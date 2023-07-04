@@ -26,11 +26,15 @@
         saludo();
 
         // Función dinámica con múltiples parámetros
-        const operacion = (numero1, numero2) => {
-            console.log(`El resultado es: ${numero1 + numero2}`);
+        const operacion = (tipo, numero1, numero2) => {
+            if (tipo === 'suma'){
+                console.log(`El resultado es: ${numero1 + numero2}`);
+            } else if (tipo === 'resta') {
+                console.log(`El resultado es: ${numero1 - numero2}`);
+            }
         }
-
-        operacion(2, 5)
+        operacion('suma', 2, 5);
+        operacion('resta', 2, 5);
     </script>
 </body>
 </html>
