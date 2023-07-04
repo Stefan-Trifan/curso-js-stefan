@@ -12,7 +12,6 @@
         <h1 id="titulo">Scope Local</h1>
     </section>
     <script>
-        // El scope de las variables significa desde que parte de tu código se puede acceder a una variable
         // Local Scope o Variables Locales: Son las variables declaradas dentro de una función. Solo podemos acceder a ellas desde dentro de la función.
         // La ventaja de trabajar con variables locales es que podemos repetir el nombre
 
@@ -22,13 +21,13 @@
             console.log(`${nombre} tiene ${numeroLetras} letras`)
 
             var funcionAnidada = () => {
-                // Desde una función anidada también podemos acceder a una variable local
+                // Desde una función anidada también podemos acceder a la variable local
                 console.log(numeroLetras) 
             }
             funcionAnidada()
         }
         obtenerNumeroLetras('Steve');
-        // Esto da error
+        // No puede acceder a la variable. No esta dentro del bloque. Tiene que dar error
         console.log(numeroLetras); 
     </script>
 </body>
