@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - FalconMasters</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <section class="text-center">
+        <h1 id="titulo">Funciones</h1>
+        <!-- Invocamos una función al hacer click -->
+        <button onClick="saludo()">Saludo</button>
+    </section>
+    <script>
+        // FORMA 1 de definir una función
+        console.log('_______ Saludo desde la función _______')
+        function saludo(){
+            console.log('Hola!')
+        }
+        saludo()
+
+        // FORMA 2 de definir una función: la asignamos a una variable
+        console.log('_______ Saludo desde la variable _______')
+        const saludo2 = function(){
+            console.log('Hola!!')
+        }
+        saludo2()
+
+        // FORMA 3 de definir una función: funciones de tipo flecha
+        console.log('_______ Saludo desde la función de tipo flecha _______')
+        const saludo3 = () => console.log('Hola!!!')
+        saludo3()
+    </script>
+</body>
+</html>

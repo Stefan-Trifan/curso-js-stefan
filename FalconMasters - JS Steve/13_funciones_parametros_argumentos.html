@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - FalconMasters</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <!-- https://www.youtube.com/watch?v=Eh-s-n_6zNQ&ab_channel=FalconMasters -->
+    <!-- Minuto: 03-02-20 -->
+    <section>
+        <h1 id="titulo">Parámetros y argumentos de una función</h1>
+    </section>
+    <script>
+        // Definicmos una funcion dinámica de tipo flecha
+        const saludo = (nombre = 'amigo') => { // amigo es el parámetro por defecto
+            console.log(`Hola ${nombre}`);
+        }
+
+        // Llamamos a la función con distintos argumentos
+        saludo('Steve');
+        saludo('Carlos');
+        saludo('Cesar');
+        saludo();
+
+        // Función dinámica con múltiples parámetros
+        const operacion = (numero1, numero2) => {
+            console.log(`El resultado es: ${numero1 + numero2}`);
+        }
+
+        operacion(2, 5)
+    </script>
+</body>
+</html>

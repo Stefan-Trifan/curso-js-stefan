@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - FalconMasters</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Switch</h1>
+    </section>
+    <script>
+        const usuario = {
+            nombre: 'Steve',
+            pais: 'Colombia',
+        }
+        
+        // La siguiente estructura con un IF es larga y estamos repitiendo código
+        console.log('_______ Resultado IF _______')
+        if (usuario.pais === 'España') {
+            console.log(`${usuario.nombre} es de España`)
+        } else if (usuario.pais === 'Rumania') {
+            console.log(`${usuario.nombre} es de Rumania`)
+        } else if (usuario.pais === 'Colombia') {
+            console.log(`${usuario.nombre} es de Colombia`)
+        } else if (usuario.pais === 'Argentina') {
+            console.log(`${usuario.nombre} es de Argentina`)
+        } else if (usuario.pais === 'Peru') {
+            console.log(`${usuario.nombre} es de Peru`)
+        } else if (usuario.pais === 'Venezuela') {
+            console.log(`${usuario.nombre} es de Venezuela`)
+        } else {
+            console.log(`${usuario.nombre} es un alien`)
+        }
+
+        // Para estas situaciones usamos Switch. Es más compacto y fácil de leer
+        console.log('_______ Resultado SWITCH _______')
+        switch(usuario.pais){
+            case 'España':
+                console.log(`${usuario.nombre} es de España`) 
+                break
+            case 'Rumania':
+                console.log(`${usuario.nombre} es de Rumania`)    
+                break
+            case 'Colombia':
+                console.log(`${usuario.nombre} es de Colombia`)  
+                break  
+            case 'Argentina':
+                console.log(`${usuario.nombre} es de Argentina`)  
+                break  
+            case 'Peru':
+                console.log(`${usuario.nombre} es de Peru`)
+                break
+            case 'Venezuela':
+                console.log(`${usuario.nombre} es de Venezuela`)    
+                break  
+            default: 
+            console.log(`${usuario.nombre} es un alien`) // No es necesario que lleve break
+        }
+    </script>
+</body>
+</html>
