@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - FalconMasters</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Operadores lógicos</h1>
+        <script>
+            console.log('TEMA 5: Operadores lógicos')
+            const nombre = 'Carlos';
+            const edad = 18;
+            const tieneEntrada = true;
+            const tienePermiso = true;
+
+            // && (AND)
+            const permitirAcceso1 = edad >= 18 && tieneEntrada; // Mayor de 18 y tiene entrada
+            console.log('Acceso permitido: ' + permitirAcceso1);
+
+            // || (OR)
+            const permitirAcceso2 = (edad >= 18 || tienePermiso) && tieneEntrada; // Mayor de 18 o tiene entrada
+            console.log('Acceso permitido: ' + permitirAcceso2);
+
+            // ! (NOT: invierte el valor de las variables) 
+            const variable = true;
+            console.log(!variable); // Devuelve la variable invertida
+        </script>
+    </section>
+</body>
+</html>

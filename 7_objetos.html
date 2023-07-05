@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - FalconMasters</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <!-- https://www.youtube.com/watch?v=Eh-s-n_6zNQ&ab_channel=FalconMasters -->
+    <!-- Minuto: 02-08-10 -->
+    <section>
+        <h1 id="titulo">Objetos</h1>
+        <script>
+            console.log('TEMA 7: Objetos')
+
+            // Con los objetos podemos saber lo que representa cada información
+            const personaObjeto = {
+                nombre: 'David', // Son un conjunto de variables que se conocen como propiedades
+                edad: 27,
+                correo: 'david@global.org',
+                // Declaramos un objeto dentro de otro objeto
+                suscripciones: {
+                    web: true,
+                    netflix: false
+                },
+                // Declaramos un arreglo dentro del objeto
+                coloresFavoriotos: ['Negro', 'Rojo'],
+                // Declaramos una función dentro del objeto
+                saludo: function () {
+                    alert('Hola!');
+                },
+            };
+            // Accedemos a una propeidad dentro del objeto de 2 maneras
+            console.log(personaObjeto.nombre);
+            console.log(personaObjeto.suscripciones.web)
+            console.log(personaObjeto['edad']);
+
+            // Acceder a una funcion dentro de un objeto.
+            // A las funciones dentro de un objeto se las conoce como métodos
+            personaObjeto.saludo();
+
+            // Accedemos a propiedades de un objeto de forma dinámica
+            const variable = 'correo';
+            console.log(personaObjeto[variable]);
+
+            // Agregar nuevos valores al objeto
+            personaObjeto.pais = 'España';
+
+            // Sobreescribir valores del objeto
+            personaObjeto.pais = 'Rumania';
+        </script>
+    </section>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - FalconMasters</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Arreglos</h1>
+        <script>
+            console.log('TEMA 6: Arreglos')
+
+            // Dentro de un arreglo podemos declarar numeros, booleanos, objetos, otros arreglos
+            const arreglo = ['Text', 999999999, false, { marca: 'renault' }, [1, 2, 3]];
+            console.log(arreglo);
+
+            // Acceder a ciertos elementos dentro de un arreglo
+            const amigos = ['Moru', 'Montero', 'Cienfu']
+            console.log([1])
+
+            // Agregar ciertos elementos de un arreglo vacío
+            const colores = [];
+            colores[0] = 'Rojo';
+            colores[1] = 'Verde';
+            colores[3] = 'Blanco'; // JS genera un espacio vacío para la posición 2
+            colores[3] = 'Amarillo'; // Sobreescribe el número 3
+            console.log(colores);
+
+            // Los arreglos realmente son objetos, por lo tanto tienen propiedades y metodos
+            // .length es una propiedad que devuelve la longitud del arreglo
+            console.log('El arreglo tiene ' + colores.length + ' colores');
+            // .push() es un método que sirve para añadir elementos a un arreglo
+            colores.push('Azul'); 
+        </script>
+    </section>
+</body>
+</html>
