@@ -10,9 +10,37 @@
 <body>
     <section>
         <h1 id="titulo">Métodos para trabajar con arreglos</h1>
+        <h2 class="text-center"></h2>
     </section>
     <script>
-            
+        // Declaramos el arreglo
+        const colores = ['Rojo', 'Verde', 'Azul', 'Morado']
+        console.log('_______ Declaramos el arreglo _______')
+        console.log(colores)
+
+        // .length nos permite conocer la cantidad de elementos que tiene un arreglo
+        console.log('_______ colores.length _______')
+        console.log(colores.length)
+
+        // .toString() nos permite transformar un arreglo a una cadena de texto
+        console.log('_______ colores.toString() _______')
+        console.log(colores.toString())
+        document.body.querySelector('section h2').innerHTML = colores.toString();
+
+        // .join() nos permite transformar un arreglo a una cadena de texto y separar cada elemento por la letra que nosotos queramos
+        console.log('_______ colores.join(-) _______')
+        console.log(colores.join('-'))
+
+        // .sort() nos permite ordenar los elementos (números y texto) de un arreglo de forma alfabética
+        console.log('_______ colores.sort() _______')
+        console.log(colores.sort())
+
+        // .reverse() nos permite ordenar los elementos (números y texto) de un arreglo de forma descendente
+        console.log('_______ colores.reverse() _______')
+        console.log(colores.reverse())
+
+        // .concat() 
+
     </script>
 </body>
 </html>
