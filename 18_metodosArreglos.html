@@ -14,9 +14,10 @@
     </section>
     <script>
         // Declaramos el arreglo
-        const colores = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log('_______ Declaramos el arreglo _______')
-        console.log(colores)
+        const colores = ['Rojo', 'Verde', 'Azul', 'Morado']
+        const dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
+        console.log(colores, dias)
 
         // .length nos permite conocer la cantidad de elementos que tiene un arreglo
         console.log('_______ colores.length _______')
@@ -39,7 +40,32 @@
         console.log('_______ colores.reverse() _______')
         console.log(colores.reverse())
 
-        // .concat() 
+        // .concat() permite juntar 2 arreglos en uno solo
+        const numeros = [1,2,3];
+        const letras = ['a', 'b', 'c'];
+        const numerosLetras = numeros.concat(letras);
+        console.log('_______ numeros.concat(letras) _______')
+        console.log(numerosLetras)
+
+        // .push() permite agregar un elemento al final del arreglo
+        console.log("_______ colores.push('turquesa') _______")
+        colores.push('turquesa') // Retorna la longitud del array
+        console.log(colores);
+
+        // .pop() permite eliminar un elemento al final del arreglo
+        console.log("_______ colores.pop() _______")
+        const colorEliminado1 = colores.pop() // Retorna el elemento eliminado
+        console.log(colores);
+
+        // .shift() permite eliminar un elemento al principio del arreglo
+        console.log("_______ colores.shift() _______")
+        const colorEliminado2 = colores.shift() // Retorna el elemento eliminado
+        console.log(colores);
+
+        // .unshift() permite agregar un elemento al principio del arreglo
+        console.log("_______ colores.unshift('Gris') _______")
+        const colorEliminado3 = colores.unshift('Gris') // Retorna la nueva longitud del arreglo
+        console.log(colores);
 
     </script>
 </body>
