@@ -43,29 +43,24 @@
         // .concat() permite juntar 2 arreglos en uno solo
         const numeros = [1,2,3];
         const letras = ['a', 'b', 'c'];
-        const numerosLetras = numeros.concat(letras);
         console.log('_______ numeros.concat(letras) _______')
-        console.log(numerosLetras)
+        console.log(numeros.concat(letras))
 
         // .push() permite agregar un elemento al final del arreglo
         console.log("_______ colores.push('turquesa') _______")
-        colores.push('turquesa') // Retorna la longitud del array
-        console.log(colores);
+        console.log(colores.push('turquesa'))  // Retorna la longitud del array
 
         // .pop() permite eliminar un elemento al final del arreglo
         console.log("_______ colores.pop() _______")
-        const colorEliminado1 = colores.pop() // Retorna el elemento eliminado
-        console.log(colores);
+        console.log(colores.pop()); // Retorna el elemento eliminado
 
         // .shift() permite eliminar un elemento al principio del arreglo
         console.log("_______ colores.shift() _______")
-        const colorEliminado2 = colores.shift() // Retorna el elemento eliminado
-        console.log(colores);
+        console.log(colores.shift()); // Retorna el elemento eliminado
 
         // .unshift() permite agregar un elemento al principio del arreglo
         console.log("_______ colores.unshift('Gris') _______")
-        const colorEliminado3 = colores.unshift('Gris') // Retorna la nueva longitud del arreglo
-        console.log(colores);
+        console.log(colores.unshift('Gris')); // Retorna la nueva longitud del arreglo
 
     </script>
 </body>
