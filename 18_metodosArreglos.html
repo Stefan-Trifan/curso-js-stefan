@@ -17,7 +17,9 @@
         console.log('_______ Declaramos el arreglo _______')
         const colores = ['Rojo', 'Verde', 'Azul', 'Morado']
         const dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
-        console.log(colores, dias)
+        const letras = ['a', 'z', 'x', 'b', 'c', 'm', 'p'];
+        const numeros = [1,2,3,4,5,6,7,8,9]
+        console.log(numeros, letras, colores, dias)
 
         // .length nos permite conocer la cantidad de elementos que tiene un arreglo
         console.log('_______ colores.length _______')
@@ -33,16 +35,14 @@
         console.log(colores.join('-'))
 
         // .sort() nos permite ordenar los elementos (números y texto) de un arreglo de forma alfabética
-        console.log('_______ colores.sort() _______')
-        console.log(colores.sort())
+        console.log('_______ numeros.sort() _______')
+        console.log(numeros.sort()) // Modifica el arreglo original
 
         // .reverse() nos permite ordenar los elementos (números y texto) de un arreglo de forma descendente
-        console.log('_______ colores.reverse() _______')
-        console.log(colores.reverse())
+        console.log('_______ numeros.reverse() _______')
+        console.log(numeros.reverse()) // Modifica el arreglo original
 
         // .concat() permite juntar 2 arreglos en uno solo
-        const numeros = [1,2,3];
-        const letras = ['a', 'b', 'c'];
         console.log('_______ numeros.concat(letras) _______')
         console.log(numeros.concat(letras))
 
@@ -61,6 +61,7 @@
         // .unshift() permite agregar un elemento al principio del arreglo
         console.log("_______ colores.unshift('Gris') _______")
         console.log(colores.unshift('Gris')); // Retorna la nueva longitud del arreglo
+
 
     </script>
 </body>
