@@ -62,6 +62,17 @@
         console.log("_______ colores.unshift('Gris') _______")
         console.log(colores.unshift('Gris')); // Retorna la nueva longitud del arreglo
 
+        // .splice() permite eliminar/insertar/sustituir elementos en cualquier parte del arreglo
+        console.log("_______ amigos.splice(1, 2, 'Rafael', 'Roberto') _______")
+        const amigos = ['Alejandro', 'Cesar', 'Manuel']; 
+        console.log(amigos)       
+        // - 1er parametro - Posición donde queremos comenzar a insertar los elementos.Si ponemos 0 los elementos aparecen al inicio
+        // - 2do parametro - Si queremos eliminar elementos del arreglo desde la posición indicada. Si ponemos 0 no se eliminarán elementos
+        // - Resto de parametros - Los elementos a insertar.
+        amigos.splice(1, 2, 'Rafael', 'Roberto');
+        console.log(amigos)
+
+        // .slice() permite eliminar/insertar/sustituir elementos en cualquier parte del arreglo
 
     </script>
 </body>
