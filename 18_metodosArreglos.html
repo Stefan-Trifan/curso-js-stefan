@@ -72,8 +72,14 @@
         amigos.splice(1, 2, 'Rafael', 'Roberto');
         console.log(amigos)
 
-        // .slice() permite eliminar/insertar/sustituir elementos en cualquier parte del arreglo
-
+        // .slice() permite copiar una parte de un arreglo a otro
+        console.log("_______ frutas.slice(1,5) _______")
+        const frutas = ['Fresa', 'Manzana', 'Uva', 'Piña', 'Naranja', 'Melon'];
+        console.log(frutas);
+         // - 1er parametro - Posición desde donde queremos quitar
+        // - 2do parametro - Hasta antes de que elemento copiar
+        const frutasFavoritas = frutas.slice(1,5)
+        console.log(frutasFavoritas)
     </script>
 </body>
 </html>
