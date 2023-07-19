@@ -80,6 +80,37 @@
         // - 2do parametro - Hasta antes de que elemento copiar
         const frutasFavoritas = frutas.slice(1,5)
         console.log(frutasFavoritas)
+
+        // .indexOf() permite obtener el index de un elemento. 
+        // Si no hay elemento nos retorma -1
+        console.log("_______ conocidos.indexOf('Gema') _______")
+        const conocidos = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
+        console.log(conocidos)
+        console.log(conocidos.indexOf('Gema')); // Devuelve el primer index del elemento que encontró
+
+        // .lastIndexOf() permite obtener el último index de un elemento. 
+        // Si no hay elemento nos retorma -1
+        console.log("_______ conocidos.lastIndexOf('Gema') _______")
+        console.log(conocidos)
+        console.log(conocidos.lastIndexOf('Gema')); // Devuelve el primer index del elemento que encontró
+        
+        // .forEach() permite ejecutar una funcióin por cada elemento
+        console.log("_______ conocidos.forEach((nombre , index) => {console.log(`Hola ${nombre} (${index}) `)}) _______")
+        // Primer parámetro la forma que identificamos los elementos del array
+        // Segundo parámetro es la posición
+        conocidos.forEach((nombre , index) => {
+            console.log(`Hola ${nombre} (${index}) `)
+        })
+
+        // .find() Permite recorrer un arreglo y devuelve el primero elemento que retornemos
+        console.log("_______ conocidos3.find((nombre) => {if(nombre[0] === 'C'){return nombre;}}) _______")
+        const conocidos3 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
+        const resultado = conocidos3.find((nombre) => {
+            if(nombre[0] === 'C'){
+                return nombre;
+            }
+        })
+        console.log(resultado)
     </script>
 </body>
 </html>
