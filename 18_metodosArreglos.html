@@ -13,104 +13,126 @@
         <h2 class="text-center"></h2>
     </section>
     <script>
-        // Declaramos el arreglo
-        console.log('_______ Declaramos el arreglo _______')
-        const colores = ['Rojo', 'Verde', 'Azul', 'Morado']
-        const dias = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
-        const letras = ['a', 'z', 'x', 'b', 'c', 'm', 'p'];
-        const numeros = [1,2,3,4,5,6,7,8,9]
-        console.log(numeros, letras, colores, dias)
-
         // .length nos permite conocer la cantidad de elementos que tiene un arreglo
-        console.log('_______ colores.length _______')
-        console.log(colores.length)
+        console.log('_______________ colores1.length _______________')
+        const colores1 = ['Rojo', 'Verde', 'Azul', 'Morado']
+        console.log(colores1)
+        console.log(colores1.length)
 
         // .toString() nos permite transformar un arreglo a una cadena de texto
-        console.log('_______ colores.toString() _______')
-        console.log(colores.toString())
-        document.body.querySelector('section h2').innerHTML = colores.toString();
+        console.log('_______________ colores2.toString() _______________')
+        const colores2 = ['Rojo', 'Verde', 'Azul', 'Morado']
+        console.log(colores2)
+        console.log(colores2.toString())
+        document.body.querySelector('section h2').innerHTML = colores2.toString();
 
         // .join() nos permite transformar un arreglo a una cadena de texto y separar cada elemento por la letra que nosotos queramos
-        console.log('_______ colores.join(-) _______')
-        console.log(colores.join('-'))
+        console.log('_______________ colores3.join(-) _______________')
+        const colores3 = ['Rojo', 'Verde', 'Azul', 'Morado']
+        console.log(colores3)
+        console.log(colores3.join('-'))
 
         // .sort() nos permite ordenar los elementos (números y texto) de un arreglo de forma alfabética
-        console.log('_______ numeros.sort() _______')
-        console.log(numeros.sort()) // Modifica el arreglo original
+        console.log('_______________ numeros4.sort() _______________')
+        const numeros4 = [6,9,4,9,2,2,3,8,7]
+        console.log(numeros4)
+        console.log(numeros4.sort()) // Modifica el arreglo original
 
         // .reverse() nos permite ordenar los elementos (números y texto) de un arreglo de forma descendente
-        console.log('_______ numeros.reverse() _______')
-        console.log(numeros.reverse()) // Modifica el arreglo original
+        console.log('_______________ numeros5.reverse() _______________')
+        const numeros5 = [1,2,3,4,5,6,7,8,9]
+        console.log(numeros5)
+        console.log(numeros5.reverse()) // Modifica el arreglo original
 
         // .concat() permite juntar 2 arreglos en uno solo
-        console.log('_______ numeros.concat(letras) _______')
-        console.log(numeros.concat(letras))
+        console.log('_______________ numeros6.concat(letras_6) _______________')
+        const numeros6 = [1,2,3,4,5,6,7,8,9]
+        const letras_6 = ['a', 'z', 'x', 'b', 'c', 'm', 'p'];
+        console.log(numeros6)
+        console.log(letras_6)
+        console.log(numeros6.concat(letras_6))
 
         // .push() permite agregar un elemento al final del arreglo
-        console.log("_______ colores.push('turquesa') _______")
-        console.log(colores.push('turquesa'))  // Retorna la longitud del array
+        console.log("_______________ colores7.push('turquesa') _______________")
+        const colores7 = ['Rojo', 'Verde', 'Azul', 'Morado']
+        console.log(colores7)
+        console.log(colores7.push('turquesa'))  // Retorna la longitud del array
 
         // .pop() permite eliminar un elemento al final del arreglo
-        console.log("_______ colores.pop() _______")
-        console.log(colores.pop()); // Retorna el elemento eliminado
+        console.log("_______________ colores8.pop() _______________")
+        const colores8 = ['Rojo', 'Verde', 'Azul', 'Morado']
+        console.log(colores8)
+        console.log(colores8.pop()); // Retorna el elemento eliminado
 
         // .shift() permite eliminar un elemento al principio del arreglo
-        console.log("_______ colores.shift() _______")
-        console.log(colores.shift()); // Retorna el elemento eliminado
+        console.log("_______________ colores9.shift() _______________")
+        const colores9 = ['Rojo', 'Verde', 'Azul', 'Morado']
+        console.log(colores9)
+        console.log(colores9.shift()); // Retorna el elemento eliminado
 
         // .unshift() permite agregar un elemento al principio del arreglo
-        console.log("_______ colores.unshift('Gris') _______")
-        console.log(colores.unshift('Gris')); // Retorna la nueva longitud del arreglo
+        console.log("_______________ colores10.unshift('Gris') _______________")
+        const colores10 = ['Rojo', 'Verde', 'Azul', 'Morado']
+        console.log(colores10)
+        console.log(colores10.unshift('Gris')); // Retorna la nueva longitud del arreglo
 
         // .splice() permite eliminar/insertar/sustituir elementos en cualquier parte del arreglo
-        console.log("_______ amigos.splice(1, 2, 'Rafael', 'Roberto') _______")
-        const amigos = ['Alejandro', 'Cesar', 'Manuel']; 
-        console.log(amigos)       
-        // - 1er parametro - Posición donde queremos comenzar a insertar los elementos.Si ponemos 0 los elementos aparecen al inicio
+        console.log("_______________ amigos11.splice(1, 2, 'Rafael', 'Roberto') _______________")
+        const amigos11 = ['Alejandro', 'Cesar', 'Manuel']; 
+        console.log(amigos11)       
+        amigos11.splice(1, 2, 'Rafael', 'Roberto');
+        // - 1er parametro - Posición donde queremos comenzar a insertar los elementos. Si ponemos 0 los elementos aparecen al inicio
         // - 2do parametro - Si queremos eliminar elementos del arreglo desde la posición indicada. Si ponemos 0 no se eliminarán elementos
         // - Resto de parametros - Los elementos a insertar.
-        amigos.splice(1, 2, 'Rafael', 'Roberto');
-        console.log(amigos)
+        console.log(amigos11)
 
         // .slice() permite copiar una parte de un arreglo a otro
-        console.log("_______ frutas.slice(1,5) _______")
-        const frutas = ['Fresa', 'Manzana', 'Uva', 'Piña', 'Naranja', 'Melon'];
-        console.log(frutas);
-         // - 1er parametro - Posición desde donde queremos quitar
+        console.log("_______________ frutas12.slice(1,5) _______________")
+        const frutas12 = ['Fresa', 'Manzana', 'Uva', 'Piña', 'Naranja', 'Melon'];
+        console.log(frutas12);
+        const frutasavoritas12 = frutas12.slice(2,4)
+        // - 1er parametro - Posición desde donde queremos quitar
         // - 2do parametro - Hasta antes de que elemento copiar
-        const frutasFavoritas = frutas.slice(1,5)
-        console.log(frutasFavoritas)
+        console.log(frutasavoritas12)
 
         // .indexOf() permite obtener el index de un elemento. 
         // Si no hay elemento nos retorma -1
-        console.log("_______ conocidos.indexOf('Gema') _______")
-        const conocidos = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
-        console.log(conocidos)
-        console.log(conocidos.indexOf('Gema')); // Devuelve el primer index del elemento que encontró
+        console.log("_______________ conocidos13.indexOf('Gema') _______________")
+        const conocidos13 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
+        console.log(conocidos13)
+        console.log(conocidos13.indexOf('Gema')); // Devuelve el primer index del elemento que encontró
 
         // .lastIndexOf() permite obtener el último index de un elemento. 
         // Si no hay elemento nos retorma -1
-        console.log("_______ conocidos.lastIndexOf('Gema') _______")
-        console.log(conocidos)
-        console.log(conocidos.lastIndexOf('Gema')); // Devuelve el primer index del elemento que encontró
+        console.log("_______________ conocidos14.lastIndexOf('Gema') _______________")
+        const conocidos14 = ['Carlos', 'Gema', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
+        console.log(conocidos14)
+        console.log(conocidos14.lastIndexOf('Gema')); // Devuelve el último index del elemento que encontró
         
         // .forEach() permite ejecutar una funcióin por cada elemento
-        console.log("_______ conocidos.forEach((nombre , index) => {console.log(`Hola ${nombre} (${index}) `)}) _______")
+        console.log("_______________ conocidos15.forEach((nombre , index) => {console.log(`Hola ${nombre} (${index}) `)}) _______________")
+        const conocidos15 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
+        console.log(conocidos15)
         // Primer parámetro la forma que identificamos los elementos del array
         // Segundo parámetro es la posición
-        conocidos.forEach((nombre , index) => {
+        conocidos15.forEach((nombre , index) => {
             console.log(`Hola ${nombre} (${index}) `)
         })
 
-        // .find() Permite recorrer un arreglo y devuelve el primero elemento que retornemos
-        console.log("_______ conocidos3.find((nombre) => {if(nombre[0] === 'C'){return nombre;}}) _______")
-        const conocidos3 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
-        const resultado = conocidos3.find((nombre) => {
+        // .find() Permite recorrer un arreglo y devuelve el primer elemento que retornemos
+        console.log("_______________ conocidos16.find((nombre) => {if(nombre[0] === 'C'){return nombre;}}) _______________")
+        const conocidos16 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
+        console.log(conocidos16)
+        const resultado = conocidos16.find((nombre) => {
             if(nombre[0] === 'C'){
                 return nombre;
             }
         })
         console.log(resultado)
+
+
+
+
     </script>
 </body>
 </html>
