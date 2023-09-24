@@ -13,126 +13,216 @@
         <h2 class="text-center"></h2>
     </section>
     <script>
+
+
         // .length nos permite conocer la cantidad de elementos que tiene un arreglo
-        console.log('_______________ colores1.length _______________')
+        console.log('___ colores1.length ___')
         const colores1 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores1)
+        /**/
         console.log(colores1.length)
 
+
         // .toString() nos permite transformar un arreglo a una cadena de texto
-        console.log('_______________ colores2.toString() _______________')
+        console.log('___ colores2.toString() ___')
         const colores2 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores2)
+        /**/
         console.log(colores2.toString())
         document.body.querySelector('section h2').innerHTML = colores2.toString();
 
+
         // .join() nos permite transformar un arreglo a una cadena de texto y separar cada elemento por la letra que nosotos queramos
-        console.log('_______________ colores3.join(-) _______________')
+        console.log('___ colores3.join(-) ___')
         const colores3 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores3)
+        /**/
         console.log(colores3.join('-'))
 
+
         // .sort() nos permite ordenar los elementos (números y texto) de un arreglo de forma alfabética
-        console.log('_______________ numeros4.sort() _______________')
+        console.log('___ numeros4.sort() ___')
         const numeros4 = [6,9,4,9,2,2,3,8,7]
         console.log(numeros4)
+        /**/
         console.log(numeros4.sort()) // Modifica el arreglo original
 
+
         // .reverse() nos permite ordenar los elementos (números y texto) de un arreglo de forma descendente
-        console.log('_______________ numeros5.reverse() _______________')
+        console.log('___ numeros5.reverse() ___')
         const numeros5 = [1,2,3,4,5,6,7,8,9]
         console.log(numeros5)
+        /**/
         console.log(numeros5.reverse()) // Modifica el arreglo original
 
+
         // .concat() permite juntar 2 arreglos en uno solo
-        console.log('_______________ numeros6.concat(letras_6) _______________')
+        console.log('___ numeros6.concat(letras_6) ___')
         const numeros6 = [1,2,3,4,5,6,7,8,9]
         const letras_6 = ['a', 'z', 'x', 'b', 'c', 'm', 'p'];
         console.log(numeros6)
         console.log(letras_6)
+        /**/
         console.log(numeros6.concat(letras_6))
 
+
         // .push() permite agregar un elemento al final del arreglo
-        console.log("_______________ colores7.push('turquesa') _______________")
+        console.log("___ colores7.push('turquesa') ___")
         const colores7 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores7)
+        /**/
         console.log(colores7.push('turquesa'))  // Retorna la longitud del array
 
+
         // .pop() permite eliminar un elemento al final del arreglo
-        console.log("_______________ colores8.pop() _______________")
+        console.log("___ colores8.pop() ___")
         const colores8 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores8)
+        /**/
         console.log(colores8.pop()); // Retorna el elemento eliminado
 
+
         // .shift() permite eliminar un elemento al principio del arreglo
-        console.log("_______________ colores9.shift() _______________")
+        console.log("___ colores9.shift() ___")
         const colores9 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores9)
+        /**/
         console.log(colores9.shift()); // Retorna el elemento eliminado
 
+
         // .unshift() permite agregar un elemento al principio del arreglo
-        console.log("_______________ colores10.unshift('Gris') _______________")
+        console.log("___ colores10.unshift('Gris') ___")
         const colores10 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores10)
+        /**/
         console.log(colores10.unshift('Gris')); // Retorna la nueva longitud del arreglo
 
+
         // .splice() permite eliminar/insertar/sustituir elementos en cualquier parte del arreglo
-        console.log("_______________ amigos11.splice(1, 2, 'Rafael', 'Roberto') _______________")
+        console.log("___ amigos11.splice(1, 2, 'Rafael', 'Roberto') ___")
         const amigos11 = ['Alejandro', 'Cesar', 'Manuel']; 
-        console.log(amigos11)       
+        console.log(amigos11)
+        /* 
+            1er parametro - Posición donde queremos comenzar a insertar los elementos. Si ponemos 0 los elementos aparecen al inicio
+            2do parametro - Si queremos eliminar elementos del arreglo desde la posición indicada. Si ponemos 0 no se eliminarán elementos
+            Resto parametros - Los elementos a insertar. 
+        */  
         amigos11.splice(1, 2, 'Rafael', 'Roberto');
-        // - 1er parametro - Posición donde queremos comenzar a insertar los elementos. Si ponemos 0 los elementos aparecen al inicio
-        // - 2do parametro - Si queremos eliminar elementos del arreglo desde la posición indicada. Si ponemos 0 no se eliminarán elementos
-        // - Resto de parametros - Los elementos a insertar.
         console.log(amigos11)
 
+
         // .slice() permite copiar una parte de un arreglo a otro
-        console.log("_______________ frutas12.slice(1,5) _______________")
+        console.log("___ frutas12.slice(2,4) ___")
         const frutas12 = ['Fresa', 'Manzana', 'Uva', 'Piña', 'Naranja', 'Melon'];
         console.log(frutas12);
-        const frutasavoritas12 = frutas12.slice(2,4)
-        // - 1er parametro - Posición desde donde queremos quitar
-        // - 2do parametro - Hasta antes de que elemento copiar
-        console.log(frutasavoritas12)
+        /*
+            1er parametro - Posición desde donde queremos quitar
+            2do parametro - Hasta antes de que elemento copiar
+        */
+        const frutasFavoritas12 = frutas12.slice(2,4)
+        console.log(frutasFavoritas12)
+
 
         // .indexOf() permite obtener el index de un elemento. 
         // Si no hay elemento nos retorma -1
-        console.log("_______________ conocidos13.indexOf('Gema') _______________")
+        console.log("___ conocidos13.indexOf('Gema') ___")
         const conocidos13 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
         console.log(conocidos13)
+        /**/
         console.log(conocidos13.indexOf('Gema')); // Devuelve el primer index del elemento que encontró
+
 
         // .lastIndexOf() permite obtener el último index de un elemento. 
         // Si no hay elemento nos retorma -1
-        console.log("_______________ conocidos14.lastIndexOf('Gema') _______________")
+        console.log("___ conocidos14.lastIndexOf('Gema') ___")
         const conocidos14 = ['Carlos', 'Gema', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
         console.log(conocidos14)
+        /**/
         console.log(conocidos14.lastIndexOf('Gema')); // Devuelve el último index del elemento que encontró
+
         
         // .forEach() permite ejecutar una funcióin por cada elemento
-        console.log("_______________ conocidos15.forEach((nombre , index) => {console.log(`Hola ${nombre} (${index}) `)}) _______________")
+        console.log("___ conocidos15.forEach(() => {}) ___")
         const conocidos15 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
         console.log(conocidos15)
-        // Primer parámetro la forma que identificamos los elementos del array
-        // Segundo parámetro es la posición
-        conocidos15.forEach((nombre , index) => {
-            console.log(`Hola ${nombre} (${index}) `)
+        /*
+            Primer parámetro siempre es la forma que identificamos los elementos del array
+            Segundo parámetro es la posición
+        */
+        conocidos15.forEach((nombre15 , index15) => {
+            console.log(`Hola ${nombre15}`, index15) 
         })
 
-        // .find() Permite recorrer un arreglo y devuelve el primer elemento que retornemos
-        console.log("_______________ conocidos16.find((nombre) => {if(nombre[0] === 'C'){return nombre;}}) _______________")
-        const conocidos16 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
-        console.log(conocidos16)
-        const resultado = conocidos16.find((nombre) => {
-            if(nombre[0] === 'C'){
-                return nombre;
+
+        // .find() Permite recorrer un arreglo y devuelve el primer elemento que retornemos con la sentencia return
+        // permite ejecutar una funcióin por cada elemento al igual que .forEach()
+        console.log("___ grupo16.find(() => {}) ___") 
+        const grupo16 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
+        console.log(grupo16)
+        /*
+            Dentro del primer () escribimos como queremos identificar a cada uno de los elementos 
+        */
+        const personaSeleccionada16 = grupo16.find((nombre16) => {
+            if(nombre16[0] === 'C'){
+                return nombre16;
             }
         })
-        console.log(resultado)
+        console.log(personaSeleccionada16)
 
 
+        // .map() Permite ejecutar una función por cada elemento y crear un nuevo arreglo en base a los resultados de esa función. 
+        // El nuevo arreglo va a tener el mismo número de elementos que el original
+        console.log("___ grupo17.map(() => {}) ___")
+        const grupo17 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
+        console.log(grupo17)
+        /*
+            Dentro del primer () escribimos como queremos identificar a cada uno de los elementos 
+        */
+        const grupoMayusculas = grupo17.map((nombre17) => nombre17.toUpperCase()) // Función flecha reducida
+        console.log(grupoMayusculas)
 
 
+        // .filter() igual que .map(), pero el nuevo arreglo solo devuelve los resultados que cumplen con una condición
+        console.log("___ grupo18.filter(() => {}) ___")
+        const grupo18 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 'Gema'];
+        console.log(grupo18)
+        /**/
+        const grupo4Letras18 = grupo18.filter((nombre18) => {
+            if (nombre18.length === 4){
+                return nombre18;
+            }
+        })
+        console.log(grupo4Letras18)
+        
+        
+        // .includes() Nos permite saber si un arreglo contiene el elemento especificado
+        console.log("___ grupo19.includes('Julio') ___")
+        const grupo19 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 'Gema'];
+        console.log(grupo19)
+        /*
+            La sentencia devuelve true o false
+        */
+        console.log(`El arreglo contiene 'Julio'? ${grupo19.includes('Julio')}`)
+
+
+        // .every() Nos permite ejecutar un condicional sobre cada elemento y nos devuelve true si TODOS los elemento cumplieron la condición.
+        // Muy úttil para validar si los campos de un formlario son correctos
+        console.log("___ grupo20.every(() => {}) ___")
+        const grupo20 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 45];
+        console.log(grupo20)
+        /*
+            La sentencia devuelve true o false
+        */
+        const IsStringGrupo20 = grupo20.every((nombre20) => {
+            if(typeof nombre20 === "string"){
+                return true;
+            } else {
+                return false;
+            }
+        })
+        console.log(`Todos los nombres son string?: ${IsStringGrupo20}`)
+
+        
     </script>
 </body>
 </html>
