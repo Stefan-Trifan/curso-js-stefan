@@ -186,7 +186,9 @@
         console.log("___ grupo18.filter(() => {}) ___")
         const grupo18 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 'Gema'];
         console.log(grupo18)
-        /**/
+        /*
+            Dentro del primer () escribimos como queremos identificar a cada uno de los elementos 
+        */
         const grupo4Letras18 = grupo18.filter((nombre18) => {
             if (nombre18.length === 4){
                 return nombre18;
@@ -200,17 +202,19 @@
         const grupo19 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 'Gema'];
         console.log(grupo19)
         /*
+            Dentro del primer () escribimos como queremos identificar a cada uno de los elementos 
             La sentencia devuelve true o false
         */
         console.log(`El arreglo contiene 'Julio'? ${grupo19.includes('Julio')}`)
 
 
-        // .every() Nos permite ejecutar un condicional sobre cada elemento y nos devuelve true si TODOS los elemento cumplieron la condición.
+        // .every() Nos permite ejecutar un condicional sobre cada elemento y nos devuelve true si TODOS los elementos cumplieron la condición.
         // Muy úttil para validar si los campos de un formlario son correctos
         console.log("___ grupo20.every(() => {}) ___")
         const grupo20 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 45];
         console.log(grupo20)
         /*
+            Dentro del primer () escribimos como queremos identificar a cada uno de los elementos 
             La sentencia devuelve true o false
         */
         const IsStringGrupo20 = grupo20.every((nombre20) => {
@@ -221,6 +225,25 @@
             }
         })
         console.log(`Todos los nombres son string?: ${IsStringGrupo20}`)
+
+
+        // .some() Nos permite ejecutar un condicional sobre cada elemento y nos devuelve true si ALGUNOS de los elementos cumplieron la condición.
+        console.log("___ grupo21.some(() => {}) ___")
+        const grupo21 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 45];
+        console.log(grupo21)
+        /*
+            Dentro del primer () escribimos como queremos identificar a cada uno de los elementos 
+            Devuelve True si hay un valor invalido
+            Devuelve False si no hay algun valor invalido
+        */
+        const IsStringGrupo21 = grupo21.some((nombre20) => {
+            if(typeof nombre20 !== "string"){  // Preguntamos si algún elemento es distinto a una cadena de texto
+                return true;
+            } else {
+                return false;
+            }
+        })
+        console.log(`El arreglo es inválido? ${IsStringGrupo21}`)
 
         
     </script>
