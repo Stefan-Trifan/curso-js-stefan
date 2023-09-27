@@ -14,7 +14,6 @@
     </section>
     <script>
 
-
         // .length nos permite conocer la cantidad de elementos que tiene un arreglo
         console.log('______ MÉTODO 1: colores1.length ______')
         const colores1 = ['Rojo', 'Verde', 'Azul', 'Morado']
@@ -116,10 +115,10 @@
         const frutas12 = ['Fresa', 'Manzana', 'Uva', 'Piña', 'Naranja', 'Melon'];
         console.log(frutas12);
         /*
-            1er parametro - Posición desde donde queremos quitar
+            1er parametro - Posición desde donde queremos copiar
             2do parametro - Hasta antes de que elemento copiar
         */
-        const frutasFavoritas12 = frutas12.slice(2,4)
+        const frutasFavoritas12 = frutas12.slice(2,5)
         console.log(frutasFavoritas12)
 
 
@@ -159,9 +158,7 @@
         console.log("______ MÉTODO 16: grupo16.find(() => {}) ______") 
         const grupo16 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
         console.log(grupo16)
-        /*
-            Dentro del primer () escribimos como queremos identificar a cada uno de los elementos 
-        */
+        /* Dentro del primer () escribimos como queremos identificar a cada uno de los elementos */
         const personaSeleccionada16 = grupo16.find((nombre16) => {
             if(nombre16[0] === 'C'){
                 return nombre16;
@@ -175,9 +172,7 @@
         console.log("______ MÉTODO 17: grupo17.map(() => {}) ______")
         const grupo17 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
         console.log(grupo17)
-        /*
-            Dentro del primer () escribimos como queremos identificar a cada uno de los elementos 
-        */
+        /* Dentro del primer () escribimos como queremos identificar a cada uno de los elementos */
         const grupoMayusculas = grupo17.map((nombre17) => nombre17.toUpperCase()) // Función flecha reducida
         console.log(grupoMayusculas)
 
@@ -186,9 +181,7 @@
         console.log("______ MÉTODO 18: grupo18.filter(() => {}) ______")
         const grupo18 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 'Gema'];
         console.log(grupo18)
-        /*
-            Dentro del primer () escribimos como queremos identificar a cada uno de los elementos 
-        */
+        /* Dentro del primer () escribimos como queremos identificar a cada uno de los elementos */
         const grupo4Letras18 = grupo18.filter((nombre18) => {
             if (nombre18.length === 4){
                 return nombre18;
@@ -245,7 +238,6 @@
         })
         console.log(`El arreglo es inválido? ${IsStringGrupo21}`)
 
-        
     </script>
 </body>
 </html>

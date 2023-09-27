@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - FalconMasters</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Métodos para trabajar con strings</h1>
+    </section>
+    <script>
+
+        console.log('_____ STRING texto1 _____')
+        const nombre1 = "Steve"
+        const texto1 = `Hola, yo soy ${nombre1}!`
+        console.log(texto1)
+
+
+        // .length es una propiedad que devuelve el nr. de caracteres de una cadena de texto
+        console.log('_____ MÉTODO 1: texto1.length _____')
+        /**/
+        console.log(texto1.length)
+
+
+        // .indexOf() - Devuelve el index del primer caracter especificado
+        console.log('_____ MÉTODO 2: texto1.indexOf("o") _____')
+        /* Si devuelve -1 no se encuentra dentro de la cadena de texo */
+        console.log(texto1.indexOf('o'))
+
+
+        // .lastIndexOf() - Devuelve el index del último caracter especificado
+        console.log('_____ MÉTODO 3: texto1.lastIndexOf("o") _____')
+        /* Si devuelve -1 no se encuentra dentro de la cadena de texo */
+        console.log(texto1.lastIndexOf('o'))
+
+
+        // .slice() - Devuelve un fragmento de una cadena de texto
+        // No modifica la cadena original 
+        console.log('_____ MÉTODO 4: texto1.slice(index4, lastIndex4) _____')
+        /*
+            1er parametro - Posición desde donde queremos copiar
+            2do parametro - Hasta antes de que elemento copiar
+        */
+        const index4 = texto1.lastIndexOf("soy") + 4
+        const lastIndex4 = texto1.indexOf(texto1.lenth) 
+        console.log(texto1.slice(index4, lastIndex4))
+
+        
+
+    </script>
+</body>
+</html>
