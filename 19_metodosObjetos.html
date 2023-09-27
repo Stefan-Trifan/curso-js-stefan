@@ -13,19 +13,45 @@
     </section>
     <script>
 
+        console.log('________ Objeto usuario1: ________')
         const usuario1 = {
-            nombre: 'Carlos',
-            edad: 27,
-            amigos: ['Alejandro', 'Cesar', 'Manuel'],
-            //Método del objeto
-            saludo: () => {
-                console.log('Hola!') 
+            nombre1: 'Carlos',
+            edad1: 27,
+            amigos1: ['Alejandro', 'Cesar', 'Manuel'],
+            saludo1: () => {
+                console.log(`Hola!`)
             }
-        }
+        };
+        console.log(usuario1)
 
-        /**/
 
+        // Métodos propios
+        // Los objetos pueden tener métodos personalizados
+        console.log('________ usuario1.saludo() ________')
+        usuario1.saludo1();
+
+
+        // Object.keys()
+        // Nos devuelve un arreglo con las llaves (keys) del objeto
+        console.log('________ Object.keys(usuario1) ________')
+        const llaves2 = Object.keys(usuario1);
+        console.log(llaves2)
+
+
+        // Object.values()
+        // Nos devuelve un arreglo con los valores (values) del objeto
+        console.log('________ Object.values(usuario1) ________')
+        const valores3 = Object.values(usuario1);
+        console.log(valores3)
+
+
+        // Object.entries()
+        // Nos devuelve un arreglo con las parejas de clave y valor (propiedades) del objeto
+        console.log('________ Object.entries(usuario1) ________')
+        const propiedades4 = Object.entries(usuario1);
+        console.log(propiedades4);
+        console.log(`El objeto tiene ${propiedades4.length} propiedades`)
 
     </script>
 </body>
-</html>g
+</html>
