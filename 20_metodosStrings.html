@@ -39,17 +39,39 @@
 
         // .slice() - Devuelve un fragmento de una cadena de texto
         // No modifica la cadena original 
-        console.log('_____ MÉTODO 4: texto1.slice(index4, lastIndex4) _____')
+        console.log('_____ MÉTODO 4: texto1.slice(indexAntesNombre4, lastIndex4) _____')
         /*
             1er parametro - Posición desde donde queremos copiar
             2do parametro - Hasta antes de que elemento copiar
         */
-        const index4 = texto1.lastIndexOf("soy") + 4
+        const indexAntesNombre4 = texto1.lastIndexOf("soy") + 4
         const lastIndex4 = texto1.indexOf(texto1.lenth) 
-        console.log(texto1.slice(index4, lastIndex4))
+        console.log(texto1.slice(indexAntesNombre4, lastIndex4))
 
+
+        // .replace() - Devuelve una cadena de texto en donde reemplaza un valor por otro
+        console.log('_____ MÉTODO 5: texto1.replace("Steve", "Carlos") _____')
+        /*
+            1er parametro - El texto que queremos reemplazar
+            2do parametro - El teto que queremos poner
+        */
+        const textoReemplazado5 = texto1.replace("Steve", "Carlos")
+        console.log(textoReemplazado5)
+
+
+        // toUpperCase() - Devuelve una cadena de texto de puras mayúsculas
+        console.log('_____ MÉTODO 6: texto1.toUpperCase() _____')
+        /**/
+        const textoMayusculas6 = texto1.toUpperCase()
+        console.log(textoMayusculas6)
+
+
+        // toLowerCase() - Devuelve una cadena de texto de puras minúsculas
+        console.log('_____ MÉTODO 7: texto1.toLowerCase() _____')
+        /**/
+        const textoMinusculas7 = texto1.toLowerCase()
+        console.log(textoMinusculas7)
         
-
     </script>
 </body>
 </html>
