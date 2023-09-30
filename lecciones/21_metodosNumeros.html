@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - FalconMasters</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Métodos para trabajar con números</h1>
+    </section>
+    <script>
+        // .toString() - Convertir numero a cadena de texto
+        console.log('_____ MÉTODO 1: numero1.toString() _____')
+        const numero1 = 10;
+        console.log(numero1, typeof numero1)
+        /**/
+        const numeroTexo1 = numero1.toString()
+        console.log(numeroTexo1, typeof numeroTexo1)
+
+
+        // .toFixed - Permite obtener un numero con la cantidad de decimales especificados
+        console.log('_____ MÉTODO 2: numero2.toFixed(2) _____')
+        const numero2 = 3.1315872687364
+        console.log(numero2)
+        /**/
+        const numeroDecimales2 = numero2.toFixed(2)
+        console.log(numeroDecimales2)
+
+
+        // .parseInt - Permite transformar un valor a un entero
+        console.log('_____ MÉTODO 3: parseInt(numeroString3) _____')
+        const numeroString3 = "3.1315"
+        console.log(numeroString3, typeof numeroString3)
+        /**/
+        const numeroEntero3 = parseInt(numeroString3)
+        console.log(numeroEntero3, typeof numeroEntero3)
+        /*
+            ejercicio 01
+        */
+
+
+        // .parseFloat - Permite transformar un valor a un número con decimales
+        console.log('_____ MÉTODO 4: parseFloat(numeroString4) _____')
+        const numeroString4 = "3.1315"
+        console.log(numeroString4, typeof numeroString4)
+        /**/
+        const numeroEntero4 = parseFloat(numeroString4)
+        console.log(numeroEntero4, typeof numeroEntero4)
+
+
+        // Math.random() - Genera un número al azar entre 0 y 1
+        console.log('_____ MÉTODO 5: Math.random() _____')
+        let numero5
+        /**/
+        numero5 = Math.random()
+        console.log(numero5)
+        /*
+            ejercicio 02
+        */
+
+
+        // Math.floor() - Redondea un número hacia abajo
+        console.log('_____ MÉTODO 6: Math.floor(numero6) _____')
+        let numero6 = 10.9
+        console.log(numero6)
+        /**/
+        let numeroAproximado6 = Math.floor(numero6)
+        console.log(numeroAproximado6)
+
+
+        // Math.ceil() - Redondea un número hacia arriba
+        console.log('_____ MÉTODO 7: Math.ceil(numero7) _____')
+        let numero7 = 10.2
+        console.log(numero7)
+        /**/
+        let numeroAproximado7 = Math.ceil(numero7)
+        console.log(numeroAproximado7)
+
+
+        // Math.round() - Redondea un número hacia el entero más cercano
+        console.log('_____ MÉTODO 8: Math.round(numero7) _____')
+        let numero9 = 10.5555
+        console.log(numero9)
+        /**/
+        let numeroAproximado8 = Math.round(numero9)
+        console.log(numeroAproximado8)
+
+
+    </script>
+</body>
+</html>
