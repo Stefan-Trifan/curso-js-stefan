@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript - FalconMasters</title>
+    <title>Scope Local</title>
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -17,12 +17,12 @@
 
         var obtenerNumeroLetras = (nombre) => {
             // numeroLetras es una variable local. Podemos acceder a ella solamente dentro de la propia función
-            var numeroLetras = nombre.length; 
+            var numeroLetras = nombre.length;
             console.log(`${nombre} tiene ${numeroLetras} letras`)
 
             var funcionAnidada = () => {
                 // Desde una función anidada también podemos acceder a la variable local
-                console.log(numeroLetras) 
+                console.log(numeroLetras)
             }
             funcionAnidada()
         }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript - FalconMasters</title>
+    <title>Métodos para trabajar con arreglos</title>
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -41,7 +41,7 @@
 
         // .sort() nos permite ordenar los elementos (números y texto) de un arreglo de forma alfabética
         console.log('______ MÉTODO 4: numeros4.sort() ______')
-        const numeros4 = [6,9,4,9,2,2,3,8,7]
+        const numeros4 = [6, 9, 4, 9, 2, 2, 3, 8, 7]
         console.log(numeros4)
         /**/
         console.log(numeros4.sort()) // Modifica el arreglo original
@@ -49,7 +49,7 @@
 
         // .reverse() nos permite ordenar los elementos (números y texto) de un arreglo de forma descendente
         console.log('______ MÉTODO 5: numeros5.reverse() ______')
-        const numeros5 = [1,2,3,4,5,6,7,8,9]
+        const numeros5 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         console.log(numeros5)
         /**/
         console.log(numeros5.reverse()) // Modifica el arreglo original
@@ -57,7 +57,7 @@
 
         // .concat() permite juntar 2 arreglos en uno solo
         console.log('______ MÉTODO 6: numeros6.concat(letras_6) ______')
-        const numeros6 = [1,2,3,4,5,6,7,8,9]
+        const numeros6 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         const letras_6 = ['a', 'z', 'x', 'b', 'c', 'm', 'p'];
         console.log(numeros6)
         console.log(letras_6)
@@ -99,13 +99,13 @@
 
         // .splice() permite eliminar/insertar/sustituir elementos en cualquier parte del arreglo
         console.log("______ MÉTODO 11: amigos11.splice(1, 2, 'Rafael', 'Roberto') ______")
-        const amigos11 = ['Alejandro', 'Cesar', 'Manuel']; 
+        const amigos11 = ['Alejandro', 'Cesar', 'Manuel'];
         console.log(amigos11)
         /* 
             1er parametro - Posición donde queremos comenzar a insertar los elementos. Si ponemos 0 los elementos aparecen al inicio
             2do parametro - Si queremos eliminar elementos del arreglo desde la posición indicada. Si ponemos 0 no se eliminarán elementos
             Resto parametros - Los elementos a insertar. 
-        */  
+        */
         amigos11.splice(1, 2, 'Rafael', 'Roberto');
         console.log(amigos11)
 
@@ -118,7 +118,7 @@
             1er parametro - Posición desde donde queremos copiar
             2do parametro - Hasta antes de que elemento copiar
         */
-        const frutasFavoritas12 = frutas12.slice(2,5)
+        const frutasFavoritas12 = frutas12.slice(2, 5)
         console.log(frutasFavoritas12)
 
 
@@ -139,7 +139,7 @@
         /**/
         console.log(conocidos14.lastIndexOf('Gema')); // Devuelve el último index del elemento que encontró
 
-        
+
         // .forEach() permite ejecutar una funcióin por cada elemento
         console.log("______ MÉTODO 15: conocidos15.forEach(() => {}) ______")
         const conocidos15 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
@@ -148,19 +148,19 @@
             Primer parámetro siempre es la forma que identificamos los elementos del array
             Segundo parámetro es la posición
         */
-        conocidos15.forEach((nombre15 , index15) => {
-            console.log(`Hola ${nombre15}`, index15) 
+        conocidos15.forEach((nombre15, index15) => {
+            console.log(`Hola ${nombre15}`, index15)
         })
 
 
         // .find() Permite recorrer un arreglo y devuelve el primer elemento que retornemos con la sentencia return
         // permite ejecutar una funcióin por cada elemento al igual que .forEach()
-        console.log("______ MÉTODO 16: grupo16.find(() => {}) ______") 
+        console.log("______ MÉTODO 16: grupo16.find(() => {}) ______")
         const grupo16 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
         console.log(grupo16)
         /* Dentro del primer () escribimos como queremos identificar a cada uno de los elementos */
         const personaSeleccionada16 = grupo16.find((nombre16) => {
-            if(nombre16[0] === 'C'){
+            if (nombre16[0] === 'C') {
                 return nombre16;
             }
         })
@@ -183,13 +183,13 @@
         console.log(grupo18)
         /* Dentro del primer () escribimos como queremos identificar a cada uno de los elementos */
         const grupo4Letras18 = grupo18.filter((nombre18) => {
-            if (nombre18.length === 4){
+            if (nombre18.length === 4) {
                 return nombre18;
             }
         })
         console.log(grupo4Letras18)
-        
-        
+
+
         // .includes() Nos permite saber si un arreglo contiene el elemento especificado
         console.log("______ MÉTODO 19: grupo19.includes('Julio') ______")
         const grupo19 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 'Gema'];
@@ -211,7 +211,7 @@
             La sentencia devuelve true o false
         */
         const IsStringGrupo20 = grupo20.every((nombre20) => {
-            if(typeof nombre20 === "string"){
+            if (typeof nombre20 === "string") {
                 return true;
             } else {
                 return false;
@@ -230,7 +230,7 @@
             Devuelve False si no hay algun valor invalido
         */
         const IsStringGrupo21 = grupo21.some((nombre20) => {
-            if(typeof nombre20 !== "string"){  // Preguntamos si algún elemento es distinto a una cadena de texto
+            if (typeof nombre20 !== "string") {  // Preguntamos si algún elemento es distinto a una cadena de texto
                 return true;
             } else {
                 return false;

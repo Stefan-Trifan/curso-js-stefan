@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructurar Objetos</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Destructurar Objetos</h1>
+    </section>
+    <script>
+        // Podemos destructurar los valores que le pasamos a una función
+
+        // Declaramos el objeto persona
+        const persona = {
+            nombre: 'Steve',
+            edad: 21,
+            pais: 'España'
+        }
+        console.log(persona)
+
+        // Asignamos las propiedades a las variables
+        const {nombre, edad, pais} = persona
+        console.log(nombre, edad, pais)
+
+        // Creamos la función saludo en base a las variables
+        const saludo = (nombre, edad, pais) => {
+            console.log(`${nombre} tiene ${edad} y es de ${pais}`)
+        }
+        saludo(persona.nombre, persona.edad, persona.pais)
+    </script>
+</body>
+</html>

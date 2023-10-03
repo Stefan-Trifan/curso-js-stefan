@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript - FalconMasters</title>
+    <title>Operador de tipo Spread</title>
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -12,12 +12,12 @@
         <h1 id="titulo">Operador de tipo Spread</h1>
     </section>
     <script>
-        
+
         // Operador Spread
         // Permite cortar de forma dinámica los elementos de un arreglo/objeto y expandirlos en otro sitio
 
         // Ejemplo con Arreglo
-        console.log('_______ frutasFavoritas1 _______')
+        console.log('_______ Operador Spread | frutasFavoritas1 _______')
         const frutasFavoritas1 = ['Manzama', 'Pera', 'Piña', 'Melon']
         console.log(frutasFavoritas1)
         //
@@ -26,9 +26,9 @@
         console.log(platosFavoritos1)
         /**/
         console.log('_______ comidaFavoria1 _______')
-        let comidaFavorita = [...frutasFavoritas1, ...platosFavoritos1]
-        console.log(comidaFavorita)
-        
+        let comidaFavorita1 = [...frutasFavoritas1, ...platosFavoritos1]
+        console.log(comidaFavorita1)
+
         // Ejemplo con Objeto
         console.log('_______ datosLogin2 _______')
         const datosLogin2 = {
@@ -48,17 +48,18 @@
         // Parámetro Rest
         // Permite que una función contenga un número indefinido de argumentos.
         // Los argumentos extra que encuentre los convertirá en un arreglo
-        const registrarUsuaro = (nombre3, correo3, ...datosAdicionales) => {
+        console.log('_______ Parámetro Rest | registrarUsuario3 _______')
+        const registrarUsuario3 = (nombre3, correo3, ...datosAdicionales) => {
             console.log(nombre3, correo3, datosAdicionales)
         }
-        registrarUsuaro("hola", "correo@correo.com", 27)
+        registrarUsuario3("hola", "correo@correo.com", 27)
 
 
         // Destructuración de objetos
         // Permite obtener elementos/propiedades de un arreglo/objeto y guardarlos en una variable
 
         // Ejemplo con Arreglo
-        console.log('_______ amigos4 _______')
+        console.log('_______ Destructuración de objetos | amigos4 _______')
         const amigos4 = ['Aljandro', 'Cesar', 'Manuel']
         console.log(amigos4)
         /**/
@@ -66,6 +67,24 @@
         console.log(primerAmigo4)
         console.log(segundoAmigo4)
         console.log(primerAmigo4)
+
+
+        // Ejemplo con Objeto
+        console.log('_______ usuario5 _______')
+        const usuario5 = {
+            nombre5: 'Steve',
+            edad5: 21,
+            pais5: 'España',
+        }
+        console.log(usuario5)
+        /* 
+            Aquí sí que tenemos que poner el nombre exacto 
+            Estamos creando una variables que contienen los valores del objeto
+        */
+        const { nombre5, edad5, pais5 } = usuario5
+        console.log(nombre5)
+        console.log(edad5)
+        console.log(pais5)
 
 
     </script>

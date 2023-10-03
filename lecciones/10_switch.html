@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript - FalconMasters</title>
+    <title>Switch</title>
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
             nombre: 'Steve',
             pais: 'Colombia',
         }
-        
+
         // La siguiente estructura con un IF es larga y estamos repitiendo código
         console.log('_______ Resultado IF _______')
         if (usuario.pais === 'España') {
@@ -37,27 +37,27 @@
 
         // Para estas situaciones usamos Switch. Es más compacto y fácil de leer
         console.log('_______ Resultado SWITCH _______')
-        switch(usuario.pais){
+        switch (usuario.pais) {
             case 'España':
-                console.log(`${usuario.nombre} es de España`) 
+                console.log(`${usuario.nombre} es de España`)
                 break
             case 'Rumania':
-                console.log(`${usuario.nombre} es de Rumania`)    
+                console.log(`${usuario.nombre} es de Rumania`)
                 break
             case 'Colombia':
-                console.log(`${usuario.nombre} es de Colombia`)  
-                break  
+                console.log(`${usuario.nombre} es de Colombia`)
+                break
             case 'Argentina':
-                console.log(`${usuario.nombre} es de Argentina`)  
-                break  
+                console.log(`${usuario.nombre} es de Argentina`)
+                break
             case 'Peru':
                 console.log(`${usuario.nombre} es de Peru`)
                 break
             case 'Venezuela':
-                console.log(`${usuario.nombre} es de Venezuela`)    
-                break  
-            default: 
-            console.log(`${usuario.nombre} es un alien`) // No es necesario que lleve break
+                console.log(`${usuario.nombre} es de Venezuela`)
+                break
+            default:
+                console.log(`${usuario.nombre} es un alien`) // No es necesario que lleve break
         }
     </script>
 </body>
