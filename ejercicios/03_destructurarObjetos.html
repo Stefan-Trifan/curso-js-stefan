@@ -31,6 +31,19 @@
             console.log(`${nombre} tiene ${edad} y es de ${pais}`)
         }
         saludo(persona.nombre, persona.edad, persona.pais)
+
+        // O de forma más simplificada...
+        const saludo2 = (nombre, edad, pais) => {
+        console.log(`${nombre} tiene ${edad} y es de ${pais}`)
+        }
+        saludo2(nombre, edad, pais)
+
+        // Simplificamos más las cosas
+        // saludo3 VA A RECIBIR UN OBJETO, y de ese objeto extrae el nombre y la edad
+        const saludo3 = ({nombre, edad, pais}) => {
+        console.log(`${nombre} tiene ${edad} y es de ${pais}`)
+        }
+        saludo3(persona)
     </script>
 </body>
 </html>
