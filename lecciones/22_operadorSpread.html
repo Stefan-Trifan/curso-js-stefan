@@ -16,28 +16,31 @@
         // Operador Spread
         // Permite cortar de forma dinámica los elementos de un arreglo/objeto y expandirlos en otro sitio
 
-        // Ejemplo con Arreglo
-        console.log('_______ Operador Spread | frutasFavoritas1 _______')
+        // Ejemplo con Arreglo. 
+        // Declaramos el primer arreglo
+        console.log('_______ Operador Spread | Primer Arreglo _______')
         const frutasFavoritas1 = ['Manzama', 'Pera', 'Piña', 'Melon']
         console.log(frutasFavoritas1)
-        //
-        console.log('_______ platosFavoritos1 _______')
+        // Declaramos el segundo arreglo
+        console.log('_______ Operador Spread | Segundo Arreglo _______')
         let platosFavoritos1 = ['Pizza', 'Sushi']
         console.log(platosFavoritos1)
-        /**/
-        console.log('_______ comidaFavoria1 _______')
+        /*
+            Creamos el arreglo dinámico
+        */
+        console.log('_______ Operador Spread | Arreglo Dinámico _______')
         let comidaFavorita1 = [...frutasFavoritas1, ...platosFavoritos1]
         console.log(comidaFavorita1)
 
         // Ejemplo con Objeto
-        console.log('_______ datosLogin2 _______')
+        console.log('_______ Operador Spread | Primer Objeto _______')
         const datosLogin2 = {
             correo2: 'correo@correo.com',
             password2: '123'
         }
         console.log(datosLogin2)
         /**/
-        console.log('_______ usuario2 _______')
+        console.log('_______ Operador Spread | Objeto Dinámico _______')
         const usuario2 = {
             nombre2: 'Carlos',
             edad2: 27,
