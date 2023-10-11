@@ -13,34 +13,33 @@
     </section>
     <script>
 
-        // Operador Spread
-        // Permite cortar de forma dinámica los elementos de un arreglo/objeto y expandirlos en otro sitio
+        /* Operador Spread
+        Permite cortar de forma dinámica los elementos de un arreglo/objeto y expandirlos en otro sitio
+        /***************************************************/
 
         // Ejemplo con Arreglo. 
         // Declaramos el primer arreglo
-        console.log('_______ Operador Spread | Primer Arreglo _______')
+        console.log('___________________ Operador Spread | Primer Arreglo:')
         const frutasFavoritas1 = ['Manzama', 'Pera', 'Piña', 'Melon']
         console.log(frutasFavoritas1)
         // Declaramos el segundo arreglo
-        console.log('_______ Operador Spread | Segundo Arreglo _______')
+        console.log('___________________ Operador Spread | Segundo Arreglo:')
         let platosFavoritos1 = ['Pizza', 'Sushi']
         console.log(platosFavoritos1)
-        /*
-            Creamos el arreglo dinámico
-        */
-        console.log('_______ Operador Spread | Arreglo Dinámico _______')
+        /* Creamos el arreglo dinámico */
+        console.log('___________________ Operador Spread | Arreglo Dinámico:')
         let comidaFavorita1 = [...frutasFavoritas1, ...platosFavoritos1]
         console.log(comidaFavorita1)
 
         // Ejemplo con Objeto
-        console.log('_______ Operador Spread | Primer Objeto _______')
+        console.log('___________________ Operador Spread | Objeto:')
         const datosLogin2 = {
             correo2: 'correo@correo.com',
             password2: '123'
         }
         console.log(datosLogin2)
-        /**/
-        console.log('_______ Operador Spread | Objeto Dinámico _______')
+        /* Creamos el objeto dinámico */
+        console.log('___________________ Operador Spread | Objeto Dinámico:')
         const usuario2 = {
             nombre2: 'Carlos',
             edad2: 27,
@@ -48,39 +47,42 @@
         }
         console.log(usuario2)
 
-        // Parámetro Rest
-        // Permite que una función contenga un número indefinido de argumentos.
-        // Los argumentos extra que encuentre los convertirá en un arreglo
-        console.log('_______ Parámetro Rest | registrarUsuario3 _______')
+        /* Parámetro Rest
+        Permite que una función contenga un número indefinido de argumentos.
+        Los argumentos extra que encuentre los convertirá en un arreglo
+        /***************************************************/
+
+        console.log('___________________ Parámetro Rest | Función :')
         const registrarUsuario3 = (nombre3, correo3, ...datosAdicionales) => {
             console.log(nombre3, correo3, datosAdicionales)
         }
         registrarUsuario3("hola", "correo@correo.com", 27)
 
-
-        // Destructuración de objetos
-        // Permite obtener elementos/propiedades de un arreglo/objeto y guardarlos en una variable
+        /* Destructuración de objetos
+        Permite obtener elementos/propiedades de un arreglo/objeto y guardarlos en una variable
+        /***************************************************/
 
         // Ejemplo con Arreglo
-        console.log('_______ Destructuración de objetos | amigos4 _______')
+        // Declaramos el arreglo
+        console.log('___________________ Destructuración de objetos | Arreglo:')
         const amigos4 = ['Aljandro', 'Cesar', 'Manuel']
         console.log(amigos4)
-        /**/
+        /* Desestructuramos el arreglo */
         const [primerAmigo4, segundoAmigo4, tercerAmigo4] = amigos4
         console.log(primerAmigo4)
         console.log(segundoAmigo4)
         console.log(primerAmigo4)
 
-
         // Ejemplo con Objeto
-        console.log('_______ usuario5 _______')
+        console.log('___________________Destructuración de objetos | Objeto:')
         const usuario5 = {
             nombre5: 'Steve',
             edad5: 21,
             pais5: 'España',
         }
         console.log(usuario5)
-        /* 
+        /*  
+            Desestructuramos el objeto
             Aquí sí que tenemos que poner el nombre exacto 
             Estamos creando una variables que contienen los valores del objeto
         */
