@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">forEach</h1>
+    </section>
+    <script>
+        // ADVERTENCIA: Live Server puede dar error con este ejercicio!
+
+        console.log("______ Elementos como colección ______")
+        // Recogemos todas las etiquetas como colección dentro de una variable
+        const etiquetas = document.head.children
+        console.log(etiquetas)
+
+        // Transformamos la colección a un arreglo
+        console.log("______ Elementos como arreglo ______")
+        const arreglo = [...etiquetas]
+        console.log(arreglo)
+
+        // Imprimimos por pantalla cada elemento
+        arreglo.forEach((elemento) => {
+            console.log(elemento)
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">While</h1>
+    </section>
+    <script>
+
+        /* Ciclo While
+        Repite un bloque de código mientras se cumple una condición
+        Se utiliza cuando la cantidad de iteraciones no se conoce de antemano y depende de una condición.
+        Es útil cuando debes repetir una acción mientras una condición sea verdadera, pero no sabes cuántas veces se ejecutará la acción.
+        Se utiliza menos que el bucle for
+        /***************************************************/
+    
+        // Expresión 1: Una condición, mientras se cumpla se ejecutará el bloque de código
+
+        // Escribimos Hola 11 veces
+        console.log('_______ While _______')
+        let i = 0
+        while(i <= 10){
+            console.log('Hola!');
+            i++
+        }
+
+
+        /* Ciclo Do While
+        Same as While
+        La iteración se debe cumplir al menos una vez
+        /***************************************************/
+    
+        // Expresión 1: Una condición, mientras se cumpla se ejecutará el bloque de código
+
+        // Escribimos Hola 11 veces
+        console.log('_______ Do While _______')
+        let contador = 0
+        do {
+            contador++
+            console.log('Hola!')
+        } while(contador <= 10)
+    
+
+
+    </script>
+</body>
+</html>

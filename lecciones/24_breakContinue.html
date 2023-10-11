@@ -14,18 +14,44 @@
     </section>
     <script>
 
+
         /* Sentencia BREAK
         La sentencia break rompe la ejecución del ciclo
         /***************************************************/
 
-        // Declaramos un arreglo y recogemos las personas cuyo nombre empeize por "A"
-        const nombres = ['Arturo', 'Andres', 'Alejandro', 'Roberto' , 'Adrian', 'Antonio', 'Angel']
+        // Declaramos un arreglo y recogemos la primera persona cuyo nombre no empeize por "A"
+        const nombres = ['Arturo', 'Andres', 'Alejandro', 'Roberto' , 'Adrian', 'Antonio', 'Angel', 'Ramón']
+        console.log('_______ Sentencia BREAK | nombres1 _______')
+        console.log(nombres)
+        /**/
         for (let i = 0; i < nombres.length; i++){
             if(nombres[i][0] !== 'A'){
                 console.log(`"${nombres[i]}" no empieza por la letra A`);
-                i++
+                i++;
+                break
             } 
-            console.log(nombres[i])
+            console.log(nombres[i]);
+            
+        }
+
+
+        /* Sentencia CONTINUE
+        La sentencia continue nos sirve para saltar a la siguiente interación
+        No se utiliza demasiado
+        /***************************************************/
+
+        // Declaramos un arreglo y recogemos la primera persona cuyo nombre no empeize por "A"
+        const nombres2 = ['Arturo', 'Andres', 'Alejandro', 'Roberto' , 'Adrian', 'Antonio', 'Angel']
+        console.log('_______ Sentencia CONTINUE | nombres2 _______')
+        console.log(nombres2)
+        /**/
+        for (let i = 0; i < nombres.length; i++){
+            if(nombres[i][0] !== 'A'){
+                i++;
+                continue 
+            } 
+            console.log(nombres[i]);
+            
         }
 
     </script>

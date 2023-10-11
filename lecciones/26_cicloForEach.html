@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">forEach</h1>
+    </section>
+    <script>
+
+        /* Ciclo forEach
+        Permite ejecutar una funcióin por cada elemento  de un arreglo
+        Solo funciona para arreglos
+        /**************************************************************************************/
+
+        console.log("______ forEach ______")
+        const amigos1 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
+        console.log(amigos1)
+
+        /*
+            Primer parámetro siempre es la forma que identificamos los elementos del array
+            Segundo parámetro es la posición
+        */
+
+        // Escribimos por consola Hola Index por cada elemento del array
+        amigos1.forEach((amigo1, index1) => {
+            console.log(`Hola ${amigo1}`, index1)
+        })
+
+        /* Ciclo for in
+        Permite recorrer las propeidades de un objeto
+        Útil para modificar propiedades de un objeto
+        /**************************************************************************************/
+        console.log("______ for in ______")
+        const persona2 = {
+            nombre1: 'Carlos',
+            edad2: 27,
+            correo2: 'correo@correo.com',
+        }
+        console.log(persona2)
+        /*
+            Primer parámetro es la propiedad del objeto
+            Segundo parámetro es el objeto
+        */
+        for(propiedad2 in persona2){
+            persona2[propiedad2] = ''
+        }
+        console.log(persona2)
+
+        /* Ciclo for off
+        Nos permite recorrer las propeidades de un objeto iterable
+        Podemos recorrer: Arreglos, Cadenas de texto, Mapas y Listas de Nodos, etc
+        /**************************************************************************************/
+        console.log("______ for off ______")
+        // Recogemos todas las etiquetas como colección dentro de una variable
+        const etiquetas3 = document.head.children
+        console.log(etiquetas3)
+        /*
+            Primer parámetro es la propiedad ¡¡
+            Segundo parámetro es el objeto
+        */
+        for(elemento3 of etiquetas3){
+            console.log(elemento3)
+        }
+        /* 
+            A veces es más recomendable transformar la colección a un arreglo y utilizar foreach: 
+            Ejercicio 06
+        */
+    </script>
+</body>
+</html>
