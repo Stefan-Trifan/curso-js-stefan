@@ -18,34 +18,35 @@
         Las clases permiten encapsular código
         Estructura:
             - Definición (Primera letra en Mayus)
-            - Peopiedades: La clase puede contener variables. Dentro de una clase se llaman propiedades
-            - Constructor: Es un método especial para inicializar un objeto creado a aprtir de una clase
-            - Métodos: La clase puede contener funciones. Dentro de una clase se llaman métodos
+            - Propiedades: La clase puede contener variables. Dentro de una clase se llaman propiedades.
+            - Constructor: Es un método especial para inicializar un objeto creado a aprtir de una clase.
+            - Métodos: La clase puede contener funciones. Dentro de una clase se llaman métodos.
         /**************************************************************************************/
 
         // Creamos una plantilla a partir de la cual creamos un objeto
         class Usuario {
             // Propiedades generales para todos los objetos
-            tipo = 'usuario'
+            tipo = 'usuario' // Las propiedades dentro de clases itilizan "=" en lugar de "."
 
             // Este método constructor se va a ejecuar cada vez que creemos un nuevo usuario
             constructor(nombre, apellido){
                 // Creamos nuevas propiedades a aprtir de los valores que recibe la función
-                this.nombre = nombre;
+                this.nombre = nombre; // Accedemos a la clase (this), creamos a la propiedad nombre y la asignamos al primer valor que le va a pasar la función 
                 this.apellido = apellido;
 
-                console.log(`Nuevo usuario registrado!}`)
+                console.log(`Nuevo usuario registrado!`)
+            }
+
+            obtenerNombreCompleto(){ // Creamos un método que pertence al usuario
+                console.log(`Obteniendo datos...`);
+                return `El nombre completo es ${this.nombre} ${this.apellido}`
             }
         }
 
-        // Creamos un nuevo objeto a partir de la plantilla
-        const usuario = new Usuario('Stefan', 'Trifan')
-        console.log(usuario.nombre)
-
+        const usuario = new Usuario('Stefan', 'Trifan') // Con la palabra new ejecutamos el constructor
+        console.log(usuario.obtenerNombreCompleto())
         const usuario2 = new Usuario('Pablo', 'Escobar')
-        console.log(usuario2.nombre, usuario2.apellido)
-
-        // Repasar
+        console.log(usuario2.obtenerNombreCompleto())
     </script>
 </body>
 </html>
