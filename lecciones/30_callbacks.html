@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Callbacks</h1>
+    </section>
+    <script>
+
+        /* Callbacks (Repasar)
+        Son funciones que pueden tener otras funciones como parámetros
+        Con el fin de que una función pueda ejecutar otra función
+        /**************************************************************************************/
+
+        // Supongamos que nos conectamos a una librería para conectarnos a una base de datos y obtener los posts de un usuario
+
+        const obtenerPostsUsuario = (usuario, callback) => {
+            console.log(`Obteniendo los posts de ${usuario} ...`)
+            // En este caso, setTimeout es un callback
+            setTimeout(() => {
+                let posts = ['Post1', 'Post2', 'post3']
+                callback(posts)
+            }, 200)
+        }
+
+        // Invocamos esta función para obtener los posts
+
+        obtenerPostsUsuario('Carlos', (posts) =>{
+            console.log(posts)
+        })
+
+
+    </script>
+</body>
+</html>
