@@ -1,3 +1,3 @@
 export default () => {
-    console.log('Producto si Agregado al carrito')
+    console.log('Producto siuuuu Agregado al carrito')
 }
