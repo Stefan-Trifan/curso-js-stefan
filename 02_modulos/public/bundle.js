@@ -1,11 +1,34 @@
 'use strict';
 
-var carrito = () => {
-    console.log('Producto agregado al carrito');
+/*  
+    Forma 1 - Palabra export
+*/
+
+// export const nombre = 'Carlos'
+
+// export const obtenerPosts = () => {
+//     return ['Post1', 'Post2', 'Post3']
+// }
+
+/*  
+    Forma 2 - Palabra export
+*/
+
+const nombre = 'Carlos';
+
+const obtenerPosts = () => {
+    return ['Post1', 'Post2', 'Post3']
 };
 
-// Así importamos la función carrito del archivo carrito
+/*
+    Named Imports
+    Importamos en base al valor
+    Utilizamos un alias
+*/
 
-// Así llamamos la función carrito
-console.log('Archivo incial');
-carrito();
+
+console.log('Mi nombre es ' + nombre);
+console.log(obtenerPosts());
+
+console.log('Mi nombre es ' + nombre);
+console.log(obtenerPosts());
