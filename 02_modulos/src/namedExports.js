@@ -2,19 +2,19 @@
     Forma 1 - Palabra export
 */
 
-// export const nombre = 'Carlos'
+// // export const nombre = 'Carlos'
 
-// export const obtenerPosts = () => {
-//     return ['Post1', 'Post2', 'Post3']
-// }
+// // export const obtenerPosts = () => {
+// //     return ['Post1', 'Post2', 'Post3']
+// // }
 
 /*  
-    Forma 2 - Palabra export
+    Forma 2
 */
 
-export const nombre = 'Carlos'
+const nombre = 'Carlos'
 
-export const obtenerPosts = () => {
+const obtenerPosts = () => {
     return ['Post1', 'Post2', 'Post3']
 }
 

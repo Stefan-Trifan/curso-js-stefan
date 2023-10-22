@@ -1,3 +1,5 @@
+'use strict';
+
 /*
     Named Imports
     Importamos en base al valor
