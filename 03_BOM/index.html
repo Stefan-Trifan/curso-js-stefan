@@ -12,16 +12,54 @@
     <section>
         <h1 id="titulo">BOM</h1>
     </section>
-    <script>
+    <script id="inactivo" class="inactivo">
         /* Broswer Object Model
         Es un objeto
         Nos va a permitir acceder a propeidades y metodos que el navegador web nos va a dar acceso
-        Ejemplos, nos permitirá: 
+        Ejemplos, nos permitirá:
             Acceder a la ventana para conocer su tamaño
             Acceder a la barra de direcciones (URL) para escribir nuevas direcciones
             Crear nuevas pestañas
             Trabajar con las alertas del navegador
-        /**************************************************************************************/
+        /***********************************/
+
+        // window 
+        // es un objeto que nos permite acceder a distintas funciones del navegador
+        // Window tiene distintas propiedades y metodos
+        console.log('______ Objeto window ______')
+        /**/
+        console.log(window)
+
+        /*
+            Métodos del objeto window
+            Los métodos globales son los cuales podemos acceder desde cualquier parte de nuestro código
+            window.alert('Alert con window') y alert('Alert sin window') son lo mismo        
+        */
+
+        // window.innerWidth 
+        // Nos permite acceder al ancho del navegador
+        console.log('______ Propiedad ancho navegador ______')
+        /**/
+        console.log(`La ventana de mi navegador mide: ${window.innerWidth} px de ancho`)
+
+        // windos.innerHeight 
+        // Nos permite acceder al alto del navegador
+        console.log('______ Propiedad alto navegador ______')
+        /**/
+        console.log(`La ventana de mi navegador mide: ${window.innerHeight} px de alto`)
+
+        // window.open()
+        // Nos permite abrir ventanas del navegador
+        // Es posible que el navegador te pida permisos para abrir otra ventana
+        // Nos devuelve un objeto para acceder a esa ventana
+        console.log('______ Propiedad window open ______')
+        /*
+            1er parametro: Dirección de la nueva ventana
+            2er parametro: Nombre de la ventana
+            3er parametro: Cadena de texto de opciones
+        */
+
     </script>
+
 </body>
 </html>
