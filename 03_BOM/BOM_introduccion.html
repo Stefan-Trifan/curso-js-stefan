@@ -11,6 +11,8 @@
 <body>
     <section>
         <h1 id="titulo">BOM</h1>
+        <button onclick="abrirVentana()">Abrir ventana</button>
+        <button onclick="cerrarVentana()">Cerrar ventana</button>
     </section>
     <script>
         /* Broswer Object Model
@@ -58,9 +60,15 @@
             2er parametro: Nombre de la ventana
             3er parametro: Cadena de texto de opciones
         */
+        let ventana
         const abrirVentana = () => {
-
+            ventana = window.open('', 'Mi Nueva Ventana', 'width=500, height=500');
+            ventana.document.write('<h1>Hola, escribiendo en la nueva ventana</h1>')
         }
+
+
+
+        
     </script>
 
 </body>
