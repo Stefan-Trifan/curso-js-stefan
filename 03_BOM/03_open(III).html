@@ -19,16 +19,23 @@
         // Nos permite abrir ventanas del navegador
         // Es posible que el navegador te pida permisos para abrir otra ventana
         // Nos devuelve un objeto para acceder a esa ventana
+        // No es muy común abir ventanas con JS por qué es mala práctica
         console.log('______ Propiedad window open ______')
         /*
             1er parametro: Dirección de la nueva ventana
             2er parametro: Nombre de la ventana
             3er parametro: Cadena de texto de opciones
         */
+        // Definimos la variable fuera de la función para tener acceso global (desde .cerrarVentana())
         let ventana
         const abrirVentana = () => {
+            // Cuando se ejecute la función guardamos la ventana en una variable
             ventana = window.open('', 'Mi Nueva Ventana', 'width=500, height=500');
+            // Ahora tenemos propiedades y metodos adicionales
             ventana.document.write('<h1>Hola, escribiendo en la nueva ventana</h1>')
+        }
+        const cerrarVentana = () => {
+            ventana.close()
         }
     </script>
 
