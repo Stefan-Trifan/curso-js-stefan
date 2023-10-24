@@ -11,8 +11,6 @@
 <body>
     <section>
         <h1 id="titulo">BOM</h1>
-        <button onclick="abrirVentana()">Abrir ventana</button>
-        <button onclick="cerrarVentana()">Cerrar ventana</button>
     </section>
     <script>
         /* Broswer Object Model
@@ -37,38 +35,6 @@
             Los métodos globales son los cuales podemos acceder desde cualquier parte de nuestro código
             window.alert('Alert con window') y alert('Alert sin window') son lo mismo        
         */
-
-        // window.innerWidth 
-        // Nos permite acceder al ancho del navegador
-        console.log('______ Propiedad ancho navegador ______')
-        /**/
-        console.log(`La ventana de mi navegador mide: ${window.innerWidth} px de ancho`)
-
-        // windos.innerHeight 
-        // Nos permite acceder al alto del navegador
-        console.log('______ Propiedad alto navegador ______')
-        /**/
-        console.log(`La ventana de mi navegador mide: ${window.innerHeight} px de alto`)
-
-        // window.open()
-        // Nos permite abrir ventanas del navegador
-        // Es posible que el navegador te pida permisos para abrir otra ventana
-        // Nos devuelve un objeto para acceder a esa ventana
-        console.log('______ Propiedad window open ______')
-        /*
-            1er parametro: Dirección de la nueva ventana
-            2er parametro: Nombre de la ventana
-            3er parametro: Cadena de texto de opciones
-        */
-        let ventana
-        const abrirVentana = () => {
-            ventana = window.open('', 'Mi Nueva Ventana', 'width=500, height=500');
-            ventana.document.write('<h1>Hola, escribiendo en la nueva ventana</h1>')
-        }
-
-
-
-        
     </script>
 
 </body>
