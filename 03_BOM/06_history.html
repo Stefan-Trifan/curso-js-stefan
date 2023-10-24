@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">history</h1>
+        <button onclick="irAtras()">Regresar <-</button>
+        <button onclick="irAdelante()">Ir Adelante -></button>
+    </section>
+    <script>
+        // window.history
+        // Es un objeto global que nos permite acceder a los botones <- y -> del navegador
+        // No se utiliza mucho
+        console.log('______ Los métodos del objeto history del objeto window ______')
+        console.log(history)
+
+        /* .back() - Es un método del objeto history que nos permite ir atrás */
+        const irAtras = () => {
+            history.back()
+        }
+
+        /* .forward() - Es un método del objeto history que nos permite ir adelante */
+        const irAdelante = () => {
+            history.forward()
+        }
+    </script>
+</body>
+</html>
