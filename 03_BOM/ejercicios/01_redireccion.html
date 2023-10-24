@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirección</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Redirección</h1>
+        <button onclick="cambiarPath()">Cargar Documento</button>
+    </section>
+    <script>
+        
+        let path = window.location.pathname
+        console.log(path)
+
+        const cambiarPath = () => {
+            if (path.includes('/03_BOM/ejercicios/01_redireccion.html')) {
+                path = path.replace('/03_BOM/ejercicios/01_redireccion.html', '/03_BOM/ejercicios/00_plantilla.html')
+                window.location.pathname = path
+            }
+        }
+
+    </script>
+</body>
+</html>
