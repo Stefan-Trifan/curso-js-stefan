@@ -10,6 +10,7 @@
 <body>
     <section>
         <h1 id="titulo">Destructurar Objetos</h1>
+        <p class="text-center">Abre la consola y el Visual Studio!</p>
     </section>
     <script>
         // Podemos destructurar los valores que le pasamos a una función
@@ -23,7 +24,7 @@
         console.log(persona)
 
         // Asignamos las propiedades a las variables
-        const {nombre, edad, pais} = persona
+        const { nombre, edad, pais } = persona
         console.log(nombre, edad, pais)
 
         // Creamos la función saludo en base a las variables
@@ -34,14 +35,14 @@
 
         // O de forma más simplificada...
         const saludo2 = (nombre, edad, pais) => {
-        console.log(`${nombre} tiene ${edad} y es de ${pais}`)
+            console.log(`${nombre} tiene ${edad} y es de ${pais}`)
         }
         saludo2(nombre, edad, pais)
 
         // Simplificamos más las cosas
         // saludo3 VA A RECIBIR UN OBJETO, y de ese objeto extrae el nombre y la edad
-        const saludo3 = ({nombre, edad, pais}) => {
-        console.log(`${nombre} tiene ${edad} y es de ${pais}`)
+        const saludo3 = ({ nombre, edad, pais }) => {
+            console.log(`${nombre} tiene ${edad} y es de ${pais}`)
         }
         saludo3(persona)
     </script>

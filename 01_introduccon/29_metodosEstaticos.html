@@ -11,22 +11,23 @@
 <body>
     <section>
         <h1 id="titulo">Métodos Estáticos</h1>
+        <p class="text-center">Abre la consola y el Visual Studio!</p>
     </section>
     <script>
-        
+
         /* Métodos Estáticos
         Nos permiten acceder a propiedades y métodos sin tener que inicializar nuevos objetos
         /**************************************************************************************/
 
         class Usuario {
-            constructor(nombre, correo){
+            constructor(nombre, correo) {
                 this.nombre = nombre;
                 this.correo = correo;
                 console.log(`Nuevo usuario registrado`)
             }
 
             // Creamos un método estático 
-            static borrarUsuario(id_usuario){
+            static borrarUsuario(id_usuario) {
                 console.log(`Has borrado el usuario con el ID: ${id_usuario}`)
             }
 
@@ -38,8 +39,8 @@
         Usuario.borrarUsuario(3)
         // Lo mismo con la propiedad usuariosRegistrados
         console.log(Usuario.usuariosRegistrados)
-        
-        /*  
+
+        /*
             Antiguamente teníams que inicializar el objeto para acceder al método borrarUsuario
             const usuario = new Usuario('Stefan', 'stefan@gmail.com')
             usuario.borrarUsuario(22)

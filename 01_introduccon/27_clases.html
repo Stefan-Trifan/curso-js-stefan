@@ -11,6 +11,7 @@
 <body>
     <section>
         <h1 id="titulo">Clases</h1>
+        <p class="text-center">Abre la consola y el Visual Studio!</p>
     </section>
     <script>
         /* Clases
@@ -29,7 +30,7 @@
             tipo = 'usuario' // Las propiedades dentro de clases itilizan "=" en lugar de "."
 
             // Este método constructor se va a ejecuar cada vez que creemos un nuevo usuario
-            constructor(nombre, apellido){
+            constructor(nombre, apellido) {
                 // Creamos nuevas propiedades a aprtir de los valores que recibe la función
                 this.nombre = nombre; // Accedemos a la clase (this), creamos a la propiedad nombre y la asignamos al primer valor que le va a pasar la función 
                 this.apellido = apellido;
@@ -37,7 +38,7 @@
                 console.log(`Nuevo usuario registrado!`)
             }
 
-            obtenerNombreCompleto(){ // Creamos un método que pertence al usuario
+            obtenerNombreCompleto() { // Creamos un método que pertence al usuario
                 console.log(`Obteniendo datos...`);
                 return `El nombre completo es ${this.nombre} ${this.apellido}`
             }

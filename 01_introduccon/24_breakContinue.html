@@ -11,6 +11,7 @@
 <body>
     <section>
         <h1 id="titulo">breakContinue</h1>
+        <p class="text-center">Abre la consola y el Visual Studio!</p>
     </section>
     <script>
 
@@ -20,18 +21,18 @@
         /***************************************************/
 
         // Declaramos un arreglo y recogemos la primera persona cuyo nombre no empeize por "A"
-        const nombres = ['Arturo', 'Andres', 'Alejandro', 'Roberto' , 'Adrian', 'Antonio', 'Angel', 'Ramón']
+        const nombres = ['Arturo', 'Andres', 'Alejandro', 'Roberto', 'Adrian', 'Antonio', 'Angel', 'Ramón']
         console.log('_______ Sentencia BREAK | nombres1 _______')
         console.log(nombres)
         /**/
-        for (let i = 0; i < nombres.length; i++){
-            if(nombres[i][0] !== 'A'){
+        for (let i = 0; i < nombres.length; i++) {
+            if (nombres[i][0] !== 'A') {
                 console.log(`"${nombres[i]}" no empieza por la letra A`);
                 i++;
                 break
-            } 
+            }
             console.log(nombres[i]);
-            
+
         }
 
 
@@ -41,17 +42,17 @@
         /***************************************************/
 
         // Declaramos un arreglo y recogemos la primera persona cuyo nombre no empeize por "A"
-        const nombres2 = ['Arturo', 'Andres', 'Alejandro', 'Roberto' , 'Adrian', 'Antonio', 'Angel']
+        const nombres2 = ['Arturo', 'Andres', 'Alejandro', 'Roberto', 'Adrian', 'Antonio', 'Angel']
         console.log('_______ Sentencia CONTINUE | nombres2 _______')
         console.log(nombres2)
         /**/
-        for (let i = 0; i < nombres.length; i++){
-            if(nombres[i][0] !== 'A'){
+        for (let i = 0; i < nombres.length; i++) {
+            if (nombres[i][0] !== 'A') {
                 i++;
-                continue 
-            } 
+                continue
+            }
             console.log(nombres[i]);
-            
+
         }
 
     </script>
