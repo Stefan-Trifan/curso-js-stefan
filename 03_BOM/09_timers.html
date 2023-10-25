@@ -5,19 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timers</title>
-    <link rel="stylesheet" href="/assets/style.css">
     <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
     <section>
         <h1 id="titulo">Timers</h1>
         <div class="text-center">
             <button onclick="iniciar1()">Iniciar Timer</button>
-            <button onclick="interval2()">Iniciar Intervalo</button>       
+            <button onclick="interval2()">Iniciar Intervalo</button>
             <button onclick="parar3()">Parar todo</button>
-     
         </div>
-
     </section>
     <script>
         // Timers
@@ -48,17 +46,17 @@
             Tiene 2 argumentos
                 1 Argumento - Función que se va a ejecutar
                 2 Argumento - Intervalo de tiempo en el que se ejecuta la funicón
-        */        
+        */
         let cuenta2 = 1
         let id2
         // Declaramos la función que ejecuta el intervalo
         const interval2 = () => {
             // Guardamos el intervalo dentro de una varibale
             // Cada 100ms incrementamos cuenta2 en 1 valor
-            id2 = setInterval (() => {
+            id2 = setInterval(() => {
                 console.log(cuenta2)
                 cuenta2 += 1
-            }, 100)            
+            }, 100)
         }
 
         /* 

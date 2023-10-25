@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookies</title>
-    <link rel="stylesheet" href="/assets/style.css">
     <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
     <section class="text-center">
@@ -25,7 +25,7 @@
         }
 
         // Asignamos la cookie que hemos creado a un usuario
-        let usuario 
+        let usuario
 
         // Separamos el array de cookies y lo asginamos a una variable
         let cookies = document.cookie.split(';')
@@ -34,13 +34,13 @@
         // Obtenemos el nombre de la cookie y se la asignamos a usuario
         cookies.forEach((cookie) => {
             const propiedad = cookie.split('=')[0]
-            if(propiedad === 'nombre'){
+            if (propiedad === 'nombre') {
                 usuario = cookie.split('=')[1]
             }
         })
 
         // Saludamos a nuestro usuario
-        if(usuario){
+        if (usuario) {
             console.log('Hola ' + usuario)
         }
 
