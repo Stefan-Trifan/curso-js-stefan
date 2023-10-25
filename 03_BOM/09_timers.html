@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timers</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Timers</h1>
+        <button onclick="iniciar1()">Iniciar</button>
+    </section>
+    <script>
+        // Timers
+        // Son métodos del navegador que nos permiten trabajar con tiempo
+        console.log('______ Timers ______')
+
+        /* 
+            window.setTimeOut(() => {}, 5000) 
+            Es un callback
+            Nos permite ejecutar una función después de cierto tiempo
+            Tiene 2 argumentos
+                1 Argumento - Función que se va a ejecutar
+                2 Argumento - Tiempo de espera para ejecutar la función en milisegundos
+        */
+        // Ejemplo con setTimeout que se ejecuta cuando pulsamos un botón
+        const saludo1 = () => console.log('Hola!')
+
+        iniciar1 = () => {
+            console.log('Iniciando Timer...')
+            setTimeout(saludo1, 2000)
+        }
+
+    </script>
+</body>
+</html>
