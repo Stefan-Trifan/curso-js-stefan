@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>???</title>
+    <title>Cookies</title>
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="shortcut icon" href="#">
 </head>
 <body>
-    <section>
-        <h1 id="titulo">???</h1>
+    <section class="text-center">
+        <h1 id="titulo">Cookies</h1>
+        <button onclick="crearCookie()">Crear Default Cookie</button>
     </section>
     <script>
-        // window.metodoPropiedad
-        // Definición
-        console.log('______  ______')
-        /* Parámetros */
+        // Cookies
+        // Pequeños archivos de texto o variables
+        // Guardan info en la computadora del usuario 
+        // La info no se pierde cuando refrescamos la página
+        // El navegador web nos da un código para que podamos crear/leer/editar esas cookies
+        // Se utiliza para:
+        // - Guardar info del usuario que no queremos guardar en una base de datos (Preferencias, configuraciones)
+        // - Preferencias de usuario
+        // - Info de autentificación
 
+        /* Creamos una cookie predeterminada */
+        const crearCookie = () => {
+            // Trabajamos con la propiedad cookie del documento.
+            // Guardamos esa cookie dentro del navegador
+            document.cookie = 'nombre=Carlos; expires=Wed, 01 Jan 2025 01:00:00 UTC';
+            console.log(`Default Cookie Creada: ${document.cookie}`);
+        };
     </script>
 </body>
 </html>

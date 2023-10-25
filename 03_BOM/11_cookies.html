@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <section class="text-center">
+        <h1 id="titulo">Cookies</h1>
+        <button onclick="iniciarSesion()">Iniciar Sesión</button>
+        <button onclick="cerrarSesion()">Cerrar Sesión</button>
+    </section>
+    <script>
+        // Cookies II
+
+        // Declarams una función que te pide tu nombre y crea una cookie
+        const iniciarSesion = () => {
+            const usuario = prompt('Cual es tu nombre?')
+            document.cookie = `nombre=${usuario}; expires=Wed, 01 Jan 2025 01:00:00 UTC`;
+            console.log(`Has creado la cookie: ${document.cookie}`);
+        }
+
+        // Asignamos la cookie que hemos creado a un usuario
+        let usuario 
+
+        // Separamos el array de cookies y lo asginamos a una variable
+        let cookies = document.cookie.split(';')
+        console.log(cookies)
+
+        // Obtenemos el nombre de la cookie y se la asignamos a usuario
+        cookies.forEach((cookie) => {
+            const propiedad = cookie.split('=')[0]
+            if(propiedad === 'nombre'){
+                usuario = cookie.split('=')[1]
+            }
+        })
+
+        // Saludamos a nuestro usuario
+        if(usuario){
+            console.log('Hola ' + usuario)
+        }
+
+        // Borramos la cookie
+        const cerrarSesion = () => {
+            // Le ponermos un valor vacío y una fecha pasada
+            document.cookie = 'nombre=; expires=Wed, 01 Jan 2020 01:00:00 UTC'
+            console.log('Hasta luego!')
+        }
+    </script>
+</body>
+</html>
