@@ -11,7 +11,13 @@
 <body>
     <section>
         <h1 id="titulo">Timers</h1>
-        <button onclick="iniciar1()">Iniciar</button>
+        <div class="text-center">
+            <button onclick="iniciar1()">Iniciar Timer</button>
+            <button onclick="interval2()">Iniciar Intervalo</button>       
+            <button onclick="parar3()">Parar todo</button>
+     
+        </div>
+
     </section>
     <script>
         // Timers
@@ -27,11 +33,44 @@
                 2 Argumento - Tiempo de espera para ejecutar la función en milisegundos
         */
         // Ejemplo con setTimeout que se ejecuta cuando pulsamos un botón
-        const saludo1 = () => console.log('Hola!')
+        const saludo1 = () => alert('Hola!')
+        let id1
+        const iniciar1 = () => {
+            console.log('Iniciando Timer de 3 segundos...')
+            // Guardamos el identificador de este setTimeout en una variable para posteriormente detenerlo
+            id1 = setTimeout(saludo1, 3000)
+        }
 
-        iniciar1 = () => {
-            console.log('Iniciando Timer...')
-            setTimeout(saludo1, 2000)
+        /* 
+            window.setInterval(() => {}, 5000) 
+            Nos permite ejecutar una función cada cierto tiempo
+            Se repite de forma infinida hasta que nosotros lo especifiquemos
+            Tiene 2 argumentos
+                1 Argumento - Función que se va a ejecutar
+                2 Argumento - Intervalo de tiempo en el que se ejecuta la funicón
+        */        
+        let cuenta2 = 1
+        let id2
+        // Declaramos la función que ejecuta el intervalo
+        const interval2 = () => {
+            // Guardamos el intervalo dentro de una varibale
+            // Cada 100ms incrementamos cuenta2 en 1 valor
+            id2 = setInterval (() => {
+                console.log(cuenta2)
+                cuenta2 += 1
+            }, 100)            
+        }
+
+        /* 
+            window.clearTimeout(I) 
+            Nos permite cortar la ejecución de una función
+            Tiene 1 argumento:
+                1 Argumento - ID del temporizador que queremos detener
+        */
+        const parar3 = () => {
+            console.log('Timer detenido')
+            clearTimeout(id1)
+            clearTimeout(id2)
         }
 
     </script>
