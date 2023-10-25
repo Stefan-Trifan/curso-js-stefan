@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/assets/dom.css" />
+	<title>Seleccionando elementos del DOM (parte 1)</title>
+	<link rel="shortcut icon" href="#">
+</head>
+<body>
+	<div class="contenedor-principal">
+		<div class="contenedor" id="contenedor1">
+			<div class="caja">Caja 1</div>
+			<div class="caja">Caja 2</div>
+			<div class="caja">Caja 3</div>
+		</div>
+		<div class="contenedor" id="contenedor2">
+			<div class="caja">Caja 1</div>
+			<div class="caja">Caja 2</div>
+			<div class="caja">Caja 3</div>
+		</div>
+	</div>
+	<script>
+		// Para hacer un elemento interactivo:
+		// 1.1 Primero tenemos que acceder al elemento del DOM
+		// 1.2 Posteriormente le agregamos un evento (Nos va a permitir hacer sitios dinámicos)
+
+		// 1.1 Para acceder a los elementos del DOM
+		// - DOM nos va a permitir acceder a métodos para este propósito
+
+		/* getElemetById - Nos permite obtener un elemento en base a su atributo ID */
+		console.log('______ .get ______')
+		let primerContenedor = document.getElementById('contenedor1')
+		console.log(primerContenedor)
+
+
+	</script>
+</body>
+</html>
+
+<link rel="shortcut icon" href="#">
