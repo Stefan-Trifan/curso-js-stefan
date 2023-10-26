@@ -34,10 +34,98 @@
 		// - Modificar estilos CSS
 		// - Modificar atributos
 
-		/* getElemetById - Nos permite obtener un elemento en base a su atributo ID */
-		console.log('______ document.getElementById() ______')
-		let primerContenedor = document.getElementById('contenedor1')
-		console.log(primerContenedor)
+		/*  
+			.getElemetById(I) - Método
+			Nos permite obtener acceso a un elemento en base a su atributo ID
+		    Nos devuelve un objeto con propiedades y métodos que podemos utilizar 
+		*/
+		console.log('_________ getElementById() _________')
+		let primerContenedor1 = document.getElementById('contenedor1')
+		console.log(primerContenedor1)
+
+		/*  
+			.children - Método
+			Nos permite obtener los elementos hijo de un elemento
+			Nos devuelve una colección de elementos HTML (objeto). Una colección no es un arreglo
+		*/
+		console.log('_________ getElementById().children _________')
+		let hijosContenedor2 = document.getElementById('contenedor1').children
+		console.log(hijosContenedor2)
+
+		/*  
+			.parentElement
+			Nos permite obtener los elementos padre de un elemento
+		*/
+		console.log('_________ getElementById().parentElement _________')
+		let padresContenedor3 = document.getElementById('contenedor1').parentElement
+		console.log(padresContenedor3)	
+		
+		/*  
+			.getElementsByTagName(I) - Método
+			Nos permiten obtener uma colección de elementos en base a su etiqueta
+			Nota: Devuelve una colección HTML. Una colección no es un arreglo
+		*/
+		console.log('_________ getElementsByTagName() _________')
+		let elementosDiv4 = document.getElementsByTagName('div')
+		console.log(elementosDiv4)
+		/* Estas colecciones cuentan con muchas propiedades. como por ejemplo .length */
+		console.log('_________ getElementsByTagName().length _________')
+		console.log(`Tenemos ${elementosDiv4.length} divs en la página`)
+
+		/*  
+			.getElementsByClassName(I) - Método
+			Nos permiten obtener uma colección de elementos en base a su clase css
+			Nota: Devuelve una colección HTML. (No podemos iterar)
+		*/
+		console.log('_________ getElementsByClassName() _________')
+		let contenedores5 = document.getElementsByClassName('contenedor')
+		console.log(contenedores5)
+
+		/*  
+			.querySelector(I) - Método
+			Devuelve solo el primer elemento que coincida con el selector
+			Es como un selector de CSS
+			Devuelve un nodelist (lista de nodos)
+		*/
+		console.log('_________ querySelector() _________')
+		let smCaja6 = document.querySelector('#contenedor1 .caja')
+		console.log(smCaja6)
+
+		/*  
+			.querySelectorAll(I) - Método
+			Devuelve todos los elementos que coincidan con el selector
+			Es como un selector de CSS
+			Devuelve un nodelist (podemos iterar)
+			
+		*/
+		console.log('_________ querySelectorAll() _________')
+		let smCajas7 = document.querySelectorAll('#contenedor1 .caja')
+		console.log(smCajas7)
+		/* Las podremos iterar con forEach() */
+		console.log('_________ querySelectorAll.forEach(()=>{}) _________')
+		smCajas7.forEach((caja) => {
+			console.log(caja)
+		})
+
+		/*  
+			.closest
+			Nos permite buscar de adentro hacia fuera en búsqueda de un elemento
+		*/
+		// Queremos acceder a la última caja de nuestro contenedor:
+		// querySelector nos devuelve solo la última caja del primer contenedor
+		const ultimaCaja8 = document.querySelector('#contenedor2 .caja:last-child') 
+		// closest
+		console.log('_________ .closest() _________')
+		console.log(ultimaCaja8.closest('.contenedor-principal'))
+
+
+		/*  
+			Podemos encadenar todos los métodos vistos en el capítulo>
+		*/
+		console.log('_________ Encadenar propiedades/métodos _________')
+		const segundoContenedor9 = document.getElementById('contenedor2')
+		console.log(segundoContenedor9.querySelector('.caja'))
+		// Devuelve todos los elementos del segundo contenedor
 	</script>
 </body>
 </html>
