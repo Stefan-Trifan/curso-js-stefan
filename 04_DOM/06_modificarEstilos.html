@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/assets/dom.css" />
+	<script defer src=""></script>
+	<title>Modificando estilos mediante clases 📌</title>
+	<link rel="shortcut icon" href="#">
+</head>
+<body>
+	<div class="contenedor-principal">
+		<div class="contenedor" id="contenedor1">
+			<div class="caja cojo cojin ">Caja 1</div>
+			<div class="caja">Caja 2</div>
+			<div class="caja">Caja 3</div>
+		</div>
+		<div class="contenedor" id="contenedor2">
+			<div class="caja">Caja 1</div>
+			<div class="caja">Caja 2</div>
+			<div class="caja">Caja 3</div>
+		</div>
+		<button class="text-uppercase" onclick="agregarClase()">Agregar Clase</button>
+		<button class="text-uppercase" onclick="eliminarClase()">Eliminar Clase</button>
+		<button class="text-uppercase" onclick="toggleClase()">Toggle Clase</button>
+		<button class="text-uppercase" onclick="comprobarClase()">Comprobar Clase</button>
+	</div>
+	<script>
+		/* 
+			Modificar estilos CSS mediante clases
+		*/
+		// Declaramos la primera caja
+		const primeraCaja = document.querySelector('#contenedor1 .caja')
+		/* 
+			📌 .classList 
+			Nos permite obtener la lista de clases de un elemento
+			Con est apropeidad también vamos a poder eliminar/crear clases
+		*/
+		console.log('_________ .classList _________')
+		console.log(primeraCaja.classList)
+
+		// Creamos la función para agregar clases
+		const agregarClase = () => {
+			/* 
+				📌 classList.add 
+				Añadir clases
+			*/
+			primeraCaja.classList.add('activa')
+		}
+
+		// Creamos la función para eliminar clases
+		const eliminarClase = () => {
+			/* 
+				📌 classList.remove 
+				Remover clases
+			*/
+			primeraCaja.classList.remove('activa')
+		}	
+
+		// Creamos la función para alternar clases
+		const toggleClase = () => {
+			/* 
+				📌 classList.toggle 
+				Alternar clases
+			*/
+			primeraCaja.classList.toggle('activa')
+		}	
+
+		// Creamos la función para comprobar si tiene la clase activa
+		const comprobarClase = () => {
+			/* 
+				📌 classList.contains()
+				Comprueba si el elemento contiene una clase
+			*/
+			if(primeraCaja.classList.contains('activa')){
+				console.log('Contiene la clase activa')
+			} else {
+				console.log('No contiene la clase activa')
+			}
+			clases = primeraCaja.classList
+
+			clases.forEach((clase) => {
+				console.log(clase)
+			})
+
+		}	
+	</script>
+	</script>
+</body>
+</html>
