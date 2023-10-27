@@ -23,7 +23,7 @@
 		</div>
 		<button class="text-uppercase" onclick="agregarCajaCol1()">Agregar Caja al Final</button>
 		<button class="text-uppercase" onclick="agregarCajaCol2()">Agregar Caja al Principio</button>
-		<button class="text-uppercase" onclick="reemplazarBoton()">Reemplazar Caja</button>
+		<button class="text-uppercase" onclick="reemplazarBoton()">Reemplazar Primera Caja</button>
 	</div>
 	<script>
 		/* Nodos
@@ -86,7 +86,7 @@
 			*/
 			col2.insertAdjacentElement('afterbegin', nuevaCaja)
 		}
-		
+
 		// Método 1: Declaramos la función para el segundo botón
 		const reemplazarBoton = () => {
 			/*  
