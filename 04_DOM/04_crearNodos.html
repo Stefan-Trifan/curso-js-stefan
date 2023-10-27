@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/assets/dom.css" />
+	<script defer src=""></script>
+	<title>Creando y agregando nodos al DOM</title>
+	<link rel="shortcut icon" href="#">
+</head>
+<body>
+	<div class="contenedor-principal">
+		<div class="contenedor" id="contenedor1">
+			<div class="caja">Caja 1</div>
+			<div class="caja">Caja 2</div>
+			<div class="caja">Caja 3</div>
+		</div>
+		<div class="contenedor" id="contenedor2">
+			<div class="caja">Caja 1</div>
+			<div class="caja">Caja 2</div>
+			<div class="caja">Caja 3</div>
+		</div>
+		<button class="text-uppercase" onclick="agregarCajaCol1()">Agregar Caja al Final</button>
+		<button class="text-uppercase" onclick="agregarCajaCol2()">Agregar Caja al Principio</button>
+		<button class="text-uppercase" onclick="reemplazarBoton()">Reemplazar Caja</button>
+	</div>
+	<script>
+		/* Nodos
+		Crear elementos dentro de nuestra página
+		/***********************************/
+		/* 
+			A continuación crearemos un botón que cuando lo pulsemos va añadir una caja dentro del contenedor 
+			Vamos a tener que seguir 3 pasos
+		*/
+
+		// Declaramos la función para el primer botón
+		const agregarCajaCol1 = () => {
+			/*  
+				1. Creamos el elemento y lo guardamos dentro de una variable
+				📌 .createElement(I) - Recibe como parámetro una cadena de texo con la etiqueta que queremos crear.
+			*/
+			const nuevaCaja = document.createElement('div')
+			/*
+				2. Agregamos texto y atributos
+				📌 .innerText - Nos permite crear una cadena de texo con el texto dentro de un elemento
+			*/
+			nuevaCaja.innerText = 'Nueva Caja!'
+			nuevaCaja.setAttribute('class', 'caja activa')
+			/*
+				3. Agregamos el elemento al DOM. Existen varias formas
+			*/
+			const col1 = document.getElementById('contenedor1')
+			/*
+				3.1 Agregamos el elemento al DOM
+				📌 .appendChild() - Agrega un elemento al final
+			*/
+			col1.appendChild(nuevaCaja)
+		}
+
+		// Declaramos la función para el segundo botón
+		const agregarCajaCol2 = () => {
+			/*  
+				1. Creamos el elemento y lo guardamos dentro de una variable
+			*/
+			const nuevaCaja = document.createElement('div')
+			/*
+				2. Agregamos texto y atributos
+			*/
+			nuevaCaja.innerText = 'Nueva Caja!'
+			nuevaCaja.setAttribute('class', 'caja activa')
+			/*
+				3. Agregamos el elemento al DOM. Existen varias formas
+			*/
+			const col2 = document.getElementById('contenedor2')
+			/*
+				3.1 Agregamos el elemento al DOM
+				📌 .insertAdjacentElement() - Agrega un elemento
+					Tiene 2 argumentos
+					1: Posición
+						afterbegin (como primer elemento)
+						beforeend (como ultimo elemento)
+						beforebegin (antes del elemento padre)
+						afterend ( despues del elemento padre)
+					2: Lugar donde se va a añadir el botón
+			*/
+			col2.insertAdjacentElement('afterbegin', nuevaCaja)
+		}
+		
+		// Método 1: Declaramos la función para el segundo botón
+		const reemplazarBoton = () => {
+			/*  
+				1. Creamos el elemento y lo guardamos dentro de una variable
+			*/
+			const nuevaCaja = document.createElement('div')
+			/*
+				2. Agregamos texto y atributos
+			*/
+			nuevaCaja.innerText = 'Reemplazada'
+			nuevaCaja.setAttribute('class', 'caja activa text-uppercase')
+			/*
+				3 Reemplazamos el botón
+				📌 .replaceWith() - Nos permite reemplazar un elemento por otro
+			*/
+			document.querySelector('#contenedor1 .caja').replaceWith(nuevaCaja)
+		}
+	</script>
+</body>
+</html>

@@ -23,14 +23,53 @@
 		</div>
 	</div>
 	<script>
+		/* 
+		Nosotros queremos seleccionar un elemento dentro de nuestro HTML y modificarlo
+		Para esto cada elemento tiene propiedades y métodos para esto
+		/***********************************/
+
 		/*  
-			.getElemetById(I) - Método
-			Nos permite obtener acceso a un elemento en base a su atributo ID
-		    Nos devuelve un objeto con propiedades y métodos que podemos utilizar 
+			elemento.innerHTML
+			Nos permite modificar el contenido HTML de un elemento
 		*/
-		console.log('_________ getElementById() _________')
-		let primerContenedor1 = document.getElementById('contenedor1')
-		//////////////////////////////////////
+		console.log('_________ elemento.innerHTML() _________')
+		let col1caja1 = document.querySelector('.caja')
+		col1caja1.innerHTML = '<b>innerHTML</b>'
+		console.log(col1caja1)
+
+		/*  
+			elemento.attribute
+			Nos permite acceder y cambiar atributos del elemento
+		*/
+		console.log('_________ elemento.attribute _________')
+		let IDcol1caja1 = document.querySelector('.caja')
+		IDcol1caja1.id = 'nuevo-id'
+		console.log(IDcol1caja1.id)
+
+		/*  
+			elemento.setAttribute(II)
+			Nos permtie agregar o establecer el valor de un atributo al elemento
+			1 Parámetro - Atributo
+			2 Parámetro - Valor
+		*/
+		console.log('_________elemento.setAttribute() _________')
+		let col1caja2 = document.querySelector('.caja:nth-child(2)')
+		col1caja2.setAttribute('class', 'caja activa')
+		col1caja2.setAttribute('data-id', '999-999-999')
+		console.log(col1caja2)
+
+		/*  
+			elemento.style.property
+			Nos permite cambiar los estilos de un alemento
+		*/
+		console.log('_________ elemento.style.property _________')
+		let col2caja1 = document.querySelector('#contenedor2 .caja')
+		col2caja1.style.background = 'red'
+		col2caja1.style.color = 'white'
+		// No pdoemos usar el guion como en CSS: text-transform
+		// JS lo interpreta como una resta
+		// En su lugar utilizamos el camelCase
+		col2caja1.style.textTransform = 'uppercase'
 	</script>
 </body>
 </html>

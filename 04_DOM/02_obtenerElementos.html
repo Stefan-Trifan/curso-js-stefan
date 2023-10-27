@@ -37,7 +37,7 @@
 		/*  
 			.getElemetById(I) - Método
 			Nos permite obtener acceso a un elemento en base a su atributo ID
-		    Nos devuelve un objeto con propiedades y métodos que podemos utilizar 
+			Nos devuelve un objeto con propiedades y métodos que podemos utilizar 
 		*/
 		console.log('_________ getElementById() _________')
 		let primerContenedor1 = document.getElementById('contenedor1')
@@ -58,8 +58,8 @@
 		*/
 		console.log('_________ .parentElement _________')
 		let padresContenedor3 = document.getElementById('contenedor1').parentElement
-		console.log(padresContenedor3)	
-		
+		console.log(padresContenedor3)
+
 		/*  
 			.getElementsByTagName(I) - Método
 			Nos permiten obtener uma colección de elementos en base a su etiqueta
@@ -113,7 +113,7 @@
 		*/
 		// Queremos acceder a la última caja de nuestro contenedor:
 		// querySelector nos devuelve solo la última caja del primer contenedor
-		const ultimaCaja8 = document.querySelector('#contenedor2 .caja:last-child') 
+		const ultimaCaja8 = document.querySelector('#contenedor2 .caja:last-child')
 		// closest
 		console.log('_________ .closest() _________')
 		console.log(ultimaCaja8.closest('.contenedor-principal'))
@@ -126,7 +126,6 @@
 		const segundoContenedor9 = document.getElementById('contenedor2')
 		console.log(segundoContenedor9.querySelector('.caja'))
 		// Devuelve todos los elementos del segundo contenedor
-		//////////////////////////////////////
 	</script>
 </body>
 </html>

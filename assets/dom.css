@@ -63,3 +63,7 @@ button {
 button:hover {
 	background: #1942be;
 }
+
+.text-uppercase{
+	text-transform: uppercase;
+}
