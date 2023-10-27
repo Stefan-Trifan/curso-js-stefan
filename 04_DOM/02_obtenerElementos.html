@@ -48,7 +48,7 @@
 			Nos permite obtener los elementos hijo de un elemento
 			Nos devuelve una colección de elementos HTML (objeto). Una colección no es un arreglo
 		*/
-		console.log('_________ getElementById().children _________')
+		console.log('_________ .children _________')
 		let hijosContenedor2 = document.getElementById('contenedor1').children
 		console.log(hijosContenedor2)
 
@@ -56,7 +56,7 @@
 			.parentElement
 			Nos permite obtener los elementos padre de un elemento
 		*/
-		console.log('_________ getElementById().parentElement _________')
+		console.log('_________ .parentElement _________')
 		let padresContenedor3 = document.getElementById('contenedor1').parentElement
 		console.log(padresContenedor3)	
 		
@@ -102,7 +102,7 @@
 		let smCajas7 = document.querySelectorAll('#contenedor1 .caja')
 		console.log(smCajas7)
 		/* Las podremos iterar con forEach() */
-		console.log('_________ querySelectorAll.forEach(()=>{}) _________')
+		console.log('_________ querySelectorAll.forEach() _________')
 		smCajas7.forEach((caja) => {
 			console.log(caja)
 		})
