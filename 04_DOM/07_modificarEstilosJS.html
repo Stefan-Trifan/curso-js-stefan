@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/assets/dom.css" />
+	<script defer src=""></script>
+	<title>Modificando estilos con JS 📌</title>
+	<link rel="shortcut icon" href="#">
+</head>
+<body>
+	<div class="contenedor-principal">
+		<div class="contenedor" id="contenedor1">
+			<div class="caja ">Caja 1</div>
+			<div class="caja">Caja 2</div>
+			<div class="caja">Caja 3</div>
+		</div>
+		<div class="contenedor" id="contenedor2">
+			<div class="caja">Caja 1</div>
+			<div class="caja">Caja 2</div>
+			<div class="caja">Caja 3</div>
+		</div>
+		<button class="text-uppercase" onclick="incrementarFuente()">Incrementar Fuente</button>
+		<button class="text-uppercase" onclick="disminuirFuente()">Disminuir Fuente</button>
+		<button class="text-uppercase" onclick="modificarInlineStyle()">Cambiar Color</button>
+	</div>
+	<script>
+		/* 
+			Modificar estilos CSS mediante 'inline styles'
+			Son los estilos que podemos modificar mediante los atributos style de HTML
+		*/
+		// Declaramos todas las cajas
+		const allCajas = document.querySelectorAll('.caja')
+		console.log(allCajas)
+		// Declaramos una variable que va a contener el tamaño inicial de mi fuente
+		let tamaño;
+
+
+
+
+
+
+
+		// Declaramos la última Caja
+		const ultimaCaja = document.querySelector('#contenedor2 .caja:last-child')
+
+		// Creamos la función para eliminar estilos
+		const modificarInlineStyle = () => {
+			/* 
+				📌 .style.propiedad
+			*/
+			ultimaCaja.style.background = 'black'
+			ultimaCaja.style.color = 'white'
+		}
+
+
+
+
+
+
+
+
+	</script>
+	</script>
+</body>
+</html>
