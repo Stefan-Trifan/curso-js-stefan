@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/form.css" />
+    <title>Accediendo a elementos de formulario</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h1 class="text-center">Accediendo a elementos de formulario</h1>
+        <form id="formulario-donacion" action="" method="">
+            <input type="text" name="correo" id="correo" placeholder="correo@correo.com" />
+            <select name="pais" id="pais">
+                <option selected disabled value="">Selecciona un país</option>
+                <option value="mexico">México</option>
+                <option value="españa">España</option>
+                <option value="argentina">Argentina</option>
+            </select>
+            <label for="cantidad-5">
+                <input type="radio" name="donacion" id="cantidad-5" value="5" /> 5 usd </label>
+            <label for="cantidad-10">
+                <input type="radio" name="donacion" id="cantidad-10" value="10" /> 10 usd </label>
+            <input type="date" name="fecha" id="fecha" />
+            <label for="terminos-y-condiciones">
+                <input type="checkbox" id="terminos-y-condiciones" name="terminos-y-condiciones" /> Aceptar terminos y condiciones </label>
+            <button id="btnEnviar">Enviar</button>
+        </form>
+    </div>
+</body>
+<script>
+    /* Accedemos al resto de elementos del FORM
+    Al presionar el botón de ENVIAR queremos acceder al resto de los valores */
+    const botonEnviar = document.getElementById('btnEnviar')
+
+    botonEnviar.addEventListener('click', (e) => {
+        /* 📌 preventDefault()    
+        Nos permite prevenir el comportamiento por defecto del navegador */
+        // Accedemos al evento y prevenimos que la página se refresque
+        e.preventDefault()
+        // Ahora podemos acceder a todos los valores para validarlos y hacer lo que nosotros queramos
+
+        // Accedemos al valor de correo (DOM)
+        const correo = document.querySelector('#formulario-donacion [name="correo"]')
+        console.log(correo.value)
+
+        // Accedemos al select pais (FORMS)
+        const pais = document.forms['formulario-donacion']['pais']
+        console.log(pais.value)
+
+        // Guardamos el form dentro de una variable
+        const formulario = document.forms['formulario-donacion']
+
+         // Accedemos al radio donación mediante brackets (FORMS)
+        console.log(formulario['donacion'].value)
+
+        // Accedemos a la fecha mediante el #fecha (FORMS)
+        console.log(formulario.fecha.value)
+
+        // Accedemos a los términos y condiciones (FORMS)
+        // Utilizamos brackets por que terminos-y-condiciones tiene guiones
+        /* 
+        📌 checked
+        Nos dice si el checkbox está marcado o no    
+        */
+        console.log(formulario['terminos-y-condiciones'].checked)
+    })
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/form.css" />
+    <title>Accediendo al Formulario</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h1 class="text-center">Accediendo al Formulario</h1>
+        <form id="formulario-donacion" action="" method="">
+            <input type="text" name="correo" id="correo" placeholder="correo@correo.com" />
+            <select name="pais" id="pais">
+                <option selected disabled value="">Selecciona un país</option>
+                <option value="mexico">México</option>
+                <option value="españa">España</option>
+                <option value="argentina">Argentina</option>
+            </select>
+            <label for="cantidad-5">
+                <input type="radio" name="donacion" id="cantidad-5" value="5" /> 5 usd </label>
+            <label for="cantidad-10">
+                <input type="radio" name="donacion" id="cantidad-10" value="10" /> 10 usd </label>
+            <input type="date" name="fecha" id="fecha" />
+            <label for="terminos-y-condiciones">
+                <input type="checkbox" id="terminos-y-condiciones" name="terminos-y-condiciones" /> Aceptar terminos y condiciones </label>
+            <button id="btnEnviar">Enviar</button>
+        </form>
+    </div>
+</body>
+<script>
+    /* Tenemos 2 formas de acceder a los formularios
+    - Mediante el objeto forms
+    - Mediante métodos del DOM
+    /**************************************************************************************/
+
+    /* Forma 1 (Objeto Forms)
+    📌 document.forms 
+    Es un objeto que JS va a construir y contiene todos los formularios de la página
+    Devuelve una colección con todos los formularios */
+    console.log('______ .forms: Accedemos al Objeto con todos los forms ______')
+    console.log(document.forms)
+    // Accedemos a nuestro formulario, con el ID: formulario-donacion
+    console.log('______ .forms: Accedemos al Form con el id formulario-donacion ______')
+    console.log(document.forms['formulario-donacion'])
+    // Accedemos al input del correo
+    console.log('______ .forms: Accedemos al valor de correo______')
+    console.log(document.forms['formulario-donacion']['correo']);
+
+    /* Forma 2 DOM */
+    console.log('______ DOM: Accedemos al valor de correo ______')
+    const correo = document.querySelector('#formulario-donacion [name="correo"]')
+    console.log(correo)
+</script>
+</html>
