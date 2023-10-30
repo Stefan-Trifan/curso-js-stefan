@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/assets/form.css" />
-    <title>Plantilla</title>
+    <title>Eventos Para Formularios</title>
 </head>
 <body>
     <div class="contenedor">
-        <h1 class="text-center">Plantilla</h1>
+        <h1 class="text-center">Eventos Para Formularios</h1>
         <form id="formulario-donacion" action="" method="">
             <input type="text" name="correo" id="correo" placeholder="correo@correo.com" />
             <select name="pais" id="pais">
@@ -30,9 +30,19 @@
     </div>
 </body>
 <script>
-    /* 
+    /* Eventos Para Formularios
+    Podemos trabajar con eventos para reaccionar a diferentes cosas que ocurren dentro de nuestro formulaio
+    Ejemplos:
+    - Reaccionar cuando intenta enviar el formulario
+    - Cuando el usuario cambie el valor de algun input
+    - Cuando el usuaro pierda el foco sobre un input
+    - Cuando el usuario escriba dentro de un input
     /**************************************************************************************/
-    console.log('______  ______')
+    // Accedemos al formulario
+    const formulario = document.forms['formulario-donacion']
+    console.log(formulario)
+
+
     /* 
        📌 
     */
