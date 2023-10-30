@@ -5,10 +5,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="/assets/dom.css" />
-	<title>Seleccionando elementos del DOM (parte 1)</title>
+	<title>Seleccionando elementos del DOM</title>
 	<link rel="shortcut icon" href="#">
 </head>
 <body>
+	<h1>Seleccionando elementos del DOM</h1>
 	<div class="contenedor-principal">
 		<div class="contenedor" id="contenedor1">
 			<div class="caja">Caja 1</div>
@@ -22,20 +23,22 @@
 		</div>
 	</div>
 	<script>
-		// Para hacer un elemento interactivo:
-		// 1.1 Primero tenemos que acceder al elemento del DOM
-		// 1.2 Posteriormente le agregamos un evento (Nos va a permitir hacer sitios dinámicos)
 
-		// 1.1 Para acceder a los elementos del DOM
-		// - DOM nos va a permitir acceder a métodos para este propósito
-		// - Estos métodos nos van a devolver un objeto con propiedades y métodos que podemos utilizar
-		// - Estas propiedades y métodos contienen información sobre el elemento
-		// Podemos utilizar las propeidades y métodos para hacer un sinfín de cosas
-		// - Modificar estilos CSS
-		// - Modificar atributos
+		/* 	Para hacer un elemento interactivo:
+			1.1 Primero tenemos que acceder al elemento del DOM
+			1.2 Posteriormente le agregamos un evento (Nos va a permitir hacer sitios dinámicos) 
+		*/
+
+		/* 1.1 Para acceder a los elementos del DOM
+		- DOM nos va a permitir acceder a métodos para este propósito
+		- Estos métodos nos van a devolver un objeto con propiedades y métodos que podemos utilizar
+		- Estas propiedades y métodos contienen información sobre el elemento
+		Podemos utilizar las propeidades y métodos para hacer un sinfín de cosas
+		- Modificar estilos CSS
+		- Modificar atributos */
 
 		/*  
-			.getElemetById(I) - Método
+			📌 .getElemetById(I) - Método
 			Nos permite obtener acceso a un elemento en base a su atributo ID
 			Nos devuelve un objeto con propiedades y métodos que podemos utilizar 
 		*/
@@ -44,7 +47,7 @@
 		console.log(primerContenedor1)
 
 		/*  
-			.children - Método
+			📌 .children - Método
 			Nos permite obtener los elementos hijo de un elemento
 			Nos devuelve una colección de elementos HTML (objeto). Una colección no es un arreglo
 		*/
@@ -53,7 +56,7 @@
 		console.log(hijosContenedor2)
 
 		/*  
-			.parentElement
+			📌 .parentElement
 			Nos permite obtener los elementos padre de un elemento
 		*/
 		console.log('_________ .parentElement _________')
@@ -61,7 +64,7 @@
 		console.log(padresContenedor3)
 
 		/*  
-			.getElementsByTagName(I) - Método
+			📌 .getElementsByTagName(I) - Método
 			Nos permiten obtener uma colección de elementos en base a su etiqueta
 			Nota: Devuelve una colección HTML. Una colección no es un arreglo
 		*/
@@ -73,7 +76,7 @@
 		console.log(`Tenemos ${elementosDiv4.length} divs en la página`)
 
 		/*  
-			.getElementsByClassName(I) - Método
+			📌 .getElementsByClassName(I) - Método
 			Nos permiten obtener uma colección de elementos en base a su clase css
 			Nota: Devuelve una colección HTML. (No podemos iterar)
 		*/
@@ -82,7 +85,7 @@
 		console.log(contenedores5)
 
 		/*  
-			.querySelector(I) - Método
+			📌 .querySelector(I) - Método
 			Devuelve solo el primer elemento que coincida con el selector
 			Es como un selector de CSS
 			Devuelve un nodelist (lista de nodos)
@@ -92,7 +95,7 @@
 		console.log(smCaja6)
 
 		/*  
-			.querySelectorAll(I) - Método
+			📌 .querySelectorAll(I) - Método
 			Devuelve todos los elementos que coincidan con el selector
 			Es como un selector de CSS
 			Devuelve un nodelist (podemos iterar)
@@ -108,7 +111,7 @@
 		})
 
 		/*  
-			.closest
+			📌 .closest
 			Nos permite buscar de adentro hacia fuera en búsqueda de un elemento
 		*/
 		// Queremos acceder a la última caja de nuestro contenedor:
@@ -118,9 +121,8 @@
 		console.log('_________ .closest() _________')
 		console.log(ultimaCaja8.closest('.contenedor-principal'))
 
-
 		/*  
-			Podemos encadenar todos los métodos vistos en el capítulo>
+			Podemos encadenar todos los métodos vistos en el capítulo
 		*/
 		console.log('_________ Encadenar propiedades/métodos _________')
 		const segundoContenedor9 = document.getElementById('contenedor2')

@@ -10,6 +10,7 @@
 	<link rel="shortcut icon" href="#">
 </head>
 <body>
+	<h1>Modificando estilos con JS</h1>
 	<div class="contenedor-principal">
 		<div class="contenedor" id="contenedor1">
 			<div class="caja">Caja 1</div>
@@ -31,35 +32,44 @@
 			Son los estilos que podemos modificar mediante los atributos style de HTML
 		*/
 
-		/* Aumentar/Disminuir Fuente */
+		/* 
+			Aumentar/Disminuir Fuente 
+		*/
 		// Obtenermos todas las cajas
 		const cajas = document.querySelectorAll('.caja') 
 		// Declaramos una variable que va a contener el tamaño inicial de mi fuente
-		let tamaño = 24;
-
+		let tamaño = 15;
+		// Ajustamos la fuebte a ese tamaño
+		cajas.forEach((caja) => {
+			caja.style.fontSize = `${tamaño}px`
+		})
+		
 		// Declaramos la función para aumentar el tamaño
 		const incrementarFuente = () => { 
 			cajas.forEach((caja) => {
-				caja.style.fontSize = `${tamaño + 8}px`
+				/* 
+					📌 .style.propiedad
+				*/
+				tamaño++
+				caja.style.fontSize = `${tamaño}px`
 			})
 		}
 
 		// Declaramos la función para disminuir el tamaño
 		const disminuirFuente = () => {
 			cajas.forEach((caja) => {
-				caja.style.fontSize = `${tamaño - 8}px`
-				tamño
+				tamaño--
+				caja.style.fontSize = `${tamaño}px`
 			})
 		}
 
-		/* Cambiar el color de la caja */
+		/* 
+			Cambiar el color de la caja 
+		*/
 		// Declaramos la caja a la que le vamos a cambiar el color
 		const ultimaCaja = document.querySelector('#contenedor2 .caja:last-child')
 		// Creamos la función para modificar estilos de la caja 
 		const modificarInlineStyle = () => {
-			/* 
-				📌 .style.propiedad
-			*/
 			ultimaCaja.style.background = 'black'
 			ultimaCaja.style.color = 'white' 
 		} 

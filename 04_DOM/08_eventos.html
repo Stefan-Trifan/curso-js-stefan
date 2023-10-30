@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/assets/dom.css" />
+	<script defer src=""></script>
+	<title>Eventos</title>
+	<link rel="shortcut icon" href="#">
+</head>
+<body>
+	<h1>Eventos</h1>
+	<div class="contenedor-principal">
+		<div class="contenedor" id="contenedor1">
+			<div class="caja">Caja 1</div>
+			<div class="caja">Caja 2</div>
+			<div class="caja">Caja 3</div>
+		</div>
+		<div class="contenedor" id="contenedor2">
+			<div class="caja">Caja 1</div>
+			<div class="caja">Caja 2</div>
+			<div class="caja">Caja 3</div>
+		</div>
+		<button id="boton1">Toggle Base</button>
+	</div>
+	<script>
+		/* Eventos
+		Nos permiten registrar acciones que ocurren dentro de nuestra página para luego reaccionar a ellas con código 
+		Ej: Cuando la página termine de cargar
+		Ej: Registrar cuando el usuario haga click sobre un botón 
+		Existen 2 formas para trabajar con eventos*/
+
+		// Guardamos el botón dentro de una variable
+		const boton1 = document.getElementById('boton1')
+		// Guardamos la primera caja dentro de una variable
+		const primeraCaja = document.querySelector('.caja')
+		/* 
+			📌 .addEventListener('', (e) => {})
+			Es un método que permite escuchar eventos y ejecutar una función
+			1 Argumento - Que es lo que el navegador se tiene que quedar escuchando
+			2 Argumento - Callback. La función que se va a ejecutar cuando el usuario haga click
+			📌e / event
+			Argumento que pasamos dentro del callback
+			Representa el evento/acción que el usuario hizo dentro del navegador
+			Tiene la información del evento
+		*/
+		// Botón que activa y desactiva la clase activa
+		boton1.addEventListener('click', (e) => {
+			console.log(e)
+			primeraCaja.classList.toggle('activa')
+		})
+
+		/* 
+			📌 Agregando un evento a múltiples eventos
+			Podemos agregar el eveno a múltiples elenebtis recorriendolos mediante un ciclo
+			Nota: Esta no es la forma más óptima
+			Estamos registrando 6 eventos, pero podríamos registrar uno solo (lo veremos más adelante)
+		*/
+		const cajas = document.querySelectorAll('.caja')
+		// Node list tiene acceso al método de foreach para cada elemento del nodo
+		cajas.forEach((caja) => {
+			// Esta línea está registrando el evento
+			// Por cada caja el navegador se queda atento
+			// Cuando hagan click ejecutas la función
+			/* 
+				📌 e.target.innerHTML
+				.target es el objetivo del evento. Es un elemento de HTML
+			*/
+			caja.addEventListener('click', (e) => {
+				console.log(`Hiciste click en la caja: ${e.target.innerHTML}`)
+			})
+		})
+
+	</script>
+</body>
+</html>
