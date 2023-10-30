@@ -13,18 +13,38 @@
 	<h1>Propagación de eventos</h1>
 	<div class="contenedor-principal">
 		<div class="contenedor" id="contenedor1">
-			<div class="caja">Caja 1</div>
-			<div class="caja">Caja 2</div>
-			<div class="caja">Caja 3</div>
+			<div class="caja">Con propagación</div>
+			<div class="caja caja-2">Sin propagación</div>
 		</div>
 		<div class="contenedor" id="contenedor2">
-			<div class="caja">Caja 1</div>
-			<div class="caja">Caja 2</div>
-			<div class="caja">Caja 3</div>
+
 		</div>
 	</div>
 	<script>
-		// 📌
+		/* Propagación de eventos
+		Es un comportamiento del navegador 
+		Si le añadimos un evento a un elemento padre, los elementos hijo también heredan ese evento*/
+		const primerContenedor = document.getElementById('contenedor1')
+		const primeraCaja = document.querySelector('.caja')
+		const segundaCaja = document.querySelector('.caja-2')
+		// Añadimos un evento al contenedor
+		// Si hacemos click en el contenedor padre, las cajas heredan el evento click
+		primerContenedor.addEventListener('click', () => {
+			console.log('Has hecho click en el contenedor padre')
+		})
+		// Si hacemos click en la primera caja, se activa el evento del contenedor padre
+		primeraCaja.addEventListener('click', () => {
+			console.log('Has hecho click en la primera caja')
+		})
+		// Si hacemos click en la segunda caja, no se activa el evento del contenedor padre
+		segundaCaja.addEventListener('click', (e) => {
+			/*
+			📌 e.stopPropagation()
+			Va a permitir parar la propagación
+			*/
+			e.stopPropagation()
+			console.log('Has hecho click en la segunda caja')
+		})
 	</script>
 </body>
 </html>

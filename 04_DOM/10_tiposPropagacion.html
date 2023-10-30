@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/assets/dom.css" />
+	<script defer src=""></script>
+	<title>Tipos de Propagación de eventos </title>
+	<link rel="shortcut icon" href="#">
+</head>
+<body>
+	<h1>Tipos de Propagación de eventos</h1>
+	<div class="contenedor-principal">
+		<div class="contenedor" id="contenedor1">
+			<div class="caja bubbling">Bubbling</div>
+		</div>
+		<div class="contenedor" id="contenedor2">
+			<div class="caja capturing">Capturing</div>
+		</div>
+	</div>
+	<script>
+		/* Tipos de Propagación de eventos
+		Es un valor que se coloca como 3 parámetro del método .addEventListener('', (e) => {}, true/false)
+		Solo se coloca en el evento del contenedor
+		Puede tener 2 valores */
+
+		const primerContenedor = document.getElementById('contenedor1')
+		const segundoContenedor = document.getElementById('contenedor2')
+		const caja_bubbling = document.querySelector('.caja.bubbling')
+		const caja_capturing = document.querySelector('.caja.capturing')
+
+		/*📌 Bubbling (false, por defecto)
+		En Bubbling el evento del elemento hijo reacciona primero y después el evento del elemento padre */
+		primerContenedor.addEventListener(
+			'click', 
+			() => {
+				console.log('Has hecho click en el contenedor')
+			},
+			// Se ejecuta primero el evento del elemento padre
+			true
+		)
+		caja_bubbling.addEventListener('click', () => {
+			console.log('Has hecho click en la caja caja bubbling')
+		})
+
+		/* 📌 Capturing (true)
+		En capturing el elemento padre reacciona primero y después el elemento hijo */
+		segundoContenedor.addEventListener(
+			'click', 
+			() => {
+				console.log('Has hecho click en el contenedor')
+			},
+			// Se ejecuta primero el evento del elemento hijo
+			false
+		)
+		caja_capturing.addEventListener('click', () => {
+			console.log('Has hecho click en la caja capturing')
+		})
+	</script>
+</body>
+</html>

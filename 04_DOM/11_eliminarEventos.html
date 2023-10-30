@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/assets/dom.css" />
+	<script defer src=""></script>
+	<title>Eliminar Eventos</title>
+	<link rel="shortcut icon" href="#">
+</head>
+<body>
+	<h1>Eliminar Eventos</h1>
+	<div class="contenedor-principal">
+		<div class="contenedor" id="contenedor1">
+			<div class="caja">Caja con Evento</div>
+		</div>
+		<div class="contenedor" id="contenedor2">
+
+		</div>
+		<button id="boton1">Agregar Evento</button>
+		<button id="boton2">Eliminar Evento</button>
+	</div>
+	<script>
+		const boton1 = document.getElementById('boton1')
+		const boton2 = document.getElementById('boton2')
+		const primeraCaja = document.querySelector('.caja')
+
+		// Función que alterna la clase activa
+		const toggleClase = () => {
+			primeraCaja.classList.toggle('activa')
+		}
+
+		/* Añadimos un addEventListener de forma dinámica */
+		// Agregamos una escucha. Cuando hagamos click se añade un evento a la caja 
+		boton1.addEventListener('click', () => {
+			// Cuando hagamos click se activa la función toggleClase
+			primeraCaja.addEventListener('click', toggleClase)
+		})
+
+		/* Eliminamos un evento de forma dinámica */
+		// Para eliminar un evento este tiene que estar metido dentro de una variable
+		boton2.addEventListener('click', () => {
+			/* 
+			📌 .removeEventListener(II)
+			Nos permite eliminar eventos. Recibe 2 argumentos
+			1 Argumento - El tipo de evento que queremos eliminar (ej: click)
+			2 Argumento - Función que queremos ejecutar 
+			*/
+			primeraCaja.removeEventListener('click', toggleClase)
+		})
+
+
+
+
+
+	</script>
+</body>
+</html>
