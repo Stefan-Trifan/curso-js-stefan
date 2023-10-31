@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/assets/form.css" />
     <title>Validación de Formularios</title>
-	<link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="#">
 </head>
 <body>
     <div class="contenedor">
@@ -33,8 +33,65 @@
 <script>
     /* Validación de Formularios
     /**************************************************************************************/
-    console.log('______  ______')
-    /* 
+    // Creamos una referencia a nuestro formulario
+    const formulario = document.getElementById('formulario-donacion')
+
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        // Obtenemos los datos y los guardamos dentro de un objeto
+        const datos = {
+            correo: formulario.correo.value,
+            pais: formulario.pais.value,
+            donacion: formulario['donacion'].value,
+            fecha: formulario.fecha.value,
+            terms: formulario['terminos-y-condiciones'].checked,
+        }
+
+        // Validamos los datos
+        // Correo
+        if (datos.correo.length <= 2) {
+            console.log('Introduce un correo válido')
+            /* 📌 return
+            Cuando esta sentencia es leída se sale de la ejecución de la función */
+            return;
+        }
+
+        // Pais
+        if (datos.pais === '') {
+            console.log('Selecciona un pais')
+            return;
+        }
+
+        // Donación
+        if (datos.donacion === '') {
+            console.log('Tienes que donar')
+            return;
+        }
+
+        // Fecha
+        if (datos.fecha === '') {
+            console.log('Tienes que seleccionar una fecha')
+            return;
+        }
+
+        // Términos y condiciones
+        /* 📌 !
+        Si la sentencia es falsa */
+        if (!datos.terms) {
+            console.log('Tienes que aceptar los Términos y condiciones')
+            return;
+        }
+        console.log(datos)
+        console.log('Enviando datos...')
+    })
+
+
+
+
+
+    // console.log('______  ______')
+    /*
        📌 
     */
 </script>

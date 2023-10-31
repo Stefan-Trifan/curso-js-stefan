@@ -42,15 +42,15 @@
     console.log('______ .forms: Accedemos al Objeto con todos los forms ______')
     console.log(document.forms)
     // Accedemos a nuestro formulario, con el ID: formulario-donacion
-    console.log('______ .forms: Accedemos al Form con el id formulario-donacion ______')
+    console.log('______ .forms: Accedemos al formulario con el id formulario-donacion ______')
     console.log(document.forms['formulario-donacion'])
     // Accedemos al input del correo
     console.log('______ .forms: Accedemos al valor de correo______')
     console.log(document.forms['formulario-donacion']['correo']);
 
     /* Forma 2 DOM */
-    console.log('______ DOM: Accedemos al valor de correo ______')
-    const correo = document.querySelector('#formulario-donacion [name="correo"]')
-    console.log(correo)
+    console.log('______ DOM: Accedemos al formulario con el id formulario-donacion ______')
+    const formulario = document.querySelector('#formulario-donacion')
+    console.log(formulario)
 </script>
 </html>

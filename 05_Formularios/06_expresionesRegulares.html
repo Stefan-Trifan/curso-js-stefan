@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/form.css" />
+    <title>Expresiones Regulares</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <div class="contenedor">
+        <h1 class="text-center">Expresiones Regulares para validar formularios</h1>
+        <form id="formulario-donacion" action="" method="">
+            <input type="text" name="correo" id="correo" placeholder="correo@correo.com" />
+            <button id="btnEnviar">Enviar</button>
+        </form>
+    </div>
+</body>
+<script>
+    /* Expresiones Regulares para validar formularios
+    Son fórmulas que podemos utilizar para buscar si un texto coincide con esa fórmula
+    Videos sobre expresiones regulares:
+    https://www.youtube.com/watch?v=wfogZfIS03U&ab_channel=FalconMasters
+    https://www.youtube.com/watch?v=s3pC93LgP18&ab_channel=FalconMasters
+    Ejemplo:
+    https://regexr.com/71ua4
+    /**************************************************************************************/
+
+    const formulario = document.getElementById('formulario-donacion')
+
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        // Declaramos nuestra expresión Regular
+        const expresionRegular = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/
+
+        // Obtenemos los datos y los guardamos dentro de un objeto
+        const datos = {
+            correo: formulario.correo.value,
+        }
+
+        // Validamos el correo
+        /* 
+        📌 .test()
+        Como argumento introducimos el texto que queremos comprobar si es correcto o no
+        Devuelve true o false
+        */
+        // En caso de que sea falso, ejecutamos el condicional
+        if (!expresionRegular.test(datos.correo)) {
+            console.log('Correo inválido')
+            return;
+        }
+
+        console.log(datos)
+        console.log('Enviando datos...')
+    })
+</script>
+</html>
