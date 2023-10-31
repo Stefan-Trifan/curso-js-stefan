@@ -41,24 +41,29 @@
         e.preventDefault()
         // Ahora podemos acceder a todos los valores para validarlos y hacer lo que nosotros queramos
 
-        // Accedemos al valor de correo (DOM)
+        // DOM
+        // Accedemos al valor de correo
         const correo = document.querySelector('#formulario-donacion [name="correo"]')
         console.log(correo.value)
 
-        // Accedemos al select pais (FORMS)
+        // FORMS
+        // Accedemos al select pais 
         const pais = document.forms['formulario-donacion']['pais']
         console.log(pais.value)
 
         // Guardamos el form dentro de una variable
         const formulario = document.forms['formulario-donacion']
 
-         // Accedemos al radio donación mediante brackets (FORMS)
+        // FORMS
+        // Accedemos al radio donación mediante brackets 
         console.log(formulario['donacion'].value)
 
-        // Accedemos a la fecha mediante el #fecha (FORMS)
+        // FORMS
+        // formulario es un objeto y accedemos a la fecha mediante la propiedad fecha 
         console.log(formulario.fecha.value)
 
-        // Accedemos a los términos y condiciones (FORMS)
+        // FORMS
+        // Accedemos a los términos y condiciones 
         // Utilizamos brackets por que terminos-y-condiciones tiene guiones
         /* 
         📌 checked
