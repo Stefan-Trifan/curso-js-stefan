@@ -42,33 +42,64 @@
     // Accedemos al formulario
     const formulario = document.forms['formulario-donacion']
 
-    /* 📌 .addEventListener('submit', () => {})
+    /* 📌 Evento submit
     Nos permite detectar cuando el usuario intenta enviar un formulario
     Nosotros podemos:
     - Reaccionar a ello
     - Validar los datos */
-    console.log('______ .addEventListener("submit", () => {}) ENVIAR ______')
+    console.log('______ SUBMIT: Enviar ______')
     formulario.addEventListener('submit', (e) => {
         // Prevenimos el comportamiento que tiene por defecto el evento
         e.preventDefault()
         console.log('Enviando datos...')
     })
 
-    /* 📌 Evemto change
+    /* 📌 Evento change
     Nos permite detectar cuando hay un cambio en el valor de un input, select, textarea
     Se ejecuta cuando cambiamos el valor del input y damos click fuera  */
-    console.log('______ .addEventListener("change", () => {}) PAIS ______')
+    console.log('______ CHANGE: Pais, Donaciones ______')
     formulario.pais.addEventListener('change', (e) => {
-        console.log('Cambiaste de país')
         /* 
         📌 Accedemos al valor de 2 maneras diferentes
         */
-        console.log(`El nuevo valor es ${formulario.pais.value}`)
-        console.log(`El nuevo valor es ${e.target.value}`)
+        console.log(`El nuevo país es ${formulario.pais.value}`)
+        console.log(`El nuevo país es ${e.target.value}`)
+    })
+    formulario['cantidad-5'].addEventListener('change', (e) => {
+        console.log(`Cambiaste de donación: ${e.target.value}`)
+    })
+    formulario['cantidad-10'].addEventListener('change', (e) => {
+        console.log(`Cambiaste de donación: ${e.target.value}`)
+    })
+
+    /* 📌 Evento Focus 
+    Nos permite detectar cuando un input recibe el foco de atención */
+    console.log('______ FOCUS: Correo ______')
+    formulario.correo.addEventListener('focus', () => {
+        console.log('Hiciste click sobre correo')
+    })
+
+    /* 📌 Evento Blur 
+    Nos permite detectar cuando un input pierde el foco de atención */
+    console.log('______ BLUR: Correo ______')
+    formulario.correo.addEventListener('blur', () => {
+        console.log('Hiciste click fuera de correo')
+    })
+
+    /* 📌 Evento keydown
+    Nos permite detectar cuando una tecla es presionada sobre un input */
+    console.log('______ KEYDOWN: Correo ______')
+    formulario.correo.addEventListener('keydown', (e) => {
+        console.log(`Presionaste la tecla ${e.key} en correo`)
+    })
+
+    /* 📌 Evento keyup
+    Nos permite detectar cuando una tecla es levantada sobre un input */
+    console.log('______ KEYUP: Correo ______')
+    formulario.correo.addEventListener('keyup', (e) => {
+        console.log(`Soltaste la tecla ${e.key} en correo`)
     })
 
 
-
-    
 </script>
 </html>
