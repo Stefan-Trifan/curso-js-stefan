@@ -2,6 +2,9 @@
 
 /* Maneras de importar */
 
+
+
+
 /***************************************************************************************
     Named Imports
     Importamos en base al valor
@@ -9,11 +12,14 @@
 */
 console.log('________ Named Imports ________')
 
-import {nombre2 as mombreImportado, obtenerPosts2} from './exportNamed'
+import { nombre2 as mombreImportado, obtenerPosts2 } from './01_exportNamed'
 
 // Llamamos a los objetos importados
 console.log('Mi nombre es ' + mombreImportado)
 console.log(obtenerPosts2())
+
+
+
 
 /***************************************************************************************
     Namespace Imports
@@ -22,11 +28,14 @@ console.log(obtenerPosts2())
 */
 console.log('________  Namespace Imports ________')
 
-import * as datos from './exportNamed'
+import * as datos from './01_exportNamed'
 
 // Llamamos a los objetos importados dentro del objeto datos
 console.log('Mi nombre es ' + datos.nombre2)
 console.log(datos.obtenerPosts2())
+
+
+
 
 /***************************************************************************************
     Default Imports
@@ -37,8 +46,11 @@ console.log(datos.obtenerPosts2())
 */
 console.log('________ Default Imports ________')
 
-import obtener from './exportDefault';
+import obtener from './02_exportDefault';
 console.log(obtener())
+
+
+
 
 /***************************************************************************************
     Empty Imports 
@@ -49,4 +61,4 @@ console.log(obtener())
 */
 console.log('________ Empty Imports ________')
 
-import './exportEmpty'
+import './03_exportEmpty'

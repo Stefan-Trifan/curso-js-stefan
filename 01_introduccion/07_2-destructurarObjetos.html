@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructurar Objetos III</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Destructurar Objetos III</h1>
+    </section>
+    <script>
+        // Desestructuración de un arreglo
+        const numeros = [1,2,3]
+
+        // Sin desestructuración
+        uno  = numeros[0]
+        dos  = numeros[1]
+        tres = numeros[2]
+
+        // Con desestructuración
+        // Asignamos de forma dinámica los primeros tres elementos del arreglo dentro de las variables one two three
+        const [one, two, three] = numeros
+        console.log(one, two, three)
+
+
+        // Desestructuración de un objeto
+        const numeros2 = {
+            primero: 1,
+            segundo: 2,
+            tercero: 3
+        }
+
+        // Sin desestructuración
+        first  = numeros2.primero
+        second = numeros2.segundo
+        third  = numeros2.tercero
+
+        // Con desestructuración
+        const {primero, segundo, tercero} = numeros2
+        console.log(primero, segundo, tercero)
+        // Para que la desestructuración funcione en los objetos la variable que trato de crear se tienen que llamar igual que la propiedad
+
+    </script>
+</body>
+</html>

@@ -1,7 +1,12 @@
-// Exportamos el objeto por defecto
+// Objeto que contiene los datos de todas las fotos 
+
+// Exportamos el objeto
 export default {
+	// Objeto separado por categorias (propiedades)
 	fotos: {
+		// Propiedad que contiene un arreglo de objetos con las imágenes 
 		america: [
+			// Cada objeto es la información de cada foto
 			{
 				id: 1,
 				nombre: 'America 1',
@@ -145,7 +150,6 @@ export default {
 				ruta: './img/europa/10.jpg',
 			},
 		],
-
 		africa: [
 			{
 				id: 21,
