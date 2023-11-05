@@ -6,13 +6,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass":"sass --watch --style=compressed sass/index.scss public/bundle.css",
+    "sass": "sass --watch --style=compressed sass/index.scss public/bundle.css",
     "build": "rollup --watch --config"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^4.2.0"
+    "rollup": "^4.3.0"
   }
 }
