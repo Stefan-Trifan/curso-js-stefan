@@ -11,7 +11,7 @@ const { fotos } = data;
 export default {
 	// Propiedad que contiene un arreglo de objetos con la info de cada categoría
 	categorias: [
-		// Declaramos un objeto por cada categoría con la información y el número de fotos
+		// Declaramos un objeto por cada categoría con su información y el número de fotos
 
 		/*  numeroFotos: fotos['america'].length, es dinámico 
 			numeroFotos: fotos.america.length, es lo mismo

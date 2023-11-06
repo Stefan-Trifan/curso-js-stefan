@@ -3,7 +3,7 @@
 // Objeto que contiene los datos de todas las fotos 
 
 // Exportamos el objeto
-var data = {
+var dataFotos = {
 	// Objeto separado por categorias (propiedades)
 	fotos: {
 		// Propiedad que contiene un arreglo de objetos con las imágenes 
@@ -439,14 +439,14 @@ var data = {
 // Objeto que contiene los datos de todas las categorías y de las fotos (importadas)
 
 // Desestructuramos, Extraemos las fotos y las guardamos dentro de la variable foto
-const { fotos } = data; 
+const { fotos } = dataFotos; 
 // const fotos = data.fotos Esto es lo mismo 
 
 // Exportamos el objeto
-({
+var dataCategorias = {
 	// Propiedad que contiene un arreglo de objetos con la info de cada categoría
 	categorias: [
-		// Declaramos un objeto por cada categoría con la información y el número de fotos
+		// Declaramos un objeto por cada categoría con su información y el número de fotos
 
 		/*  numeroFotos: fotos['america'].length, es dinámico 
 			numeroFotos: fotos.america.length, es lo mismo
@@ -463,9 +463,106 @@ const { fotos } = data;
 			imagenPortada: './img/antartida.jpg',
 		},
 	],
+};
+
+/* 
+    Archivo con la funcionalidad para cargar las categorias
+    Archivo que vamos a utilizar para compilar
+
+    Pasos a seguir:
+        1 Creamos las categorías
+        2 Con el método foreach, por cada una de las categorías creamos un elemento <a> dentro del contenedor de las categorias. 
+*/
+
+// Desestructuramos, obtenemos las categorias y las guardamos dentro de una variable que vamos a llamar categorias
+const {categorias} = dataCategorias;
+// Guardamos el contenedor de las categorias dentro de una variable
+const contenedorCategorias$1 = document.getElementById('categorias');
+
+/* 2 */
+categorias.forEach((categoria) => {
+    // Creamos el elemento <a> por cada categoria y lo guardamos dentro de una variable: nuevaCategoria
+    const nuevaCategoria = document.createElement('a');
+
+    // Guardamos dentro de una variable la plantilla 
+    const plantilla = `
+        <img class="categoria__img" src="${categoria.imagenPortada}" alt="" />
+        <div class="categoria__datos">
+            <p class="categoria__nombre">${categoria.nombre}</p>
+            <p class="categoria__numero-fotos">${categoria.numeroFotos} fotos</p>
+        </div> `;
+
+    // Guardamos la nueva plantilla dentro de <a>
+    nuevaCategoria.innerHTML = plantilla;
+
+    // Agregamos los atributos de <a>
+    nuevaCategoria.classList.add('categoria');
+    nuevaCategoria.href = '#';
+    nuevaCategoria.dataset.categoria = categoria.id;
+    // Insertamos en el DOM las categorias
+    contenedorCategorias$1.append(nuevaCategoria);
 });
 
-// Archivo con la funcionalidad para cargar las categorias
+// Dentro del objeto dataFotos contenemos la información de todas las fotos
 
-// Guardamos el contenedor de categorias dentro de una variable
-document.getElementById('categorias');
+/* 
+    Archivo que abre la galeria cuando hacemos click sobre las categorias 
+
+    Pasos a seguir:
+        1 Agregamos un evento al contenedor de las categorias
+        2 Detectamos con la propagación de eventos cuando demos click sobre alguna de las categorias hijo
+        3 Asignamos las fotos de la categoria que nos corresponde dentro de una variable
+        4 Cargamos las fotos en el carrousel
+*/
+
+// Guardamos el contenedor y la galeria dentro de una variable
+const contenedorCategorias = document.getElementById('categorias');
+const galeria = document.getElementById('galeria');
+
+/* 1 */
+// Creamos el evento
+contenedorCategorias.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    /* 2 */
+    // Queremos abrir la galeria solo si hacemos click sobre una categoria
+    // Detectamos cual es el elemento en el que hicimos click
+    // Si alguien hace click sobre la categoria, y comprobamos que tiene como padre un elemento a, ejecutamos:
+    // Si doy click  sobre el contenedor pero no sobre la categoria, no ejecutamos
+    if(e.target.closest('a')){
+        // Mostramos la galeria
+        galeria.classList.add('galeria--active');
+
+        // Desactivamos el scroll
+        document.body.style.overflow = 'hidden';
+        
+        /* 3 */
+        // Registramos dentro de una variable la categoria en la que hace click el usuario
+        const categoriaActiva = e.target.dataset.categoria;
+
+        // Registramos las fotos que pertenecen a la categoría seleccionada
+        const fotos = dataFotos.fotos[categoriaActiva];
+
+        /* 4 */
+        fotos.forEach((foto) => {
+            // Creamos la plantilla de las imágenes que aparecen en el slide
+            const slide = `
+                <a href="#" class="galeria__carousel-slide">
+                    <img class="galeria__carousel-image" src="${foto.ruta}" alt="" />
+                </a> 
+            `;
+            // Insertamos la plantilla dentro del contenedor de slides
+            galeria.querySelector('.galeria__carousel-slides').innerHTML += slide;
+
+
+        });
+
+        galeria.querySelector('.galeria__carousel-slide').classList.add('galeria__carousel-slide--active');
+
+    } 
+    
+});
+
+/* Archivo que contiene todos los eventos de la galeria */
+
+document.getElementById('galeria');
