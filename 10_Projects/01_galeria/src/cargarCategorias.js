@@ -1,5 +1,5 @@
 /* 
-    Archivo con la funcionalidad para cargar las categorias
+    Archivo que carga las categorias
     Archivo que vamos a utilizar para compilar
 
     Pasos a seguir:

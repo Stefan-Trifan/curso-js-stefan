@@ -466,7 +466,7 @@ var dataCategorias = {
 };
 
 /* 
-    Archivo con la funcionalidad para cargar las categorias
+    Archivo que carga las categorias
     Archivo que vamos a utilizar para compilar
 
     Pasos a seguir:
@@ -517,7 +517,7 @@ categorias.forEach((categoria) => {
 
 // Guardamos el contenedor y la galeria dentro de una variable
 const contenedorCategorias = document.getElementById('categorias');
-const galeria$1 = document.getElementById('galeria');
+const galeria$2 = document.getElementById('galeria');
 
 /* 1 */
 // Creamos el evento
@@ -531,17 +531,21 @@ contenedorCategorias.addEventListener('click', (e) => {
     // Si doy click  sobre el contenedor pero no sobre la categoria, no ejecutamos
     if(e.target.closest('a')){
         // Mostramos la galeria
-        galeria$1.classList.add('galeria--active');
+        galeria$2.classList.add('galeria--active');
 
         // Desactivamos el scroll
         document.body.style.overflow = 'hidden';
         
         /* 3 */
-        // Registramos dentro de una variable la categoria en la que hace click el usuario
-        const categoriaActiva = e.target.dataset.categoria;
+        // Registramos dentro de una variable el atributo data del enlace de la categoria en la que hace click el usuario
+        const categoriaActiva = e.target.closest('a').dataset.categoria;
 
         // Registramos las fotos que pertenecen a la categoría seleccionada
         const fotos = dataFotos.fotos[categoriaActiva];
+
+        // Elimina las imágenes anteriores del carousel para solucionar errores
+        const carousel = galeria$2.querySelector('.galeria__carousel-slides');
+        carousel.innerHTML = '';
 
         /* 4 */
         fotos.forEach((foto) => {
@@ -552,22 +556,43 @@ contenedorCategorias.addEventListener('click', (e) => {
                 </a> 
             `;
             // Insertamos la plantilla dentro del contenedor de slides
-            galeria$1.querySelector('.galeria__carousel-slides').innerHTML += slide;
+            galeria$2.querySelector('.galeria__carousel-slides').innerHTML += slide;
 
 
         });
 
-        galeria$1.querySelector('.galeria__carousel-slide').classList.add('galeria__carousel-slide--active');
+        galeria$2.querySelector('.galeria__carousel-slide').classList.add('galeria__carousel-slide--active');
 
     } 
     
 });
 
-/* Archivo que contiene todos los eventos de la galeria */
+const galeria$1 = document.getElementById('galeria');
+
+const cerrarGaleria = () => {
+    galeria$1.classList.remove('galeria--active');
+    document.body.style.overflow = '';
+};
+
+/* 
+    Archivo que contiene todos los eventos de la galeria 
+    Mediante propagación de eventos, agregamos un evento a toda la galería
+    Detectamos cuando hagamos click sobre un botón mediante su atributo data-accion
+*/
+
 
 const galeria = document.getElementById('galeria');
 
 // Creamos el evento
 galeria.addEventListener('click', (e) => {
-    console.log(e.target);
+    // Registramos el botón pulsado padre más cercano y lo guardamos dentro de una variable
+    const boton = e.target.closest('button');
+
+    // Evento Cerrar galeria
+    // Comprobamos si el botón pulsado tiene el atributo dataset
+    // Con el símbolo ? le decimos que si no cumple la condición no pasa nada
+    if(boton?.dataset?.accion === 'cerrar-galeria'){
+        cerrarGaleria();
+    }
+
 });

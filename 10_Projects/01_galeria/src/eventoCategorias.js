@@ -33,11 +33,15 @@ contenedorCategorias.addEventListener('click', (e) => {
         document.body.style.overflow = 'hidden'
         
         /* 3 */
-        // Registramos dentro de una variable la categoria en la que hace click el usuario
-        const categoriaActiva = e.target.dataset.categoria
+        // Registramos dentro de una variable el atributo data del enlace de la categoria en la que hace click el usuario
+        const categoriaActiva = e.target.closest('a').dataset.categoria
 
         // Registramos las fotos que pertenecen a la categoría seleccionada
         const fotos = dataFotos.fotos[categoriaActiva]
+
+        // Elimina las imágenes anteriores del carousel para solucionar errores
+        const carousel = galeria.querySelector('.galeria__carousel-slides')
+        carousel.innerHTML = ''
 
         /* 4 */
         fotos.forEach((foto) => {
