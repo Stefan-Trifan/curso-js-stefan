@@ -517,7 +517,7 @@ categorias.forEach((categoria) => {
 
 // Guardamos el contenedor y la galeria dentro de una variable
 const contenedorCategorias = document.getElementById('categorias');
-const galeria = document.getElementById('galeria');
+const galeria$1 = document.getElementById('galeria');
 
 /* 1 */
 // Creamos el evento
@@ -531,7 +531,7 @@ contenedorCategorias.addEventListener('click', (e) => {
     // Si doy click  sobre el contenedor pero no sobre la categoria, no ejecutamos
     if(e.target.closest('a')){
         // Mostramos la galeria
-        galeria.classList.add('galeria--active');
+        galeria$1.classList.add('galeria--active');
 
         // Desactivamos el scroll
         document.body.style.overflow = 'hidden';
@@ -552,12 +552,12 @@ contenedorCategorias.addEventListener('click', (e) => {
                 </a> 
             `;
             // Insertamos la plantilla dentro del contenedor de slides
-            galeria.querySelector('.galeria__carousel-slides').innerHTML += slide;
+            galeria$1.querySelector('.galeria__carousel-slides').innerHTML += slide;
 
 
         });
 
-        galeria.querySelector('.galeria__carousel-slide').classList.add('galeria__carousel-slide--active');
+        galeria$1.querySelector('.galeria__carousel-slide').classList.add('galeria__carousel-slide--active');
 
     } 
     
@@ -565,4 +565,9 @@ contenedorCategorias.addEventListener('click', (e) => {
 
 /* Archivo que contiene todos los eventos de la galeria */
 
-document.getElementById('galeria');
+const galeria = document.getElementById('galeria');
+
+// Creamos el evento
+galeria.addEventListener('click', (e) => {
+    console.log(e.target);
+});
