@@ -503,6 +503,23 @@ categorias.forEach((categoria) => {
     contenedorCategorias$1.append(nuevaCategoria);
 });
 
+/* 
+    Archivo con dos funciones
+    1 Función que carga la imagen activa de cada categoria
+    2 Función para cargar las imágenes al pulsar siguiente/anterior
+*/
+
+const galeria$3 = document.getElementById('galeria');
+
+/* 1 */
+const cargarImagen = (id, nombre, ruta, descripcion) => {
+    galeria$3.querySelector('.galeria__imagen').dataset.idImagen = id;
+    galeria$3.querySelector('.galeria__titulo').innerText = nombre;
+	galeria$3.querySelector('.galeria__imagen').src = ruta;
+    galeria$3.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion;
+    
+};
+
 // Dentro del objeto dataFotos contenemos la información de todas las fotos
 
 /* 
@@ -542,6 +559,11 @@ contenedorCategorias.addEventListener('click', (e) => {
 
         // Registramos las fotos que pertenecen a la categoría seleccionada
         const fotos = dataFotos.fotos[categoriaActiva];
+
+        // Llamamos a la función que carga la imágen destacada
+        // Desestructuramos el objeto fotos para obtener los parámetros de cargarImagen()
+        const {id, nombre, ruta, descripcion} = fotos[0];
+        cargarImagen(id, nombre, ruta, descripcion);
 
         // Elimina las imágenes anteriores del carousel para solucionar errores
         const carousel = galeria$2.querySelector('.galeria__carousel-slides');

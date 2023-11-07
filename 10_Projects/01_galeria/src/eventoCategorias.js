@@ -1,4 +1,5 @@
 import dataFotos from './datos/fotos'
+import {cargarImagen} from './galeria/cargarImagen'
 // Dentro del objeto dataFotos contenemos la información de todas las fotos
 
 /* 
@@ -38,6 +39,11 @@ contenedorCategorias.addEventListener('click', (e) => {
 
         // Registramos las fotos que pertenecen a la categoría seleccionada
         const fotos = dataFotos.fotos[categoriaActiva]
+
+        // Llamamos a la función que carga la imágen destacada
+        // Desestructuramos el objeto fotos para obtener los parámetros de cargarImagen()
+        const {id, nombre, ruta, descripcion} = fotos[0]
+        cargarImagen(id, nombre, ruta, descripcion)
 
         // Elimina las imágenes anteriores del carousel para solucionar errores
         const carousel = galeria.querySelector('.galeria__carousel-slides')
