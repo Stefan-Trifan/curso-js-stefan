@@ -1,3 +1,8 @@
+// export
+/* 
+    Función que se encarga de cerrar la galería
+*/
+
 const galeria = document.getElementById('galeria')
 
 const cerrarGaleria = () => {

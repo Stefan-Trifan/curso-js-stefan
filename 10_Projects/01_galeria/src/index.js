@@ -1,4 +1,4 @@
-// Importamos el acrchivo de cargar categorias
+// Importamos los archivos con los que vamos a trabajar
 import './cargarCategorias'
 import './eventoCategorias'
 import './galeria/eventosGaleria'

@@ -1,12 +1,24 @@
-// Objeto que contiene los datos de todas las fotos 
+// export
+/* 
+	Objeto que contiene las imágenes del carrusel
+*/
 
-// Exportamos el objeto
+/*  
+	fotos : {
+		categoria1 : [{IMG} {IMG} {IMG}]
+		categoria2 : [{IMG} {IMG} {IMG}]
+		categoria3 : [{IMG} {IMG} {IMG}]
+	}
+	
+*/
+
+// Exportamos las imágenes del carrusel como objeto llamado por defecto
 export default {
-	// Objeto separado por categorias (propiedades)
+	// Propeidad que contiene un objeto
 	fotos: {
-		// Propiedad que contiene un arreglo de objetos con las imágenes 
+		// Propiedad que contiene un arreglo
 		america: [
-			// Cada objeto es la información de cada foto
+			// Elemento del arreglo
 			{
 				id: 1,
 				nombre: 'America 1',

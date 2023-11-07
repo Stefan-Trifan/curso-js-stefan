@@ -1,10 +1,12 @@
+import cerrarGaleria from "./cerrarGaleria"
+// import { cargarImagen } from "./cargarImagen"
+
 /* 
-    Archivo que contiene todos los eventos de la galeria 
+    Una vez abierta, contiene todos los eventos de la galeria (cerrar, ...)
+
     Mediante propagación de eventos, agregamos un evento a toda la galería
     Detectamos cuando hagamos click sobre un botón mediante su atributo data-accion
 */
-
-import cerrarGaleria from "./cerrarGaleria"
 
 const galeria = document.getElementById('galeria')
 
@@ -19,5 +21,4 @@ galeria.addEventListener('click', (e) => {
     if(boton?.dataset?.accion === 'cerrar-galeria'){
         cerrarGaleria()
     }
-
 })

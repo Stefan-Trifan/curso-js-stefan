@@ -1,14 +1,26 @@
 'use strict';
 
-// Objeto que contiene los datos de todas las fotos 
+// export
+/* 
+	Objeto que contiene las imágenes del carrusel
+*/
 
-// Exportamos el objeto
+/*  
+	fotos : {
+		categoria1 : [{IMG} {IMG} {IMG}]
+		categoria2 : [{IMG} {IMG} {IMG}]
+		categoria3 : [{IMG} {IMG} {IMG}]
+	}
+	
+*/
+
+// Exportamos las imágenes del carrusel como objeto llamado por defecto
 var dataFotos = {
-	// Objeto separado por categorias (propiedades)
+	// Propeidad que contiene un objeto
 	fotos: {
-		// Propiedad que contiene un arreglo de objetos con las imágenes 
+		// Propiedad que contiene un arreglo
 		america: [
-			// Cada objeto es la información de cada foto
+			// Elemento del arreglo
 			{
 				id: 1,
 				nombre: 'America 1',
@@ -436,21 +448,31 @@ var dataFotos = {
 	},
 };
 
-// Objeto que contiene los datos de todas las categorías y de las fotos (importadas)
+// Importamos el objeto con los datos de las imágenes del carrusel dentro de la variable data
 
-// Desestructuramos, Extraemos las fotos y las guardamos dentro de la variable foto
-const { fotos } = dataFotos; 
-// const fotos = data.fotos Esto es lo mismo 
+/* 
+	Archivo que contiene los datos de todas las categorías y de las imágenes del carrusel (importadas) 
+*/
 
-// Exportamos el objeto
+// Declaramos la variable fotos
+// Desestructuramos el objeto data con las fotos importadas
+// Extraemos todas las fotos del carrusel 
+// Las guardamos dentro de fotos
+   const { fotos } = dataFotos; 
+// const fotos = data.fotos (Esto es lo mismo)
+
+
+// Exportamos el objeto y la variable fotos por que la estamos utilizando en el objeto
+// Contiene las categorías y sus imágenes de portada
 var dataCategorias = {
-	// Propiedad que contiene un arreglo de objetos con la info de cada categoría
+	// Propiedad que contiene un arreglo de objetos.
 	categorias: [
-		// Declaramos un objeto por cada categoría con su información y el número de fotos
-
-		/*  numeroFotos: fotos['america'].length, es dinámico 
+		// Caja objeto es una categoría con su info y el número de fotos
+		/*  
+			numeroFotos: fotos['america'].length, es dinámico 
 			numeroFotos: fotos.america.length, es lo mismo
-			Accedemos al objeto fotos, a la propiedad de america y contamos cuántas tiene */
+			Accedemos al objeto fotos, a la propiedad llamada 'america' y contamos cuántas imágenes de carrusel tiene 
+		*/
 		{ id: 'america', nombre: 'America', numeroFotos: fotos['america'].length, imagenPortada: './img/america.jpg' },
 		{ id: 'europa', nombre: 'Europa', numeroFotos: fotos['europa'].length, imagenPortada: './img/europa.jpg' },
 		{ id: 'africa', nombre: 'África', numeroFotos: fotos['africa'].length, imagenPortada: './img/africa.jpg' },
@@ -465,6 +487,8 @@ var dataCategorias = {
 	],
 };
 
+// Importamos el objeto de las categorías dentro de la variable dataCategorias y las variables que dependen de el
+
 /* 
     Archivo que carga las categorias
     Archivo que vamos a utilizar para compilar
@@ -474,17 +498,21 @@ var dataCategorias = {
         2 Con el método foreach, por cada una de las categorías creamos un elemento <a> dentro del contenedor de las categorias. 
 */
 
-// Desestructuramos, obtenemos las categorias y las guardamos dentro de una variable que vamos a llamar categorias
+/* 1 */
+// Declaramos la variable categorias
+// Desestructuramos el objeto dataCategorias con las categorias importadas
+// Extraemos las categorias
+// Las guardamos dentro de una variable que vamos a llamar categorias
 const {categorias} = dataCategorias;
 // Guardamos el contenedor de las categorias dentro de una variable
 const contenedorCategorias$1 = document.getElementById('categorias');
 
 /* 2 */
 categorias.forEach((categoria) => {
-    // Creamos el elemento <a> por cada categoria y lo guardamos dentro de una variable: nuevaCategoria
+    // Creamos el elemento <a> por cada categoria y lo guardamos dentro de una variable nuevaCategoria
     const nuevaCategoria = document.createElement('a');
 
-    // Guardamos dentro de una variable la plantilla 
+    // Guardamos dentro de una variable la plantilla que va a tener cada categoría
     const plantilla = `
         <img class="categoria__img" src="${categoria.imagenPortada}" alt="" />
         <div class="categoria__datos">
@@ -492,44 +520,56 @@ categorias.forEach((categoria) => {
             <p class="categoria__numero-fotos">${categoria.numeroFotos} fotos</p>
         </div> `;
 
-    // Guardamos la nueva plantilla dentro de <a>
+    // Guardamos la nueva plantilla dentro del nuevo elemento que hemos creado
     nuevaCategoria.innerHTML = plantilla;
 
     // Agregamos los atributos de <a>
     nuevaCategoria.classList.add('categoria');
     nuevaCategoria.href = '#';
     nuevaCategoria.dataset.categoria = categoria.id;
+    
     // Insertamos en el DOM las categorias
     contenedorCategorias$1.append(nuevaCategoria);
 });
 
+// export
 /* 
     Archivo con dos funciones
-    1 Función que carga la imagen activa de cada categoria
-    2 Función para cargar las imágenes al pulsar siguiente/anterior
+    1 Función que carga el id, el título, la imagen y la descripción dentro de la galería, según la categoría en la que se hizo click
+    2 Función para cargar las imágenes del carrusel al pulsar siguiente/anterior
 */
 
+// Guardamos la galeria dentro de una variable
 const galeria$3 = document.getElementById('galeria');
 
 /* 1 */
+// Cambiamos los atributos de la plantilla de galeria para mostrar la galeria que queremos
 const cargarImagen = (id, nombre, ruta, descripcion) => {
     galeria$3.querySelector('.galeria__imagen').dataset.idImagen = id;
+    // Ej: data-id-imagen="11"
     galeria$3.querySelector('.galeria__titulo').innerText = nombre;
-	galeria$3.querySelector('.galeria__imagen').src = ruta;
+    // Ej: Europa 1
+    galeria$3.querySelector('.galeria__imagen').src = ruta;
+    // Ej: ./img/africa/1.jpg
     galeria$3.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion;
-    
+    // Ej: Europa 1 - Lorem ipsum dolor sit amet...
 };
 
-// Dentro del objeto dataFotos contenemos la información de todas las fotos
+// Importamos la información de todas las fotos del carrusel dentro del nuevo objeto dataFotos
+// Importamos la función cargarImagen
 
 /* 
-    Archivo que abre la galeria cuando hacemos click sobre las categorias 
+    Archivo que:
+        ABRE la galeria cuando hacemos click sobre las categorias 
+        CARGA los elementos (título, imágen, descripción, carrusel) de la galería según cada categoría
 
     Pasos a seguir:
         1 Agregamos un evento al contenedor de las categorias
         2 Detectamos con la propagación de eventos cuando demos click sobre alguna de las categorias hijo
-        3 Asignamos las fotos de la categoria que nos corresponde dentro de una variable
-        4 Cargamos las fotos en el carrousel
+        3 Abrimos la galeria
+        4 Asignamos las imágenes que le corresponde a la categoria dentro de una variable
+        5 Cargamos la imágen destacada
+        6 Cargamos el carrousel
 */
 
 // Guardamos el contenedor y la galeria dentro de una variable
@@ -547,47 +587,73 @@ contenedorCategorias.addEventListener('click', (e) => {
     // Si alguien hace click sobre la categoria, y comprobamos que tiene como padre un elemento a, ejecutamos:
     // Si doy click  sobre el contenedor pero no sobre la categoria, no ejecutamos
     if(e.target.closest('a')){
-        // Mostramos la galeria
+        /* 3 */
+        // Abrimos la galeria
         galeria$2.classList.add('galeria--active');
 
         // Desactivamos el scroll
         document.body.style.overflow = 'hidden';
         
-        /* 3 */
-        // Registramos dentro de una variable el atributo data del enlace de la categoria en la que hace click el usuario
+        /* 4 */
+        // Guardamos el atributo data-categoria del enlace en la que hace click el usuario, dentro de la variable categoriaActiva
+        // Esto nos va a ayudar a saber que categoria de imágenes llamar a la base de datos
         const categoriaActiva = e.target.closest('a').dataset.categoria;
+        // Ej: europa
 
-        // Registramos las fotos que pertenecen a la categoría seleccionada
+        // Guardamos el objeto con las imágenes que pertenecen a la categoría data-categoria=""
         const fotos = dataFotos.fotos[categoriaActiva];
+        // Ej: [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
 
-        // Llamamos a la función que carga la imágen destacada
-        // Desestructuramos el objeto fotos para obtener los parámetros de cargarImagen()
+        /* 5 */
+        // Declaramos las nuevas variables id, nombre, ruta, descripción
+        // Desestructuramos la primera foto, del objeto fotos, con todas las imágenes de cada categoría
+        // Extraemos las propiedades id, nombre, ruta, descripción de la primera imagen
+        // Las guardamos dentro de id, nombre, ruta, descripción
+        // Obtenemos los parámetros de cargarImagen()
         const {id, nombre, ruta, descripcion} = fotos[0];
+        // Ej: id         : 1
+        // Ej: nombre     : America 1
+        // Ej: ruta       : ./img/america/1.jpg
+        // Ej: descripcion: America 1 - Lorem ipsum dolor sit amet...
+
+
+        // Llamamos a la función que carga la el id, título, imagen y descripción dentro de la galería,
+        // Según los atributos de la primera foto
+        // Cargamos el id, título, imagen y descripción
+        // Cambiando los atributos de sus elementos
         cargarImagen(id, nombre, ruta, descripcion);
 
+        /* 6 */
         // Elimina las imágenes anteriores del carousel para solucionar errores
         const carousel = galeria$2.querySelector('.galeria__carousel-slides');
         carousel.innerHTML = '';
 
-        /* 4 */
+        // Cargamos el carrousel
         fotos.forEach((foto) => {
-            // Creamos la plantilla de las imágenes que aparecen en el slide
+
+            // Creamos una plantilla por cada slide que aparece en el carrousel
             const slide = `
                 <a href="#" class="galeria__carousel-slide">
                     <img class="galeria__carousel-image" src="${foto.ruta}" alt="" />
                 </a> 
             `;
-            // Insertamos la plantilla dentro del contenedor de slides
+            // Insertamos cada plantilla dentro del contenedor de slides
             galeria$2.querySelector('.galeria__carousel-slides').innerHTML += slide;
 
 
         });
 
+        // Marcamos la imágen activa del slide
         galeria$2.querySelector('.galeria__carousel-slide').classList.add('galeria__carousel-slide--active');
 
     } 
     
 });
+
+// export
+/* 
+    Función que se encarga de cerrar la galería
+*/
 
 const galeria$1 = document.getElementById('galeria');
 
@@ -596,12 +662,14 @@ const cerrarGaleria = () => {
     document.body.style.overflow = '';
 };
 
+// import { cargarImagen } from "./cargarImagen"
+
 /* 
-    Archivo que contiene todos los eventos de la galeria 
+    Una vez abierta, contiene todos los eventos de la galeria (cerrar, ...)
+
     Mediante propagación de eventos, agregamos un evento a toda la galería
     Detectamos cuando hagamos click sobre un botón mediante su atributo data-accion
 */
-
 
 const galeria = document.getElementById('galeria');
 
@@ -616,5 +684,4 @@ galeria.addEventListener('click', (e) => {
     if(boton?.dataset?.accion === 'cerrar-galeria'){
         cerrarGaleria();
     }
-
 });
