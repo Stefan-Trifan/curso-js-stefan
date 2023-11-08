@@ -1,8 +1,10 @@
 // export
 /* 
     Archivo con dos funciones
-    1 Función que carga el id, el título, la imagen y la descripción dentro de la galería, según la categoría en la que se hizo click
-    2 Función para cargar las imágenes del carrusel al pulsar siguiente/anterior
+    1 Función que carga el id, el título, la imagen activa y la descripción dentro de la galería, al hacer click sobre: 
+    - La categoría 
+    - Slide del carrusel 
+    2 Función para cargar las imágenes del carrusel al pulsar ???
 */
 
 // Guardamos la galeria dentro de una variable

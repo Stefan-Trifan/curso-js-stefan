@@ -1,8 +1,11 @@
+// 3
 import cerrarGaleria from "./cerrarGaleria"
+import slideClick from "./slideClick"
 // import { cargarImagen } from "./cargarImagen"
 
 /* 
-    Una vez abierta, contiene todos los eventos de la galeria (cerrar, ...)
+    Contiene todos los eventos de la galeria una vez abierta:
+    - Cerrar
 
     Mediante propagación de eventos, agregamos un evento a toda la galería
     Detectamos cuando hagamos click sobre un botón mediante su atributo data-accion
@@ -15,10 +18,16 @@ galeria.addEventListener('click', (e) => {
     // Registramos el botón pulsado padre más cercano y lo guardamos dentro de una variable
     const boton = e.target.closest('button')
 
-    // Evento Cerrar galeria
-    // Comprobamos si el botón pulsado tiene el atributo dataset
-    // Con el símbolo ? le decimos que si no cumple la condición no pasa nada
+    // 📌 CERRAR GALERÍA
+    // Si el elemento al que dimos click tiene data-accion="cerrar-galeria", ejecutamos
+    // Con el símbolo ? le decimos que si no cumple la condición, no devuelve error
     if(boton?.dataset?.accion === 'cerrar-galeria'){
         cerrarGaleria()
+    }
+
+    // 📌 CAROUSEL SLIDE CLICK
+    // Si el elemento al que dimos click tiene el atributo data-id="", ejecutamos
+    if(e.target.dataset.id){
+        slideClick(e)
     }
 })

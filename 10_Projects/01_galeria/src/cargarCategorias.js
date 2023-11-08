@@ -1,3 +1,4 @@
+// 1
 import dataCategorias from './datos/categorias'
 // Importamos el objeto de las categorías dentro de la variable dataCategorias y las variables que dependen de el
 
@@ -15,7 +16,7 @@ import dataCategorias from './datos/categorias'
 // Desestructuramos el objeto dataCategorias con las categorias importadas
 // Extraemos las categorias
 // Las guardamos dentro de una variable que vamos a llamar categorias
-const {categorias} = dataCategorias
+const {categorias} = dataCategorias // 📌
 // Guardamos el contenedor de las categorias dentro de una variable
 const contenedorCategorias = document.getElementById('categorias')
 

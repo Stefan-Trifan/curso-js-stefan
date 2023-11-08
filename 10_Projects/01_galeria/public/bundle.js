@@ -487,6 +487,7 @@ var dataCategorias = {
 	],
 };
 
+// 1
 // Importamos el objeto de las categorías dentro de la variable dataCategorias y las variables que dependen de el
 
 /* 
@@ -503,7 +504,7 @@ var dataCategorias = {
 // Desestructuramos el objeto dataCategorias con las categorias importadas
 // Extraemos las categorias
 // Las guardamos dentro de una variable que vamos a llamar categorias
-const {categorias} = dataCategorias;
+const {categorias} = dataCategorias; // 📌
 // Guardamos el contenedor de las categorias dentro de una variable
 const contenedorCategorias$1 = document.getElementById('categorias');
 
@@ -535,8 +536,10 @@ categorias.forEach((categoria) => {
 // export
 /* 
     Archivo con dos funciones
-    1 Función que carga el id, el título, la imagen y la descripción dentro de la galería, según la categoría en la que se hizo click
-    2 Función para cargar las imágenes del carrusel al pulsar siguiente/anterior
+    1 Función que carga el id, el título, la imagen activa y la descripción dentro de la galería, al hacer click sobre: 
+    - La categoría 
+    - Slide del carrusel 
+    2 Función para cargar las imágenes del carrusel al pulsar ???
 */
 
 // Guardamos la galeria dentro de una variable
@@ -555,20 +558,21 @@ const cargarImagen = (id, nombre, ruta, descripcion) => {
     // Ej: Europa 1 - Lorem ipsum dolor sit amet...
 };
 
+// 2
 // Importamos la información de todas las fotos del carrusel dentro del nuevo objeto dataFotos
 // Importamos la función cargarImagen
 
 /* 
     Archivo que:
-        ABRE la galeria cuando hacemos click sobre las categorias 
+        ABRE la galeria cuando hacemos click sobre una categoría
         CARGA los elementos (título, imágen, descripción, carrusel) de la galería según cada categoría
 
-    Pasos a seguir:
+    Resumen:
         1 Agregamos un evento al contenedor de las categorias
         2 Detectamos con la propagación de eventos cuando demos click sobre alguna de las categorias hijo
         3 Abrimos la galeria
-        4 Asignamos las imágenes que le corresponde a la categoria dentro de una variable
-        5 Cargamos la imágen destacada
+        4 Asignamos las imágenes que le corresponde a la categoria clicada dentro de la variable fotos
+        5 Cargamos los elementos (título, imágen, descripción)
         6 Cargamos el carrousel
 */
 
@@ -577,15 +581,13 @@ const contenedorCategorias = document.getElementById('categorias');
 const galeria$2 = document.getElementById('galeria');
 
 /* 1 */
-// Creamos el evento
+// Creamos el evento click sobre el contenedor de las categorías
 contenedorCategorias.addEventListener('click', (e) => {
     e.preventDefault();
 
     /* 2 */
-    // Queremos abrir la galeria solo si hacemos click sobre una categoria
-    // Detectamos cual es el elemento en el que hicimos click
-    // Si alguien hace click sobre la categoria, y comprobamos que tiene como padre un elemento a, ejecutamos:
-    // Si doy click  sobre el contenedor pero no sobre la categoria, no ejecutamos
+    // Queremos abrir la galeria solo si hacemos click sobre una categoria.
+    // Comprobamos que tiene como padre un elemento a, ejecutamos:
     if(e.target.closest('a')){
         /* 3 */
         // Abrimos la galeria
@@ -595,32 +597,29 @@ contenedorCategorias.addEventListener('click', (e) => {
         document.body.style.overflow = 'hidden';
         
         /* 4 */
-        // Guardamos el atributo data-categoria del enlace en la que hace click el usuario, dentro de la variable categoriaActiva
+        // Añadimos el atributo data-categoria="" de la categoria en la que hemos hecho click
         // Esto nos va a ayudar a saber que categoria de imágenes llamar a la base de datos
-        const categoriaActiva = e.target.closest('a').dataset.categoria;
         // Ej: europa
+        const categoriaActiva = e.target.closest('a').dataset.categoria;
 
+        // Añadimos el atributo data-categoria="categoriaActiva" a la sección galeria
+        galeria$2.dataset.categoria = categoriaActiva;
+
+        // 📌
         // Guardamos el objeto con las imágenes que pertenecen a la categoría data-categoria=""
-        const fotos = dataFotos.fotos[categoriaActiva];
         // Ej: [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+        const fotos = dataFotos.fotos[categoriaActiva];
 
-        /* 5 */
-        // Declaramos las nuevas variables id, nombre, ruta, descripción
-        // Desestructuramos la primera foto, del objeto fotos, con todas las imágenes de cada categoría
-        // Extraemos las propiedades id, nombre, ruta, descripción de la primera imagen
-        // Las guardamos dentro de id, nombre, ruta, descripción
-        // Obtenemos los parámetros de cargarImagen()
+        /* 5 */ 
+        // Desestructuramos la primera imagen de la categoría clicada
+        // Extraemos los elementos (id, título, imágen, descripción)
+        // Las guardamos dentro de las nuevas variables id, nombre, ruta, descripción
+        // Ej: {1, America 1, ./img/america/1.jpg, America 1 - Lorem ipsum dolor sit amet...} = fotos[0]
         const {id, nombre, ruta, descripcion} = fotos[0];
-        // Ej: id         : 1
-        // Ej: nombre     : America 1
-        // Ej: ruta       : ./img/america/1.jpg
-        // Ej: descripcion: America 1 - Lorem ipsum dolor sit amet...
 
-
+        // 📌
         // Llamamos a la función que carga la el id, título, imagen y descripción dentro de la galería,
-        // Según los atributos de la primera foto
-        // Cargamos el id, título, imagen y descripción
-        // Cambiando los atributos de sus elementos
+        // Cargamos los elementos título, imágen, descripción cambiando los atributos de sus elementos HTML
         cargarImagen(id, nombre, ruta, descripcion);
 
         /* 6 */
@@ -634,13 +633,11 @@ contenedorCategorias.addEventListener('click', (e) => {
             // Creamos una plantilla por cada slide que aparece en el carrousel
             const slide = `
                 <a href="#" class="galeria__carousel-slide">
-                    <img class="galeria__carousel-image" src="${foto.ruta}" alt="" />
+                    <img class="galeria__carousel-image" src="${foto.ruta}" alt="" data-id="${foto.id}"/>
                 </a> 
             `;
             // Insertamos cada plantilla dentro del contenedor de slides
             galeria$2.querySelector('.galeria__carousel-slides').innerHTML += slide;
-
-
         });
 
         // Marcamos la imágen activa del slide
@@ -662,10 +659,47 @@ const cerrarGaleria = () => {
     document.body.style.overflow = '';
 };
 
+/* 
+    Funcionalidad del ckick sobre un dlide que cambia la imagen activa
+*/
+
+const slideClick = (e) => {
+    // Registramos el id sobre el que hemos hecho click
+    const id = e.target.dataset.id;
+    // Accedemos a la galeria
+    const galeria = document.getElementById('galeria');
+    // Registramos cual es la categoria activa
+    const categoriaActiva = galeria.dataset.categoria;
+
+
+    console.log('Hiciste click en: ' + id, categoriaActiva);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // cargarImagen(id, nombre, ruta, descripcion)
+};
+
+// 3
 // import { cargarImagen } from "./cargarImagen"
 
 /* 
-    Una vez abierta, contiene todos los eventos de la galeria (cerrar, ...)
+    Contiene todos los eventos de la galeria una vez abierta:
+    - Cerrar
 
     Mediante propagación de eventos, agregamos un evento a toda la galería
     Detectamos cuando hagamos click sobre un botón mediante su atributo data-accion
@@ -678,10 +712,16 @@ galeria.addEventListener('click', (e) => {
     // Registramos el botón pulsado padre más cercano y lo guardamos dentro de una variable
     const boton = e.target.closest('button');
 
-    // Evento Cerrar galeria
-    // Comprobamos si el botón pulsado tiene el atributo dataset
-    // Con el símbolo ? le decimos que si no cumple la condición no pasa nada
+    // 📌 CERRAR GALERÍA
+    // Si el elemento al que dimos click tiene data-accion="cerrar-galeria", ejecutamos
+    // Con el símbolo ? le decimos que si no cumple la condición, no devuelve error
     if(boton?.dataset?.accion === 'cerrar-galeria'){
         cerrarGaleria();
+    }
+
+    // 📌 CAROUSEL SLIDE CLICK
+    // Si el elemento al que dimos click tiene el atributo data-id="", ejecutamos
+    if(e.target.dataset.id){
+        slideClick(e);
     }
 });
