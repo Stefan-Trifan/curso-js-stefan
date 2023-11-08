@@ -1,5 +1,6 @@
+import datos from './../datos/fotos'
 /* 
-    Funcionalidad del ckick sobre un dlide que cambia la imagen activa
+    Funcionalidad del click sobre un slide que cambia la imagen activa
 */
 
 const slideClick = (e) => {
@@ -10,8 +11,10 @@ const slideClick = (e) => {
     // Registramos cual es la categoria activa
     const categoriaActiva = galeria.dataset.categoria
 
-
-    console.log('Hiciste click en: ' + id, categoriaActiva)
+    // Recorremos todos los slides de la bbdd y buscamos el slide con el id igual al nuestro
+    datos.fotos[categoriaActiva].forEach(() => {
+        console.log(datos.fotos[categoriaActiva].id)
+    })
 
 
 

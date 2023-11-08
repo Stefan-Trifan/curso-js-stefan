@@ -15,7 +15,7 @@
 */
 
 // Exportamos las imágenes del carrusel como objeto llamado por defecto
-var dataFotos = {
+var datos = {
 	// Propeidad que contiene un objeto
 	fotos: {
 		// Propiedad que contiene un arreglo
@@ -458,7 +458,7 @@ var dataFotos = {
 // Desestructuramos el objeto data con las fotos importadas
 // Extraemos todas las fotos del carrusel 
 // Las guardamos dentro de fotos
-   const { fotos } = dataFotos; 
+   const { fotos } = datos; 
 // const fotos = data.fotos (Esto es lo mismo)
 
 
@@ -608,7 +608,7 @@ contenedorCategorias.addEventListener('click', (e) => {
         // 📌
         // Guardamos el objeto con las imágenes que pertenecen a la categoría data-categoria=""
         // Ej: [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
-        const fotos = dataFotos.fotos[categoriaActiva];
+        const fotos = datos.fotos[categoriaActiva];
 
         /* 5 */ 
         // Desestructuramos la primera imagen de la categoría clicada
@@ -660,19 +660,21 @@ const cerrarGaleria = () => {
 };
 
 /* 
-    Funcionalidad del ckick sobre un dlide que cambia la imagen activa
+    Funcionalidad del click sobre un slide que cambia la imagen activa
 */
 
 const slideClick = (e) => {
     // Registramos el id sobre el que hemos hecho click
-    const id = e.target.dataset.id;
+    e.target.dataset.id;
     // Accedemos a la galeria
     const galeria = document.getElementById('galeria');
     // Registramos cual es la categoria activa
     const categoriaActiva = galeria.dataset.categoria;
 
-
-    console.log('Hiciste click en: ' + id, categoriaActiva);
+    // Recorremos todos los slides de la bbdd y buscamos el slide con el id igual al nuestro
+    datos.fotos[categoriaActiva].forEach(() => {
+        console.log(datos.fotos[categoriaActiva].id);
+    });
 
 
 
