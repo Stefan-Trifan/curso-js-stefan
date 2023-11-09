@@ -21,9 +21,8 @@ const slideClick = (e) => {
             ruta = foto.ruta
             nombre = foto.nombre
             descripcion = foto.descripcion
+            cargarImagen(id, nombre, ruta, descripcion)
         }
-        cargarImagen(id, nombre, ruta, descripcion)
-
     })
 
 
