@@ -1,3 +1,4 @@
+// export
 import data from './fotos';
 // Importamos el objeto con los datos de las imágenes del carrusel dentro de la variable data
 

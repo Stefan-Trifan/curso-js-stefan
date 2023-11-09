@@ -448,6 +448,7 @@ var datos = {
 	},
 };
 
+// export
 // Importamos el objeto con los datos de las imágenes del carrusel dentro de la variable data
 
 /* 
@@ -557,7 +558,34 @@ const cargarImagen = (id, nombre, ruta, descripcion) => {
     galeria$3.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion;
     // Ej: Europa 1 - Lorem ipsum dolor sit amet...
 
-    console.log(id);
+    /* 
+        Funcionalidad que cambia el borde del slide según la imagen activa 
+    
+    */
+    // Guardamos la categoría activa
+    const categoriaActual = galeria$3.dataset.categoria;
+    // Fotos de la categoría actual
+    const fotos = datos.fotos[categoriaActual];
+
+    let indexImagenActual;
+    // Recorremos el objeto que contiene los slides según la categoría activa
+    fotos.forEach((foto, index) => {
+        // Devuelve el index de la categoría activa
+        if(foto.id === id){
+            indexImagenActual = index;
+        }
+    });
+
+
+
+    // Si los sliedes existen,
+    if (galeria$3.querySelectorAll('.galeria__carousel-slide').length > 0) {
+        // Eliminamos la calse active
+        galeria$3.querySelector('.galeria__carousel-slide--active').classList.remove('galeria__carousel-slide--active');
+        // Marcamos la imagen del carrusel como activa, poniendo la clase active al slide cuyo index sea igual al de la imagen activa
+        galeria$3.querySelectorAll('.galeria__carousel-slide')[indexImagenActual].classList.add('galeria__carousel-slide--active');
+    }
+
 };
 
 // 2
@@ -661,6 +689,7 @@ const cerrarGaleria = () => {
     document.body.style.overflow = '';
 };
 
+// export
 /* 
     Funcionalidad del click sobre un slide que cambia la imagen activa
 */
@@ -670,8 +699,10 @@ const slideClick = (e) => {
 
     // Registramos el id sobre el que hemos hecho click, y lo convertimos en un número
     const id = parseInt(e.target.dataset.id); 
+
     // Accedemos a la galeria
     const galeria = document.getElementById('galeria');
+
     // Registramos cual es la categoria activa
     const categoriaActiva = galeria.dataset.categoria;
 
@@ -679,31 +710,15 @@ const slideClick = (e) => {
     datos.fotos[categoriaActiva].forEach((foto) => {
         if(foto.id === id){
             // Obtenemos los datos de la imagen a la que clicamos y las cargamos en cargarimagen
+            
             ruta = foto.ruta;
             nombre = foto.nombre;
             descripcion = foto.descripcion;
-            cargarImagen(id, nombre, ruta, descripcion);
         }
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // cargarImagen(id, nombre, ruta, descripcion)
+    // Cargamos la imagen activa
+    cargarImagen(id, nombre, ruta, descripcion);
 };
 
 // 3
