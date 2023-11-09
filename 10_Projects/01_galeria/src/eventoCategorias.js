@@ -1,13 +1,13 @@
 // 2
 import dataFotos from './datos/fotos'
 import {cargarImagen} from './galeria/cargarImagen'
-// Importamos la información de todas las fotos del carrusel dentro del nuevo objeto dataFotos
+// Importamos la información de todas los slides del carrusel dentro del nuevo objeto dataFotos
 // Importamos la función cargarImagen
 
 /* 
     Archivo que:
-        ABRE la galeria cuando hacemos click sobre una categoría
-        CARGA los elementos (título, imágen, descripción, carrusel) de la galería según cada categoría
+        Abre la galeria cuando hacemos click sobre una categoría
+        Carga los elementos (título, imágen, descripción, carrusel) de la galería según cada categoría
 
     Resumen:
         1 Agregamos un evento al contenedor de las categorias
