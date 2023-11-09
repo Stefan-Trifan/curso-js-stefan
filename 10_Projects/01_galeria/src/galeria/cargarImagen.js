@@ -37,8 +37,6 @@ const cargarImagen = (id, nombre, ruta, descripcion) => {
         }
     })
 
-
-
     // Si los sliedes existen,
     if (galeria.querySelectorAll('.galeria__carousel-slide').length > 0) {
         // Eliminamos la calse active
@@ -46,7 +44,6 @@ const cargarImagen = (id, nombre, ruta, descripcion) => {
         // Marcamos la imagen del carrusel como activa, poniendo la clase active al slide cuyo index sea igual al de la imagen activa
         galeria.querySelectorAll('.galeria__carousel-slide')[indexImagenActual].classList.add('galeria__carousel-slide--active')
     }
-
 }
 
 // Exportamos cargarImagen

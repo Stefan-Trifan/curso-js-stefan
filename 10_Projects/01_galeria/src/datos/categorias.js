@@ -13,7 +13,6 @@ import data from './fotos';
    const { fotos } = data; 
 // const fotos = data.fotos (Esto es lo mismo)
 
-
 // Exportamos el objeto y la variable fotos por que la estamos utilizando en el objeto
 // Contiene las categorías y sus imágenes de portada
 export default {
