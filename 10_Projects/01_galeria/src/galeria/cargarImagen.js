@@ -1,7 +1,7 @@
 // export
 /* 
     Archivo con dos funciones
-    1 Función que carga el id, el título, la imagen activa y la descripción dentro de la galería, al hacer click sobre: 
+    1 Función que carga el id, el título, la imagen activa y la descripción dentro de la galería, según los parámetros que le demos
     - La categoría 
     - Slide del carrusel 
     2 Función para cargar las imágenes del carrusel al pulsar ???
@@ -21,6 +21,8 @@ const cargarImagen = (id, nombre, ruta, descripcion) => {
     // Ej: ./img/africa/1.jpg
     galeria.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion
     // Ej: Europa 1 - Lorem ipsum dolor sit amet...
+
+    console.log(id)
 }
 
 // Exportamos cargarImagen

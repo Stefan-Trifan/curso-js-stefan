@@ -536,7 +536,7 @@ categorias.forEach((categoria) => {
 // export
 /* 
     Archivo con dos funciones
-    1 Función que carga el id, el título, la imagen activa y la descripción dentro de la galería, al hacer click sobre: 
+    1 Función que carga el id, el título, la imagen activa y la descripción dentro de la galería, según los parámetros que le demos
     - La categoría 
     - Slide del carrusel 
     2 Función para cargar las imágenes del carrusel al pulsar ???
@@ -556,6 +556,8 @@ const cargarImagen = (id, nombre, ruta, descripcion) => {
     // Ej: ./img/africa/1.jpg
     galeria$3.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion;
     // Ej: Europa 1 - Lorem ipsum dolor sit amet...
+
+    console.log(id);
 };
 
 // 2
@@ -664,16 +666,25 @@ const cerrarGaleria = () => {
 */
 
 const slideClick = (e) => {
-    // Registramos el id sobre el que hemos hecho click
-    e.target.dataset.id;
+    let ruta, nombre, descripcion;
+
+    // Registramos el id sobre el que hemos hecho click, y lo convertimos en un número
+    const id = parseInt(e.target.dataset.id); 
     // Accedemos a la galeria
     const galeria = document.getElementById('galeria');
     // Registramos cual es la categoria activa
     const categoriaActiva = galeria.dataset.categoria;
 
-    // Recorremos todos los slides de la bbdd y buscamos el slide con el id igual al nuestro
-    datos.fotos[categoriaActiva].forEach(() => {
-        console.log(datos.fotos[categoriaActiva].id);
+    // Recorremos todos los slides de la bbdd y buscamos el slide con el id igual al que hemos seleccionado
+    datos.fotos[categoriaActiva].forEach((foto) => {
+        if(foto.id === id){
+            // Obtenemos los datos de la imagen a la que clicamos y las cargamos en cargarimagen
+            ruta = foto.ruta;
+            nombre = foto.nombre;
+            descripcion = foto.descripcion;
+        }
+        cargarImagen(id, nombre, ruta, descripcion);
+
     });
 
 
@@ -702,6 +713,7 @@ const slideClick = (e) => {
 /* 
     Contiene todos los eventos de la galeria una vez abierta:
     - Cerrar
+    - Siguiente slide
 
     Mediante propagación de eventos, agregamos un evento a toda la galería
     Detectamos cuando hagamos click sobre un botón mediante su atributo data-accion

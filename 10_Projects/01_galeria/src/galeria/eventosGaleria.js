@@ -6,6 +6,7 @@ import slideClick from "./slideClick"
 /* 
     Contiene todos los eventos de la galeria una vez abierta:
     - Cerrar
+    - Siguiente slide
 
     Mediante propagación de eventos, agregamos un evento a toda la galería
     Detectamos cuando hagamos click sobre un botón mediante su atributo data-accion
