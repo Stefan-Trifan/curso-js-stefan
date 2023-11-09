@@ -549,14 +549,10 @@ const galeria$3 = document.getElementById('galeria');
 /* 1 */
 // Cambiamos los atributos de la plantilla de galeria para mostrar la galeria que queremos
 const cargarImagen = (id, nombre, ruta, descripcion) => {
-    galeria$3.querySelector('.galeria__imagen').dataset.idImagen = id;
-    // Ej: data-id-imagen="11"
-    galeria$3.querySelector('.galeria__titulo').innerText = nombre;
-    // Ej: Europa 1
-    galeria$3.querySelector('.galeria__imagen').src = ruta;
-    // Ej: ./img/africa/1.jpg
-    galeria$3.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion;
-    // Ej: Europa 1 - Lorem ipsum dolor sit amet...
+    galeria$3.querySelector('.galeria__imagen').dataset.idImagen = id;                      // Ej: data-id-imagen="11"
+    galeria$3.querySelector('.galeria__titulo').innerText = nombre;                         // Ej: Europa 1
+    galeria$3.querySelector('.galeria__imagen').src = ruta;                                 // Ej: ./img/africa/1.jpg
+    galeria$3.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion; // Ej: Europa 1 - Lorem ipsum dolor sit amet...
 
     /* 
         Funcionalidad que cambia el borde del slide según la imagen activa 
@@ -629,23 +625,20 @@ contenedorCategorias.addEventListener('click', (e) => {
         /* 4 */
         // Añadimos el atributo data-categoria="" de la categoria en la que hemos hecho click
         // Esto nos va a ayudar a saber que categoria de imágenes llamar a la base de datos
-        // Ej: europa
-        const categoriaActiva = e.target.closest('a').dataset.categoria;
+        const categoriaActiva = e.target.closest('a').dataset.categoria; // Ej: europa
 
         // Añadimos el atributo data-categoria="categoriaActiva" a la sección galeria
         galeria$2.dataset.categoria = categoriaActiva;
 
         // 📌
         // Guardamos el objeto con las imágenes que pertenecen a la categoría data-categoria=""
-        // Ej: [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
-        const fotos = datos.fotos[categoriaActiva];
+        const fotos = datos.fotos[categoriaActiva]; // Ej: [{…}, {…}, {…}, ... , {…}]
 
         /* 5 */ 
         // Desestructuramos la primera imagen de la categoría clicada
         // Extraemos los elementos (id, título, imágen, descripción)
         // Las guardamos dentro de las nuevas variables id, nombre, ruta, descripción
-        // Ej: {1, America 1, ./img/america/1.jpg, America 1 - Lorem ipsum dolor sit amet...} = fotos[0]
-        const {id, nombre, ruta, descripcion} = fotos[0];
+        const {id, nombre, ruta, descripcion} = fotos[0]; // Ej: {1, America 1, ./img/america/1.jpg, America 1 - Lorem ipsum ...} = fotos[0]
 
         // 📌
         // Llamamos a la función que carga la el id, título, imagen y descripción dentro de la galería,

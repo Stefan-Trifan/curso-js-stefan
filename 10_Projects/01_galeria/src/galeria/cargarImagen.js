@@ -14,14 +14,10 @@ const galeria = document.getElementById('galeria')
 /* 1 */
 // Cambiamos los atributos de la plantilla de galeria para mostrar la galeria que queremos
 const cargarImagen = (id, nombre, ruta, descripcion) => {
-    galeria.querySelector('.galeria__imagen').dataset.idImagen = id
-    // Ej: data-id-imagen="11"
-    galeria.querySelector('.galeria__titulo').innerText = nombre
-    // Ej: Europa 1
-    galeria.querySelector('.galeria__imagen').src = ruta;
-    // Ej: ./img/africa/1.jpg
-    galeria.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion
-    // Ej: Europa 1 - Lorem ipsum dolor sit amet...
+    galeria.querySelector('.galeria__imagen').dataset.idImagen = id                      // Ej: data-id-imagen="11"
+    galeria.querySelector('.galeria__titulo').innerText = nombre                         // Ej: Europa 1
+    galeria.querySelector('.galeria__imagen').src = ruta                                 // Ej: ./img/africa/1.jpg
+    galeria.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion // Ej: Europa 1 - Lorem ipsum dolor sit amet...
 
     /* 
         Funcionalidad que cambia el borde del slide según la imagen activa 

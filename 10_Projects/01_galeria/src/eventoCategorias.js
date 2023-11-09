@@ -41,23 +41,20 @@ contenedorCategorias.addEventListener('click', (e) => {
         /* 4 */
         // Añadimos el atributo data-categoria="" de la categoria en la que hemos hecho click
         // Esto nos va a ayudar a saber que categoria de imágenes llamar a la base de datos
-        // Ej: europa
-        const categoriaActiva = e.target.closest('a').dataset.categoria
+        const categoriaActiva = e.target.closest('a').dataset.categoria // Ej: europa
 
         // Añadimos el atributo data-categoria="categoriaActiva" a la sección galeria
         galeria.dataset.categoria = categoriaActiva
 
         // 📌
         // Guardamos el objeto con las imágenes que pertenecen a la categoría data-categoria=""
-        // Ej: [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
-        const fotos = dataFotos.fotos[categoriaActiva]
+        const fotos = dataFotos.fotos[categoriaActiva] // Ej: [{…}, {…}, {…}, ... , {…}]
 
         /* 5 */ 
         // Desestructuramos la primera imagen de la categoría clicada
         // Extraemos los elementos (id, título, imágen, descripción)
         // Las guardamos dentro de las nuevas variables id, nombre, ruta, descripción
-        // Ej: {1, America 1, ./img/america/1.jpg, America 1 - Lorem ipsum dolor sit amet...} = fotos[0]
-        const {id, nombre, ruta, descripcion} = fotos[0]
+        const {id, nombre, ruta, descripcion} = fotos[0] // Ej: {1, America 1, ./img/america/1.jpg, America 1 - Lorem ipsum ...} = fotos[0]
 
         // 📌
         // Llamamos a la función que carga la el id, título, imagen y descripción dentro de la galería,
