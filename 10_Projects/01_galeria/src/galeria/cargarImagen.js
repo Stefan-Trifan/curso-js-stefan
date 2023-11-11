@@ -5,7 +5,7 @@ import data from './../datos/fotos'
     1 Función que carga el id, el título, la imagen activa y la descripción dentro de la galería, según los parámetros que le demos
     - La categoría 
     - Slide del carrusel 
-    2 Función para cargar las imágenes del carrusel al pulsar ???
+    2 Función para cargar las imágenes del carrusel al pulsar las flechas
 */
 
 // Guardamos la galeria dentro de una variable
@@ -46,5 +46,40 @@ const cargarImagen = (id, nombre, ruta, descripcion) => {
     }
 }
 
+/* 2 */
+const cargarAnteriorSiguiente = (direccion) => {
+    // Accedemos a la categoría actual
+    const categoriaActual = galeria.dataset.categoria
+    // Accedemos a las fotos de la categoría
+    const fotos = data.fotos[categoriaActual]
+    // Guardamos el ID de la imagen actua, y lo transformamos a un número
+    const idImagenActual = parseInt(galeria.querySelector('.galeria__imagen').dataset.idImagen)
+
+    // Guardamos el index de la iamgen actual
+    let indexImagenActual 
+    fotos.forEach((foto, index) => {
+        if(foto.id === idImagenActual){
+            indexImagenActual = index
+        }
+    })
+
+    // Cargamos la imagen anteriot/siguiente
+    if(direccion === 'siguiente'){
+        // Si la foto con el index existe, ejecutamos
+        if(fotos[indexImagenActual + 1]) {
+            // Desestructuramos las propeidades de la foto con el index posterior y las cargamos dentro de cargarImagen
+            const {id, nombre, ruta, descripcion} = fotos[indexImagenActual + 1]
+            cargarImagen(id, nombre, ruta, descripcion)
+        }
+    } else if (direccion === 'anterior'){
+        // Si la foto con el index existe, ejecutamos
+        if(fotos[indexImagenActual - 1]) {
+            // Desestructuramos las propeidades de la foto con el index posterior y las cargamos dentro de cargarImagen
+            const {id, nombre, ruta, descripcion} = fotos[indexImagenActual - 1]
+            cargarImagen(id, nombre, ruta, descripcion)
+        }
+    }
+}
+
 // Exportamos cargarImagen
-export { cargarImagen };
+export { cargarImagen, cargarAnteriorSiguiente };

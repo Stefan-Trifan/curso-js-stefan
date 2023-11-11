@@ -1,6 +1,7 @@
 // 3
 import cerrarGaleria from "./cerrarGaleria"
 import slideClick from "./slideClick"
+import { cargarAnteriorSiguiente } from "./cargarImagen"
 // import { cargarImagen } from "./cargarImagen"
 
 /* 
@@ -29,6 +30,19 @@ galeria.addEventListener('click', (e) => {
     // 📌 CAROUSEL SLIDE CLICK
     // Si el elemento al que dimos click tiene el atributo data-id="", ejecutamos
     if(e.target.dataset.id){
+        // cambiamos la iamgen activa
         slideClick(e)
+    }
+
+    // 📌 SIGUIENTE IMAGEN
+    // Si el atributo data del botón es siguiente-imagen,
+    if(boton?.dataset?.accion === 'siguiente-imagen'){
+        cargarAnteriorSiguiente('siguiente')
+    }
+
+    // 📌 ANTERIOR IMAGEN
+    // Si el atributo data del botón es anterior-imagen,
+    if(boton?.dataset?.accion === 'anterior-imagen'){
+        cargarAnteriorSiguiente('anterior')
     }
 })
