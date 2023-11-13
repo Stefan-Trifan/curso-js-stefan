@@ -1,6 +1,6 @@
 // export
 /* 
-	Objeto que contiene las imágenes del carrusel
+	Objeto que contiene las imágenes/slides del carrusel
 */
 
 /*  
@@ -14,11 +14,11 @@
 
 // Exportamos las imágenes del carrusel como objeto llamado por defecto
 export default {
-	// Propeidad que contiene un objeto
+	// Objeto
 	fotos: {
-		// Propiedad que contiene un arreglo
+		// Arreglo
 		america: [
-			// Elemento del arreglo
+			// Objeto
 			{
 				id: 1,
 				nombre: 'America 1',

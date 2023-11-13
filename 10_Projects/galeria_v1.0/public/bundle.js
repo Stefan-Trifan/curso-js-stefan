@@ -2,7 +2,7 @@
 
 // export
 /* 
-	Objeto que contiene las imágenes del carrusel
+	Objeto que contiene las imágenes/slides del carrusel
 */
 
 /*  
@@ -16,11 +16,11 @@
 
 // Exportamos las imágenes del carrusel como objeto llamado por defecto
 var datos = {
-	// Propeidad que contiene un objeto
+	// Objeto
 	fotos: {
-		// Propiedad que contiene un arreglo
+		// Arreglo
 		america: [
-			// Elemento del arreglo
+			// Objeto
 			{
 				id: 1,
 				nombre: 'America 1',
@@ -468,11 +468,6 @@ var dataCategorias = {
 	// Propiedad que contiene un arreglo de objetos.
 	categorias: [
 		// Caja objeto es una categoría con su info y el número de fotos
-		/*  
-			numeroFotos: fotos['america'].length, es dinámico 
-			numeroFotos: fotos.america.length, es lo mismo
-			Accedemos al objeto fotos, a la propiedad llamada 'america' y contamos cuántas imágenes de carrusel tiene 
-		*/
 		{ id: 'america', nombre: 'America', numeroFotos: fotos['america'].length, imagenPortada: './img/america.jpg' },
 		{ id: 'europa', nombre: 'Europa', numeroFotos: fotos['europa'].length, imagenPortada: './img/europa.jpg' },
 		{ id: 'africa', nombre: 'África', numeroFotos: fotos['africa'].length, imagenPortada: './img/africa.jpg' },
@@ -481,6 +476,11 @@ var dataCategorias = {
 		{
 			id: 'antartida',
 			nombre: 'Antártida',
+			/*
+				numeroFotos: fotos['america'].length, es dinámico 
+				numeroFotos: fotos.america.length, es lo mismo
+				Accedemos al objeto fotos, a la propiedad 'america' y contamos cuántas imágenes de carrusel tiene 
+			*/
 			numeroFotos: fotos['antartida'].length,
 			imagenPortada: './img/antartida.jpg',
 		},
