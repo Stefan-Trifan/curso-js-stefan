@@ -1,4 +1,4 @@
-  // export
+// export
 import data from './fotos';
 // Importamos el objeto con los datos de las imágenes del carrusel dentro de la variable data
 
@@ -19,19 +19,39 @@ export default {
 	// Propiedad que contiene un arreglo de objetos.
 	categorias: [
 		// Caja objeto es una categoría con su info y el número de fotos
-		{ id: 'america', nombre: 'America', numeroFotos: fotos['america'].length, imagenPortada: './img/america.jpg' },
-		{ id: 'europa', nombre: 'Europa', numeroFotos: fotos['europa'].length, imagenPortada: './img/europa.jpg' },
-		{ id: 'africa', nombre: 'África', numeroFotos: fotos['africa'].length, imagenPortada: './img/africa.jpg' },
-		{ id: 'asia', nombre: 'Asia', numeroFotos: fotos['asia'].length, imagenPortada: './img/asia.jpg' },
-		{ id: 'oceania', nombre: 'Oceania', numeroFotos: fotos['oceania'].length, imagenPortada: './img/oceania.jpg' },
-		{
-			id: 'antartida',
-			nombre: 'Antártida',
+		{ 
+			id: 'america', 
+			nombre: 'America', 
 			/*
 				numeroFotos: fotos['america'].length, es dinámico 
 				numeroFotos: fotos.america.length, es lo mismo
 				Accedemos al objeto fotos, a la propiedad 'america' y contamos cuántas imágenes de carrusel tiene 
 			*/
+			numeroFotos: fotos['america'].length, 
+			imagenPortada: './img/america.jpg' },
+		{ 
+			id: 'europa', 
+			nombre: 'Europa', 
+			numeroFotos: fotos['europa'].length, 
+			imagenPortada: './img/europa.jpg' },
+		{
+			id: 'africa',
+			nombre: 'África',
+			numeroFotos: fotos['africa'].length,
+			imagenPortada: './img/africa.jpg' },
+		{
+			id: 'asia',
+			nombre: 'Asia',
+			numeroFotos: fotos['asia'].length,
+			imagenPortada: './img/asia.jpg' },
+		{
+			id: 'oceania',
+			nombre: 'Oceania',
+			numeroFotos: fotos['oceania'].length,
+			imagenPortada: './img/oceania.jpg' },
+		{
+			id: 'antartida',
+			nombre: 'Antártida',
 			numeroFotos: fotos['antartida'].length,
 			imagenPortada: './img/antartida.jpg',
 		},

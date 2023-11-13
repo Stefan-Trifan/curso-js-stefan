@@ -25,6 +25,7 @@ const galeria = document.getElementById('galeria')
 /* 1 */
 // Creamos el evento click sobre el contenedor de las categorías
 contenedorCategorias.addEventListener('click', (e) => {
+    // Evitar que el navegador nos mande para arriba
     e.preventDefault()
 
     /* 2 */

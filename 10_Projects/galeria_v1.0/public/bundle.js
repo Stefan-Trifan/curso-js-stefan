@@ -468,19 +468,39 @@ var dataCategorias = {
 	// Propiedad que contiene un arreglo de objetos.
 	categorias: [
 		// Caja objeto es una categoría con su info y el número de fotos
-		{ id: 'america', nombre: 'America', numeroFotos: fotos['america'].length, imagenPortada: './img/america.jpg' },
-		{ id: 'europa', nombre: 'Europa', numeroFotos: fotos['europa'].length, imagenPortada: './img/europa.jpg' },
-		{ id: 'africa', nombre: 'África', numeroFotos: fotos['africa'].length, imagenPortada: './img/africa.jpg' },
-		{ id: 'asia', nombre: 'Asia', numeroFotos: fotos['asia'].length, imagenPortada: './img/asia.jpg' },
-		{ id: 'oceania', nombre: 'Oceania', numeroFotos: fotos['oceania'].length, imagenPortada: './img/oceania.jpg' },
-		{
-			id: 'antartida',
-			nombre: 'Antártida',
+		{ 
+			id: 'america', 
+			nombre: 'America', 
 			/*
 				numeroFotos: fotos['america'].length, es dinámico 
 				numeroFotos: fotos.america.length, es lo mismo
 				Accedemos al objeto fotos, a la propiedad 'america' y contamos cuántas imágenes de carrusel tiene 
 			*/
+			numeroFotos: fotos['america'].length, 
+			imagenPortada: './img/america.jpg' },
+		{ 
+			id: 'europa', 
+			nombre: 'Europa', 
+			numeroFotos: fotos['europa'].length, 
+			imagenPortada: './img/europa.jpg' },
+		{
+			id: 'africa',
+			nombre: 'África',
+			numeroFotos: fotos['africa'].length,
+			imagenPortada: './img/africa.jpg' },
+		{
+			id: 'asia',
+			nombre: 'Asia',
+			numeroFotos: fotos['asia'].length,
+			imagenPortada: './img/asia.jpg' },
+		{
+			id: 'oceania',
+			nombre: 'Oceania',
+			numeroFotos: fotos['oceania'].length,
+			imagenPortada: './img/oceania.jpg' },
+		{
+			id: 'antartida',
+			nombre: 'Antártida',
 			numeroFotos: fotos['antartida'].length,
 			imagenPortada: './img/antartida.jpg',
 		},
@@ -495,25 +515,23 @@ var dataCategorias = {
     Archivo que vamos a utilizar para compilar
 
     Pasos a seguir:
-        1 Creamos las categorías
-        2 Con el método foreach, por cada una de las categorías creamos un elemento <a> dentro del contenedor de las categorias. 
+        1 Con el método foreach, por cada una de las categorías creamos un elemento <a> dentro del contenedor de las categorias. 
 */
 
-/* 1 */
 // Declaramos la variable categorias
 // Desestructuramos el objeto dataCategorias con las categorias importadas
 // Extraemos las categorias
 // Las guardamos dentro de una variable que vamos a llamar categorias
 const {categorias} = dataCategorias; // 📌
-// Guardamos el contenedor de las categorias dentro de una variable
+// Guardamos el contenedor de las categorias
 const contenedorCategorias$1 = document.getElementById('categorias');
 
-/* 2 */
+/* 1 */
 categorias.forEach((categoria) => {
-    // Creamos el elemento <a> por cada categoria y lo guardamos dentro de una variable nuevaCategoria
+    // Creamos el elemento <a> por cada categoria
     const nuevaCategoria = document.createElement('a');
 
-    // Guardamos dentro de una variable la plantilla que va a tener cada categoría
+    // Guardamos la plantilla que va a tener cada categoría
     const plantilla = `
         <img class="categoria__img" src="${categoria.imagenPortada}" alt="" />
         <div class="categoria__datos">
@@ -524,7 +542,7 @@ categorias.forEach((categoria) => {
     // Guardamos la nueva plantilla dentro del nuevo elemento que hemos creado
     nuevaCategoria.innerHTML = plantilla;
 
-    // Agregamos los atributos de <a>
+    // Agregamos los atributos de la plantilla
     nuevaCategoria.classList.add('categoria');
     nuevaCategoria.href = '#';
     nuevaCategoria.dataset.categoria = categoria.id;
@@ -543,22 +561,22 @@ categorias.forEach((categoria) => {
 */
 
 // Guardamos la galeria dentro de una variable
-const galeria$3 = document.getElementById('galeria');
+const galeria$4 = document.getElementById('galeria');
 
 /* 1 */
 // Cambiamos los atributos de la plantilla de galeria para mostrar la galeria que queremos
 const cargarImagen = (id, nombre, ruta, descripcion) => {
-    galeria$3.querySelector('.galeria__imagen').dataset.idImagen = id;                      // Ej: data-id-imagen="11"
-    galeria$3.querySelector('.galeria__titulo').innerText = nombre;                         // Ej: Europa 1
-    galeria$3.querySelector('.galeria__imagen').src = ruta;                                 // Ej: ./img/africa/1.jpg
-    galeria$3.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion; // Ej: Europa 1 - Lorem ipsum dolor sit amet...
+    galeria$4.querySelector('.galeria__imagen').dataset.idImagen = id;                      // Ej: data-id-imagen="11"
+    galeria$4.querySelector('.galeria__titulo').innerText = nombre;                         // Ej: Europa 1
+    galeria$4.querySelector('.galeria__imagen').src = ruta;                                 // Ej: ./img/africa/1.jpg
+    galeria$4.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion; // Ej: Europa 1 - Lorem ipsum dolor sit amet...
 
     /* 
         Funcionalidad que cambia el borde del slide según la imagen activa 
     
     */
     // Guardamos la categoría activa
-    const categoriaActual = galeria$3.dataset.categoria;
+    const categoriaActual = galeria$4.dataset.categoria;
     // Fotos de la categoría actual
     const fotos = datos.fotos[categoriaActual];
 
@@ -572,22 +590,22 @@ const cargarImagen = (id, nombre, ruta, descripcion) => {
     });
 
     // Si los sliedes existen,
-    if (galeria$3.querySelectorAll('.galeria__carousel-slide').length > 0) {
+    if (galeria$4.querySelectorAll('.galeria__carousel-slide').length > 0) {
         // Eliminamos la calse active
-        galeria$3.querySelector('.galeria__carousel-slide--active').classList.remove('galeria__carousel-slide--active');
+        galeria$4.querySelector('.galeria__carousel-slide--active').classList.remove('galeria__carousel-slide--active');
         // Marcamos la imagen del carrusel como activa, poniendo la clase active al slide cuyo index sea igual al de la imagen activa
-        galeria$3.querySelectorAll('.galeria__carousel-slide')[indexImagenActual].classList.add('galeria__carousel-slide--active');
+        galeria$4.querySelectorAll('.galeria__carousel-slide')[indexImagenActual].classList.add('galeria__carousel-slide--active');
     }
 };
 
 /* 2 */
 const cargarAnteriorSiguiente = (direccion) => {
     // Accedemos a la categoría actual
-    const categoriaActual = galeria$3.dataset.categoria;
+    const categoriaActual = galeria$4.dataset.categoria;
     // Accedemos a las fotos de la categoría
     const fotos = datos.fotos[categoriaActual];
     // Guardamos el ID de la imagen actua, y lo transformamos a un número
-    const idImagenActual = parseInt(galeria$3.querySelector('.galeria__imagen').dataset.idImagen);
+    const idImagenActual = parseInt(galeria$4.querySelector('.galeria__imagen').dataset.idImagen);
 
     // Guardamos el index de la iamgen actual
     let indexImagenActual; 
@@ -635,11 +653,12 @@ const cargarAnteriorSiguiente = (direccion) => {
 
 // Guardamos el contenedor y la galeria dentro de una variable
 const contenedorCategorias = document.getElementById('categorias');
-const galeria$2 = document.getElementById('galeria');
+const galeria$3 = document.getElementById('galeria');
 
 /* 1 */
 // Creamos el evento click sobre el contenedor de las categorías
 contenedorCategorias.addEventListener('click', (e) => {
+    // Evitar que el navegador nos mande para arriba
     e.preventDefault();
 
     /* 2 */
@@ -648,7 +667,7 @@ contenedorCategorias.addEventListener('click', (e) => {
     if(e.target.closest('a')){
         /* 3 */
         // Abrimos la galeria
-        galeria$2.classList.add('galeria--active');
+        galeria$3.classList.add('galeria--active');
 
         // Desactivamos el scroll
         document.body.style.overflow = 'hidden';
@@ -659,7 +678,7 @@ contenedorCategorias.addEventListener('click', (e) => {
         const categoriaActiva = e.target.closest('a').dataset.categoria; // Ej: europa
 
         // Añadimos el atributo data-categoria="categoriaActiva" a la sección galeria
-        galeria$2.dataset.categoria = categoriaActiva;
+        galeria$3.dataset.categoria = categoriaActiva;
 
         // 📌
         // Guardamos el objeto con las imágenes que pertenecen a la categoría data-categoria=""
@@ -678,7 +697,7 @@ contenedorCategorias.addEventListener('click', (e) => {
 
         /* 6 */
         // Elimina las imágenes anteriores del carousel para solucionar errores
-        const carousel = galeria$2.querySelector('.galeria__carousel-slides');
+        const carousel = galeria$3.querySelector('.galeria__carousel-slides');
         carousel.innerHTML = '';
 
         // Cargamos el carrousel
@@ -691,11 +710,11 @@ contenedorCategorias.addEventListener('click', (e) => {
                 </a> 
             `;
             // Insertamos cada plantilla dentro del contenedor de slides
-            galeria$2.querySelector('.galeria__carousel-slides').innerHTML += slide;
+            galeria$3.querySelector('.galeria__carousel-slides').innerHTML += slide;
         });
 
         // Marcamos la imágen activa del slide
-        galeria$2.querySelector('.galeria__carousel-slide').classList.add('galeria__carousel-slide--active');
+        galeria$3.querySelector('.galeria__carousel-slide').classList.add('galeria__carousel-slide--active');
 
     } 
     
@@ -706,10 +725,10 @@ contenedorCategorias.addEventListener('click', (e) => {
     Función que se encarga de cerrar la galería
 */
 
-const galeria$1 = document.getElementById('galeria');
+const galeria$2 = document.getElementById('galeria');
 
 const cerrarGaleria = () => {
-    galeria$1.classList.remove('galeria--active');
+    galeria$2.classList.remove('galeria--active');
     document.body.style.overflow = '';
 };
 
@@ -745,6 +764,83 @@ const slideClick = (e) => {
     cargarImagen(id, nombre, ruta, descripcion);
 };
 
+/* 
+    Función para girar el carrousel
+
+    Trabajaremos con la API de intersection observer
+    Nos permitirá ejecutar código dependiendo si el contenido es visible o no
+
+    Resumen:
+        - Queremos detectar cuales son los slides visibles
+        - Obtenemos el index de el ultimo slide visible, y el siguiente elemento
+        - Al obtener el elemento hacemos scroll con JS
+
+    Vídeo explicativo: https://www.youtube.com/watch?v=cVsqA4NhDoI
+*/
+const galeria$1 = document.getElementById('galeria');
+const carousel = (direccion) => {
+    // Creamos un objeto de opciones 
+    const opciones = {
+        // Vigilamos que las imagenes entren/salgan del carrousel
+        root: document.querySelector('.galeria__carousel-slides'),
+        rootMargin: '0px',
+        // Que porcentaje de la imagen tiene que estar dentro para considerar que está visible
+        threshold: 0.9
+    };
+
+    // Creamos el observador // Creamos una nueva instancia
+    // Ejecutamos un callback dependiendo de si los elementos de nuestra página entran o salen
+    // Observamos las imagenes cuando entren o salgan del carousel
+    // Esta función se ejecutará cada vez que haya cambios en la visibilidad de algun elemento que estamos vigilando
+    const observer = new IntersectionObserver((entradas) => {
+        // Guardamos dentro de un arreglo los elementos visibles
+        const sldiesVisibles = entradas.filter((entrada) => {
+            if(entrada.isIntersecting){
+                return entrada;
+            }
+        });
+
+        if(direccion === 'anterior'){
+            // Obtenemos el primer slide visible
+            const primerSlideVisible = sldiesVisibles[0];
+            const indexPrimerSlideVisible = entradas.indexOf(primerSlideVisible);
+            console.log(indexPrimerSlideVisible);
+
+        } else if (direccion === 'siguiente'){
+            // Queremos obtener el index del último slide visible 
+            const ultimaSlideVisible = sldiesVisibles[sldiesVisibles.length - 1];
+            const indexUltimoSlideVisible = entradas.indexOf(ultimaSlideVisible);
+            
+            // Nos aseguramos de que hay suficienes slides para hacer scroll
+            if(entradas.length - 1 > indexUltimoSlideVisible){
+                /*   
+                📌 .scrollIntoView() - Realizamos el scroll  
+                */
+                // Accedemos al objetivo
+                entradas[indexUltimoSlideVisible + 1].target.scrollIntoView({
+                    behavior: 'smooth',
+                    inline: 'start'
+                });                
+            }
+        }
+
+        /* Detectamos hacia cual slide queremos movernos */
+
+        /* Dejamos de observar */
+        const slides = galeria$1.querySelectorAll('.galeria__carousel-slide');
+        slides.forEach((slide) => {
+            observer.unobserve(slide);
+        });
+    }, opciones);
+
+    const slides = galeria$1.querySelectorAll('.galeria__carousel-slide');
+    // Observamos cada uno de los slides
+    slides.forEach((slide) => {
+        // Ejecutamos el método observe
+        observer.observe(slide);
+    });
+};
+
 // 3
 // import { cargarImagen } from "./cargarImagen"
 
@@ -764,29 +860,43 @@ galeria.addEventListener('click', (e) => {
     // Registramos el botón pulsado padre más cercano y lo guardamos dentro de una variable
     const boton = e.target.closest('button');
 
-    // 📌 CERRAR GALERÍA
+    // 📌 - - - CERRAR GALERÍA
     // Si el elemento al que dimos click tiene data-accion="cerrar-galeria", ejecutamos
     // Con el símbolo ? le decimos que si no cumple la condición, no devuelve error
     if(boton?.dataset?.accion === 'cerrar-galeria'){
         cerrarGaleria();
     }
 
-    // 📌 CAROUSEL SLIDE CLICK
+    // 📌 - - - CAROUSEL SLIDE CLICK
     // Si el elemento al que dimos click tiene el atributo data-id="", ejecutamos
     if(e.target.dataset.id){
         // cambiamos la iamgen activa
         slideClick(e);
     }
 
-    // 📌 SIGUIENTE IMAGEN
+    // 📌 - - - ANTERIOR IMAGEN
+    // Si el atributo data del botón es anterior-imagen,
+    if(boton?.dataset?.accion === 'anterior-imagen'){
+        cargarAnteriorSiguiente('anterior');
+    }
+
+    // 📌 - - - SIGUIENTE IMAGEN
     // Si el atributo data del botón es siguiente-imagen,
     if(boton?.dataset?.accion === 'siguiente-imagen'){
         cargarAnteriorSiguiente('siguiente');
     }
 
-    // 📌 ANTERIOR IMAGEN
-    // Si el atributo data del botón es anterior-imagen,
-    if(boton?.dataset?.accion === 'anterior-imagen'){
-        cargarAnteriorSiguiente('anterior');
+    // 📌 - - - ANTERIOR CAROUSEL
+    // Si el atributo data del botón es anterior-slide,
+    if(boton?.dataset?.accion === 'anterior-slide'){
+        carousel('anterior');
     }
+
+    // 📌 - - - SIGUIENTE CAROUSEL
+    // Si el atributo data del botón es siguiente-slide,
+    if(boton?.dataset?.accion === 'siguiente-slide'){
+        carousel('siguiente');
+    }
+
+
 });
