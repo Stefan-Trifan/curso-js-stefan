@@ -792,6 +792,7 @@ const carousel = (direccion) => {
     // Ejecutamos un callback dependiendo de si los elementos de nuestra página entran o salen
     // Observamos las imagenes cuando entren o salgan del carousel
     // Esta función se ejecutará cada vez que haya cambios en la visibilidad de algun elemento que estamos vigilando
+    // entradas es el arreglo que contiene todos los slides
     const observer = new IntersectionObserver((entradas) => {
         // Guardamos dentro de un arreglo los elementos visibles
         const sldiesVisibles = entradas.filter((entrada) => {
@@ -804,8 +805,14 @@ const carousel = (direccion) => {
             // Obtenemos el primer slide visible
             const primerSlideVisible = sldiesVisibles[0];
             const indexPrimerSlideVisible = entradas.indexOf(primerSlideVisible);
-            console.log(indexPrimerSlideVisible);
 
+            // Nos aseguramos de que hay suficienes slides para hacer scroll
+            if(indexPrimerSlideVisible >= 1){
+                entradas[indexPrimerSlideVisible - 1].target.scrollIntoView({
+                    behavior: 'smooth',
+                    inline: 'start'
+                });   
+            }
         } else if (direccion === 'siguiente'){
             // Queremos obtener el index del último slide visible 
             const ultimaSlideVisible = sldiesVisibles[sldiesVisibles.length - 1];
