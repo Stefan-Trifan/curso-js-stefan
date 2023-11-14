@@ -55,6 +55,9 @@ console.log('Soy código desde Empty Export');
 
 /* Maneras de importar */
 
+
+
+
 /***************************************************************************************
     Named Imports
     Importamos en base al valor
@@ -65,6 +68,9 @@ console.log('________ Named Imports ________');
 // Llamamos a los objetos importados
 console.log('Mi nombre es ' + nombre2);
 console.log(obtenerPosts2());
+
+
+
 
 /***************************************************************************************
     Namespace Imports
@@ -77,6 +83,9 @@ console.log('________  Namespace Imports ________');
 console.log('Mi nombre es ' + nombre2);
 console.log(obtenerPosts2());
 
+
+
+
 /***************************************************************************************
     Default Imports
     Cuando solo tenemos una función por archivo
@@ -86,6 +95,9 @@ console.log(obtenerPosts2());
 */
 console.log('________ Default Imports ________');
 console.log(obtener());
+
+
+
 
 /***************************************************************************************
     Empty Imports 
