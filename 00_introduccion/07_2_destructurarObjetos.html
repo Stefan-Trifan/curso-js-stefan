@@ -4,46 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destructurar Objetos III</title>
+    <title>Destructurar Objetos</title>
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
     <section>
-        <h1 id="titulo">Destructurar Objetos III</h1>
+        <h1 id="titulo">Destructurar Objetos II</h1>
     </section>
     <script>
-        // Desestructuración de un arreglo
-        const numeros = [1,2,3]
+        // Podemos destructurar los valores que le pasamos a una función
 
-        // Sin desestructuración
-        uno  = numeros[0]
-        dos  = numeros[1]
-        tres = numeros[2]
-
-        // Con desestructuración
-        // Asignamos de forma dinámica los primeros tres elementos del arreglo dentro de las variables one two three
-        const [one, two, three] = numeros
-        console.log(one, two, three)
-
-
-        // Desestructuración de un objeto
-        const numeros2 = {
-            primero: 1,
-            segundo: 2,
-            tercero: 3
+        // Declaramos el objeto persona
+        const persona = {
+            nombre: 'Steve',
+            edad: 21,
+            pais: 'España'
         }
+        console.log(persona)
 
-        // Sin desestructuración
-        first  = numeros2.primero
-        second = numeros2.segundo
-        third  = numeros2.tercero
+        // Asignamos las propiedades a las variables de forma dinámica
+        const { nombre, edad, pais } = persona
+        console.log(nombre, edad, pais)
 
-        // Con desestructuración
-        const {primero, segundo, tercero} = numeros2
-        console.log(primero, segundo, tercero)
-        // Para que la desestructuración funcione en los objetos la variable que trato de crear se tienen que llamar igual que la propiedad
+        // Creamos la función saludo en base a las variables
+        const saludo = (nombre, edad, pais) => {
+            console.log(`${nombre} tiene ${edad} y es de ${pais}`)
+        }
+        saludo(persona.nombre, persona.edad, persona.pais)
+        
+        // O de forma más simplificada...
+        saludo(nombre, edad, pais)
 
+        // Simplificamos más las cosas
+        // saludo3 VA A RECIBIR UN OBJETO, y de ese objeto extrae el nombre y la edad
+        const saludo3 = ({ nombre, edad, pais }) => {
+            console.log(`${nombre} tiene ${edad} y es de ${pais}`)
+        }
+        saludo3(persona)
     </script>
 </body>
 </html>
