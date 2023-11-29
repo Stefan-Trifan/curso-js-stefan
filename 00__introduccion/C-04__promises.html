@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Promises</h1>
+    </section>
+    <script>
+        /* Promises
+        Estructuras para decirle al navegador que queremos que espere a que nosotros terminemos de hacer una operación 
+        El navegador se queda atento a que terminemos la operación
+        Le podemos decir al navegador que no ejecute código hasta que no terminemos la operación
+        Cuando terminemos la operación respondemos al navegador con los datos
+        /**************************************************************************************/
+
+        // Definimos la promesa dentro de una variable
+        // Dentro colocamos un callback con 2 parámetros que utilizaremos dentro del código
+        // Estos 2 parámetros nos indican si la función ha tenido éxito o no
+        const promesa = new Promise((resolve, reject) => {
+            // Acción que se ejecutará
+            // Simulamos esta acción puede tardar tiempo
+            setTimeout(() => {
+                const exito = true;
+
+                if (exito) {
+                    resolve('La operación tuvo éxito')
+                } else {
+                    reject(`Operación no exitosa`)
+                }
+            }, 1000)
+        });
+
+        // Le decimos al navegador que se quede atento a nuestra respuesta
+        // El método .then(() => {}) recibe un callback
+        // Este código se ejecuta en caso de que la promesa fuera correcta
+        promesa.then((mensaje) => {
+            console.log(mensaje)
+        });
+
+        // Este código se ejecuta en caso de error
+        promesa.catch((mensaje) => {
+            console.log(mensaje)
+        })
+    </script>
+</body>
+</html>

@@ -10,7 +10,7 @@
 </head>
 <body>
     <section>
-        <h1 id="titulo">Destructurar Objetos</h1>
+        <h1 id="titulo">Destructurar Objetos II</h1>
     </section>
     <script>
         // Podemos destructurar los valores que le pasamos a una función
@@ -23,7 +23,7 @@
         }
         console.log(persona)
 
-        // Asignamos las propiedades a las variables
+        // Asignamos las propiedades a las variables de forma dinámica
         const { nombre, edad, pais } = persona
         console.log(nombre, edad, pais)
 
@@ -34,10 +34,7 @@
         saludo(persona.nombre, persona.edad, persona.pais)
 
         // O de forma más simplificada...
-        const saludo2 = (nombre, edad, pais) => {
-            console.log(`${nombre} tiene ${edad} y es de ${pais}`)
-        }
-        saludo2(nombre, edad, pais)
+        saludo(nombre, edad, pais)
 
         // Simplificamos más las cosas
         // saludo3 VA A RECIBIR UN OBJETO, y de ese objeto extrae el nombre y la edad

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos Estáticos</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Métodos Estáticos</h1>
+    </section>
+    <script>
+
+        /* Métodos Estáticos
+        Nos permiten acceder a propiedades y métodos sin tener que inicializar nuevos objetos
+        /**************************************************************************************/
+
+        class Usuario {
+            constructor(nombre, correo) {
+                this.nombre = nombre;
+                this.correo = correo;
+                console.log(`Nuevo usuario registrado`)
+            }
+
+            // Creamos un método estático 
+            static borrarUsuario(id_usuario) {
+                console.log(`Has borrado el usuario con el ID: ${id_usuario}`)
+            }
+
+            // Creamos una propiedad estática
+            static usuariosRegistrados = 1000;
+        }
+        // Todos los usuarios pueden borrar otros usuarios.
+        // Podemos acceder al método borrarUsuario pero sin inicializar el objeto
+        Usuario.borrarUsuario(3)
+        // Lo mismo con la propiedad usuariosRegistrados
+        console.log(Usuario.usuariosRegistrados)
+
+        /*
+            Antiguamente teníams que inicializar el objeto para acceder al método borrarUsuario
+            const usuario = new Usuario('Stefan', 'stefan@gmail.com')
+            usuario.borrarUsuario(22)
+        */
+    </script>
+</body>
+</html>

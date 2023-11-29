@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope Bloque</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Scope Bloque</h1>
+    </section>
+    <script>
+        // Block Scope / Alcance de tipo bloque: Pertenecen las variables declaradas con const o let dentro de un bloque { }. Solo podemos acceder a ellas dentro del bloque
+
+        const edad = 18
+        if (edad >= 18) {
+            // Esta variable solamente es accesible dentro de este bloque
+            const accesoPermitido = true;
+
+            // Con este condicional la condicion se cumple inmediatamente
+            if (true) {
+                // Puede acceder a la variable
+                console.log(accesoPermitido);
+            }
+
+            const myFunction = () => {
+                // Puede acceder a la variable
+                console.log(accesoPermitido);
+            }
+            myFunction()
+
+        }
+        // No puede acceder a la variable. Tiene que dar error
+        console.log(accesoPermitido)
+    </script>
+    <script>
+        // Por que no deberíamos declarar variables con var
+        // La variables var siempre tienen alcance global, y esti va a dar problemas
+        if (true) {
+            var nombre = 'Steve'
+            // Puede acceder a la variable
+            console.log(nombre);
+        }
+        // También puede acceder a la variable
+        console.log(nombre);
+
+        // Deberíamos declarar las variables con let o const
+        if (true) {
+            let nombre2 = 'Steve'
+            // Puede acceder a la variable
+            console.log(nombre2);
+        }
+        // Ya no puede acceder a la variable. Tiene que dar error
+        console.log(nombre2);
+    </script>
+</body>
+</html>

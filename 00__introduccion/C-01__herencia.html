@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Herencia</h1>
+    </section>
+    <script>
+        /* Herencia
+        La herencia de clases nos va a permitir crear clases tomando las propiedades y métodos de otras clases
+        /**************************************************************************************/
+
+        // Creamos la clase Usuario
+        class Usuario {
+            constructor(usuario, password) {
+                this.usuario = usuario;
+                this.password = password;
+                console.log(`Nuevo usuario: ${this.usuario}, ${this.password}`)
+            }
+
+            obtenerPosts() {
+                const posts = ['post1', 'post2']
+                return posts;
+            }
+        }
+
+        // Moderador está tomando las propiedades y métodos de Usuario con la palabra extends
+        // Creamos permisos adicionales
+        class Moderador extends Usuario {
+            constructor(usuario, password, permisos) {
+                // Cuando trabajemos con herencia, super nos va a permitir copiar los métodos, propiedades y el constructor
+                super(usuario, password)
+                this.permisos = permisos
+            }
+
+            // Creamos un método que nos permita borrar posts. Este método es solo para los moderadores 
+            borrarPost(id) {
+                if (this.permisos.includes('borrar')) {
+                    console.log(`El post con el ${id} ha sido borrado`)
+                } else {
+                    console.log('No puedes borrar posts')
+                }
+            }
+        }
+
+        // Creamos el primer usuario y lo asignamos a una variable
+        const usuario = new Usuario('Stefan', '999999999')
+        console.log(usuario.obtenerPosts())
+
+        // Creamos el segundo usuario 
+        const usuario2 = new Moderador('Pablo', '456', ['borrar', 'editar'])
+        console.log(usuario2.permisos)
+        usuario2.borrarPost(7)
+    </script>
+</body>
+</html>
