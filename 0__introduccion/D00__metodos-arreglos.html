@@ -21,6 +21,7 @@
         console.log(colores1)
         /**/
         console.log(colores1.length)
+        console.log('')
 
 
         // .toString() nos permite transformar un arreglo a una cadena de texto
@@ -30,6 +31,7 @@
         /**/
         console.log(colores2.toString())
         document.body.querySelector('section h2').innerHTML = colores2.toString();
+        console.log('')
 
 
         // .join() nos permite transformar un arreglo a una cadena de texto y separar cada elemento por la letra que nosotos queramos
@@ -38,6 +40,7 @@
         console.log(colores3)
         /**/
         console.log(colores3.join('-'))
+        console.log('')
 
 
         // .sort() nos permite ordenar los elementos (números y texto) de un arreglo de forma alfabética
@@ -46,6 +49,7 @@
         console.log(numeros4)
         /**/
         console.log(numeros4.sort()) // Modifica el arreglo original
+        console.log('')
 
 
         // .reverse() nos permite ordenar los elementos (números y texto) de un arreglo de forma descendente
@@ -54,6 +58,7 @@
         console.log(numeros5)
         /**/
         console.log(numeros5.reverse()) // Modifica el arreglo original
+        console.log('')
 
 
         // .concat() permite juntar 2 arreglos en uno solo
@@ -64,6 +69,7 @@
         console.log(letras_6)
         /**/
         console.log(numeros6.concat(letras_6))
+        console.log('')
 
 
         // .push() permite agregar un elemento al final del arreglo
@@ -72,6 +78,7 @@
         console.log(colores7)
         /**/
         console.log(colores7.push('turquesa'))  // Retorna la longitud del array
+        console.log('')
 
 
         // .pop() permite eliminar un elemento al final del arreglo
@@ -80,6 +87,7 @@
         console.log(colores8)
         /**/
         console.log(colores8.pop()); // Retorna el elemento eliminado
+        console.log('')
 
 
         // .shift() permite eliminar un elemento al principio del arreglo
@@ -88,6 +96,7 @@
         console.log(colores9)
         /**/
         console.log(colores9.shift()); // Retorna el elemento eliminado
+        console.log('')
 
 
         // .unshift() permite agregar un elemento al principio del arreglo
@@ -96,6 +105,7 @@
         console.log(colores10)
         /**/
         console.log(colores10.unshift('Gris')); // Retorna la nueva longitud del arreglo
+        console.log('')
 
 
         // .splice() permite eliminar/insertar/sustituir elementos en cualquier parte del arreglo
@@ -109,6 +119,7 @@
         */
         amigos11.splice(1, 2, 'Rafael', 'Roberto');
         console.log(amigos11)
+        console.log('')
 
 
         // .slice() permite copiar una parte de un arreglo a otro
@@ -121,6 +132,7 @@
         */
         const frutasFavoritas12 = frutas12.slice(2, 5)
         console.log(frutasFavoritas12)
+        console.log('')
 
 
         // .indexOf() permite obtener el index de un elemento. 
@@ -130,6 +142,7 @@
         console.log(conocidos13)
         /**/
         console.log(conocidos13.indexOf('Gema')); // Devuelve el primer index del elemento que encontró
+        console.log('')
 
 
         // .lastIndexOf() permite obtener el último index de un elemento. 
@@ -139,6 +152,7 @@
         console.log(conocidos14)
         /**/
         console.log(conocidos14.lastIndexOf('Gema')); // Devuelve el último index del elemento que encontró
+        console.log('')
 
 
         // .forEach() permite ejecutar una funcióin por cada elemento
@@ -153,6 +167,7 @@
         conocidos15.forEach((nombre15, index15) => {
             console.log(`Hola ${nombre15}`, index15)
         })
+        console.log('')
 
 
         // .find() Permite recorrer un arreglo y devuelve el primer elemento que retornemos con la sentencia return
@@ -167,6 +182,7 @@
             }
         })
         console.log(personaSeleccionada16)
+        console.log('')
 
 
         // .map() Permite ejecutar una función por cada elemento y crear un nuevo arreglo en base a los resultados de esa función. 
@@ -177,6 +193,7 @@
         /* Dentro del primer () escribimos como queremos identificar a cada uno de los elementos */
         const grupoMayusculas = grupo17.map((nombre17) => nombre17.toUpperCase()) // Función flecha reducida
         console.log(grupoMayusculas)
+        console.log('')
 
 
         // .filter() igual que .map(), pero el nuevo arreglo solo devuelve los resultados que cumplen con una condición
@@ -190,6 +207,7 @@
             }
         })
         console.log(grupo4Letras18)
+        console.log('')
 
 
         // .includes() Nos permite saber si un arreglo contiene el elemento especificado
@@ -201,6 +219,7 @@
             La sentencia devuelve true o false
         */
         console.log(`El arreglo contiene 'Julio'? ${grupo19.includes('Julio')}`)
+        console.log('')
 
 
         // .every() Nos permite ejecutar un condicional sobre cada elemento y nos devuelve true si TODOS los elementos cumplieron la condición.
@@ -220,6 +239,7 @@
             }
         })
         console.log(`Todos los nombres son string?: ${IsStringGrupo20}`)
+        console.log('')
 
 
         // .some() Nos permite ejecutar un condicional sobre cada elemento y nos devuelve true si ALGUNOS de los elementos cumplieron la condición.
@@ -239,6 +259,7 @@
             }
         })
         console.log(`El arreglo es inválido? ${IsStringGrupo21}`)
+        console.log('')
 
     </script>
 </body>
