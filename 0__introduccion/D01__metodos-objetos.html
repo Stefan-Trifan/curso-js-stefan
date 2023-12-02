@@ -24,32 +24,43 @@
             }
         };
         console.log(usuario1)
-        // Métodos propios
+
+        // 📌 Métodos propios
         // Los objetos pueden tener métodos personalizados
         console.log('________ usuario1.saludo() ________')
         usuario1.saludo1();
 
-
-        // Object.keys()
+        // 📌 Object.keys()
         // Nos devuelve un arreglo con las llaves (keys) del objeto
         console.log('________ Object.keys(usuario1) ________')
         const llaves2 = Object.keys(usuario1);
         console.log(llaves2)
 
-
-        // Object.values()
+        // 📌 Object.values()
         // Nos devuelve un arreglo con los valores (values) del objeto
         console.log('________ Object.values(usuario1) ________')
         const valores3 = Object.values(usuario1);
         console.log(valores3)
 
-
-        // Object.entries()
+        // 📌 Object.entries()
         // Nos devuelve un arreglo con las parejas de clave y valor (propiedades) del objeto
         console.log('________ Object.entries(usuario1) ________')
         const propiedades4 = Object.entries(usuario1);
         console.log(propiedades4);
         console.log(`El objeto tiene ${propiedades4.length} propiedades`)
+
+        // 📌 delete usuario1.edad1
+        // Elimina una propiedad
+        console.log('________ delete usuario1.edad1 ________')
+        delete usuario1.edad1
+        console.log(usuario1);
+
+        // 📌 .
+        // Crear una nueva propiedad en un objeto
+        console.log('________ usuario1.casado = true ________')
+        usuario1.casado = true
+        console.log(usuario1);
+
 
     </script>
 </body>
