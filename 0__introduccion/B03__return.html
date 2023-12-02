@@ -13,6 +13,17 @@
         <h1 id="titulo">Sentencia return</h1>
     </section>
     <script>
+        /* 
+            Todas las funciones siempre retornan un valor 
+            Si la función no tiene la palabra 'return', no regresa nada
+        */
+
+        // Esta función retorna undefined
+        const saludar = (nombre) => {
+            console.log(`Hola ${nombre}`)
+        }
+        saludar('Steve')
+
         // Función dinámica con múltiples parámetros
         const operacion = (tipo, numero1, numero2) => {
             if (tipo === 'suma') {

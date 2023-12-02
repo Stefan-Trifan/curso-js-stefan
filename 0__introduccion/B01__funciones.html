@@ -19,16 +19,18 @@
         Un método es una función que se encuentra dentro de un objeto
         */
 
-        // FORMA 1 de definir una función
+        // 📌 FORMA 1 de definir una función
         // Forma tradicional
         // No es muy recomendable
         console.log('_______ Saludo desde la función _______')
-        function saludo() {
-            console.log('Hola!')
+        function saludo(nombre) {
+            // Devuelve los argumentos
+            console.log(arguments)
+            console.log(`Hola ${nombre}`)
         }
-        saludo()
+        saludo('Steve')
 
-        // FORMA 2 de definir una función: Función anónima
+        // 📌 FORMA 2 de definir una función: Función anónima
         // La asignamos a una variable
         // Al asignarle el nombre a una variable, no hay manera de que este sea reutilizado dentro de la app
         console.log('_______ Saludo desde la variable _______')
@@ -37,19 +39,21 @@
         }
         saludo2()
 
-        // FORMA 3 de definir una función: funciones de tipo flecha
+        // 📌 FORMA 3 de definir una función: funciones de tipo flecha
         // Definimos la función dentro de una constante
         console.log('_______ Saludo desde la función de tipo flecha _______')
-        const saludo3 = (nombre) => console.log(`Hola, ${nombre}`)
+        const saludo3 = () => console.log(`Hola!!!`)
         saludo3('Steve')
 
-        // FORMA 4 de definir una función: funciones de tipo flecha alargada
+        // 📌 FORMA 4 de definir una función: funciones de tipo flecha alargada
+        // También conocida como lambda function (ES6)
+        // Más eficientes y evitan problemas. 
         console.log('_______ Saludo desde la función de tipo flecha _______')
         const saludo4 = () => {
-            console.log('Hola!!!')
+            console.log(`Hola!!!`)
         }
         saludo4()
-        
+
     </script>
 </body>
 </html>
