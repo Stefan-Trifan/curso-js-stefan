@@ -20,13 +20,17 @@
         */
 
         // FORMA 1 de definir una función
+        // Forma tradicional
+        // No es muy recomendable
         console.log('_______ Saludo desde la función _______')
         function saludo() {
             console.log('Hola!')
         }
         saludo()
 
-        // FORMA 2 de definir una función: la asignamos a una variable
+        // FORMA 2 de definir una función: Función anónima
+        // La asignamos a una variable
+        // Al asignarle el nombre a una variable, no hay manera de que este sea reutilizado dentro de la app
         console.log('_______ Saludo desde la variable _______')
         const saludo2 = function () {
             console.log('Hola!!')
@@ -34,9 +38,10 @@
         saludo2()
 
         // FORMA 3 de definir una función: funciones de tipo flecha
+        // Definimos la función dentro de una constante
         console.log('_______ Saludo desde la función de tipo flecha _______')
-        const saludo3 = () => console.log('Hola!!!')
-        saludo3()
+        const saludo3 = (nombre) => console.log(`Hola, ${nombre}`)
+        saludo3('Steve')
 
         // FORMA 4 de definir una función: funciones de tipo flecha alargada
         console.log('_______ Saludo desde la función de tipo flecha _______')
