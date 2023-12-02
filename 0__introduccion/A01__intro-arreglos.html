@@ -12,16 +12,36 @@
     <section>
         <h1 id="titulo">Intro Arreglos</h1>
         <script>
+            // 📌 []
             // Dentro de los arreglos podemos agregar muchos valores, pero NO sabemos que es cada valo  
-            // Declaración de un arreglo:         
+            // Declaración de dos arreglos:         
             const colores = ['Rojo', 'Verde', 'Azul', 'Morado']
+            console.log({colores})
+
             const carritoCompra = [
+                2 + 1,
                 'Steve',
                 999999999,
-                // Declaramos un objeto dentro de un arreglo
+                // Declaramos un objeto literal dentro de un arreglo
                 { patatas: 8 },
-                [1, 2, 7]
+                [1, 2, 7],
+                // Insertamos una función tradicional
+                function(){},
+                // Insertamos una función de tipo flecha
+                ()=>{}
             ];
+            console.log(carritoCompra)
+
+            // 📌 new Array(I)
+            // Nos sive para crear un array 
+            // No es muy utilizado
+            // Creamos un array vacío de 10 elementos:
+            console.log('______ new Array(10) ______')
+            /* 
+                1 - Número de elementos
+            */
+           const arr = new Array(10)
+           console.log(arr)
         </script>
     </section>
 </body>
