@@ -23,16 +23,29 @@
                     marca: 'renault',
                     reudas: 4,
                     color: 'azulito'
-                }
+                },
+                'ultima-pelicula': 'infinity war'
             }
+            
             console.log(persona);
             // Devuelve el objeto
+
             console.log(persona.edad);
             // Devuelve la edad
+
+            console.log(persona['edad']);
+            // También devuelve la edad
+
             console.log(persona.profesion[1]);
             // Devuelve la segunda profesion
+
             console.log(persona.carro.marca);
             // Devuelve la marca
+
+            console.log(persona["ultima-pelicula"])
+            // No podemos utilizar la notación persona.ultima-pelicula, por que tiene guión
+            // Utilizamos la notación con corchetes
+            // Devuelve la última película. 
         </script>
     </section>
 </body>
