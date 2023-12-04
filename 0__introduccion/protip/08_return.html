@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Retrun</h1>
+    </section>
+    <script>
+        //Creamos una función que crea un objeto
+        function crearPersona(nombre, apellido){
+            /* 
+                Desde ES6, si queremos que el nombre de la propiedad sea el mismo que el de la variable, no hace falta especificar el nombre dos veces
+
+                Forma antigua
+                return{
+                    nombre: nombre,
+                    apellido: apellido
+                }
+
+                Forma nueva
+                return{
+                    nombre, apellido
+                }
+
+                Forma nueva simplificada:
+                return {nombre, apellido}
+            */
+            return {nombre, apellido}
+        }
+
+        /* 
+            Es lo mismo pero con una función de tipo flecha
+            Utilizamos los parentesis ({...}), para indicar que se debe devolver un objeto literal con las propiedades nombre y apellido.
+        */
+        const crearPersona2 = (nombre, apellido) => ({nombre, apellido})
+
+
+
+        // Creamos un objeto y lo asignamos a una variable
+        const persona = crearPersona('Stefan', 'Trifan')
+        console.log(persona)
+
+    </script>
+</body>
+</html>
