@@ -15,53 +15,65 @@
     </section>
     <script>
 
-        // .length nos permite conocer la cantidad de elementos que tiene un arreglo
+        // 📌 .método() - Definición
+        console.log('______ MÉTODO X: plantillaX.método() ______')
+        // Declaración de variables
+        /*
+            1 - Argumentos
+        */
+        // Aplicar método
+
+        // 📌 .length - Nos permite conocer la cantidad de elementos que tiene un arreglo
         console.log('______ MÉTODO 1: colores1.length ______')
         const colores1 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores1)
         /**/
         console.log(colores1.length)
+        // Output: 4
         console.log('')
 
 
-        // .toString() nos permite transformar un arreglo a una cadena de texto
+        // 📌 .toString() - Nos permite transformar un arreglo a una cadena de texto
         console.log('______ MÉTODO 2: colores2.toString() ______')
         const colores2 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores2)
         /**/
         console.log(colores2.toString())
-        document.body.querySelector('section h2').innerHTML = colores2.toString();
+        // Output: Rojo,Verde,Azul,Morado
         console.log('')
 
 
-        // .join() nos permite transformar un arreglo a una cadena de texto y separar cada elemento por la letra que nosotos queramos
+        // 📌 .join() nos permite transformar un arreglo a una cadena de texto y separar cada elemento por la letra que nosotos queramos
         console.log('______ MÉTODO 3: colores3.join(-) ______')
         const colores3 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores3)
         /**/
         console.log(colores3.join('-'))
+        // Output: Rojo-Verde-Azul-Morado
         console.log('')
 
 
-        // .sort() nos permite ordenar los elementos (números y texto) de un arreglo de forma alfabética
+        // 📌 .sort() nos permite ordenar los elementos (números y texto) de un arreglo de forma alfabética
         console.log('______ MÉTODO 4: numeros4.sort() ______')
         const numeros4 = [6, 9, 4, 9, 2, 2, 3, 8, 7]
         console.log(numeros4)
         /**/
         console.log(numeros4.sort()) // Modifica el arreglo original
+        // Output: [2, 2, 3, 4, 6, 7, 8, 9, 9]
         console.log('')
 
 
-        // .reverse() nos permite ordenar los elementos (números y texto) de un arreglo de forma descendente
+        // 📌 .reverse() nos permite ordenar los elementos (números y texto) de un arreglo de forma descendente
         console.log('______ MÉTODO 5: numeros5.reverse() ______')
         const numeros5 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         console.log(numeros5)
         /**/
         console.log(numeros5.reverse()) // Modifica el arreglo original
+        // Output: [2, 2, 3, 4, 6, 7, 8, 9, 9]
         console.log('')
 
 
-        // .concat() permite juntar 2 arreglos en uno solo
+        // 📌 .concat() permite juntar 2 arreglos en uno solo
         console.log('______ MÉTODO 6: numeros6.concat(letras_6) ______')
         const numeros6 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         const letras_6 = ['a', 'z', 'x', 'b', 'c', 'm', 'p'];
@@ -69,46 +81,51 @@
         console.log(letras_6)
         /**/
         console.log(numeros6.concat(letras_6))
+        // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'z', 'x', 'b', 'c', 'm', 'p']
         console.log('')
 
 
-        // .push() permite agregar un elemento al final del arreglo
+        // 📌 .push() permite agregar un elemento al final del arreglo
         console.log("______ MÉTODO 7: colores7.push('turquesa') ______")
         const colores7 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores7)
         /**/
         console.log(colores7.push('turquesa'))  // Retorna la longitud del array
+        // Output: 5
         console.log('')
 
 
-        // .pop() permite eliminar un elemento al final del arreglo
+        // 📌 .pop() permite eliminar un elemento al final del arreglo
         console.log("______ MÉTODO 8: colores8.pop() ______")
         const colores8 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores8)
         /**/
         console.log(colores8.pop()); // Retorna el elemento eliminado
+        // Output: Morado
         console.log('')
 
 
-        // .shift() permite eliminar un elemento al principio del arreglo
+        // 📌 .shift() permite eliminar un elemento al principio del arreglo
         console.log("______ MÉTODO 9: colores9.shift() ______")
         const colores9 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores9)
         /**/
         console.log(colores9.shift()); // Retorna el elemento eliminado
+        // Output: Rojo
         console.log('')
 
 
-        // .unshift() permite agregar un elemento al principio del arreglo
+        // 📌 .unshift() permite agregar un elemento al principio del arreglo
         console.log("______ MÉTODO 10: colores10.unshift('Gris') ______")
         const colores10 = ['Rojo', 'Verde', 'Azul', 'Morado']
         console.log(colores10)
         /**/
         console.log(colores10.unshift('Gris')); // Retorna la nueva longitud del arreglo
+        // Output: 5
         console.log('')
 
 
-        // .splice() permite eliminar/insertar/sustituir elementos en cualquier parte del arreglo
+        // 📌 .splice() permite eliminar/insertar/sustituir elementos en cualquier parte del arreglo
         console.log("______ MÉTODO 11: amigos11.splice(1, 2, 'Rafael', 'Roberto') ______")
         const amigos11 = ['Alejandro', 'Cesar', 'Manuel'];
         console.log(amigos11)
@@ -119,10 +136,11 @@
         */
         amigos11.splice(1, 2, 'Rafael', 'Roberto');
         console.log(amigos11)
+        // Output: ['Alejandro', 'Rafael', 'Roberto']
         console.log('')
 
 
-        // .slice() permite copiar una parte de un arreglo a otro
+        // 📌 .slice() permite copiar una parte de un arreglo a otro
         console.log("______ MÉTODO 12: frutas12.slice(2,4) ______")
         const frutas12 = ['Fresa', 'Manzana', 'Uva', 'Piña', 'Naranja', 'Melon'];
         console.log(frutas12);
@@ -132,30 +150,33 @@
         */
         const frutasFavoritas12 = frutas12.slice(2, 5)
         console.log(frutasFavoritas12)
+        // Output: ['Uva', 'Piña', 'Naranja']
         console.log('')
 
 
-        // .indexOf() permite obtener el index de un elemento. 
+        // 📌 .indexOf() permite obtener el index de un elemento. 
         // Si no hay elemento nos retorma -1
         console.log("______ MÉTODO 13: conocidos13.indexOf('Gema') ______")
         const conocidos13 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
         console.log(conocidos13)
         /**/
         console.log(conocidos13.indexOf('Gema')); // Devuelve el primer index del elemento que encontró
+        // Output: 5
         console.log('')
 
 
-        // .lastIndexOf() permite obtener el último index de un elemento. 
+        // 📌 .lastIndexOf() permite obtener el último index de un elemento. 
         // Si no hay elemento nos retorma -1
         console.log("______ MÉTODO 14: conocidos14.lastIndexOf('Gema') ______")
         const conocidos14 = ['Carlos', 'Gema', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
         console.log(conocidos14)
         /**/
         console.log(conocidos14.lastIndexOf('Gema')); // Devuelve el último index del elemento que encontró
+        // Output: 8
         console.log('')
 
 
-        // .forEach() permite ejecutar una funcióin por cada elemento
+        // 📌 .forEach() permite ejecutar una funcióin por cada elemento
         console.log("______ MÉTODO 15: conocidos15.forEach(() => {}) ______")
         const conocidos15 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
         console.log(conocidos15)
@@ -167,10 +188,20 @@
         conocidos15.forEach((nombre15, index15) => {
             console.log(`Hola ${nombre15}`, index15)
         })
+        // Output:
+        // Hola Carlos 0
+        // Hola Rafael 1
+        // Hola Estefania 2
+        // Hola Rodrigo 3
+        // Hola Rafael 4
+        // Hola Gema 5
+        // Hola Diana 6
+        // Hola Sara 7
+        // Hola Gema 8
         console.log('')
 
 
-        // .find() Permite recorrer un arreglo y devuelve el primer elemento que retornemos con la sentencia return
+        // 📌 .find() Permite recorrer un arreglo y devuelve el primer elemento que retornemos con la sentencia return
         // permite ejecutar una funcióin por cada elemento al igual que .forEach()
         console.log("______ MÉTODO 16: grupo16.find(() => {}) ______")
         const grupo16 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
@@ -182,10 +213,11 @@
             }
         })
         console.log(personaSeleccionada16)
+        // Output: Carlos
         console.log('')
 
 
-        // .map() Permite ejecutar una función por cada elemento y crear un nuevo arreglo en base a los resultados de esa función. 
+        // 📌 .map() Permite ejecutar una función por cada elemento y crear un nuevo arreglo en base a los resultados de esa función. 
         // El nuevo arreglo va a tener el mismo número de elementos que el original
         console.log("______ MÉTODO 17: grupo17.map(() => {}) ______")
         const grupo17 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Gema', 'Diana', 'Sara', 'Gema'];
@@ -193,10 +225,11 @@
         /* Dentro del primer () escribimos como queremos identificar a cada uno de los elementos */
         const grupoMayusculas = grupo17.map((nombre17) => nombre17.toUpperCase()) // Función flecha reducida
         console.log(grupoMayusculas)
+        // Output: ['CARLOS', 'RAFAEL', 'ESTEFANIA', 'RODRIGO', 'RAFAEL', 'GEMA', 'DIANA', 'SARA', 'GEMA']
         console.log('')
 
 
-        // .filter() igual que .map(), pero el nuevo arreglo solo devuelve los resultados que cumplen con una condición
+        // 📌 .filter() igual que .map(), pero el nuevo arreglo solo devuelve los resultados que cumplen con una condición
         console.log("______ MÉTODO 18: grupo18.filter(() => {}) ______")
         const grupo18 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 'Gema'];
         console.log(grupo18)
@@ -207,10 +240,11 @@
             }
         })
         console.log(grupo4Letras18)
+        // Output: ['Sara', 'Gema']
         console.log('')
 
 
-        // .includes() Nos permite saber si un arreglo contiene el elemento especificado
+        // 📌 .includes() Nos permite saber si un arreglo contiene el elemento especificado
         console.log("______ MÉTODO 19: grupo19.includes('Julio') ______")
         const grupo19 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 'Gema'];
         console.log(grupo19)
@@ -219,10 +253,11 @@
             La sentencia devuelve true o false
         */
         console.log(`El arreglo contiene 'Julio'? ${grupo19.includes('Julio')}`)
+        // Output: El arreglo contiene 'Julio'? false
         console.log('')
 
 
-        // .every() Nos permite ejecutar un condicional sobre cada elemento y nos devuelve true si TODOS los elementos cumplieron la condición.
+        // 📌 .every() Nos permite ejecutar un condicional sobre cada elemento y nos devuelve true si TODOS los elementos cumplieron la condición.
         // Muy úttil para validar si los campos de un formlario son correctos
         console.log("______ MÉTODO 20: grupo20.every(() => {}) ______")
         const grupo20 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 45];
@@ -239,10 +274,11 @@
             }
         })
         console.log(`Todos los nombres son string?: ${IsStringGrupo20}`)
+        // Output: Todos los nombres son string?: false
         console.log('')
 
 
-        // .some() Nos permite ejecutar un condicional sobre cada elemento y nos devuelve true si ALGUNOS de los elementos cumplieron la condición.
+        // 📌 .some() Nos permite ejecutar un condicional sobre cada elemento y nos devuelve true si ALGUNOS de los elementos cumplieron la condición.
         console.log("______ MÉTODO 21: grupo21.some(() => {}) ______")
         const grupo21 = ['Carlos', 'Rafael', 'Estefania', 'Rodrigo', 'Rafael', 'Diana', 'Sara', 45];
         console.log(grupo21)
@@ -259,7 +295,21 @@
             }
         })
         console.log(`El arreglo es inválido? ${IsStringGrupo21}`)
+        // Output: El arreglo es inválido? true
         console.log('')
+
+        // 📌 .substring(II) se utiliza para extraer una parte de una cadena (string) y devolver esa parte como una nueva cadena. Funciona tomando dos argumentos
+        console.log("______ MÉTODO 22: carta22.substring(II) ______")
+        const carta22 = '10A'
+        console.log(carta22)
+        /*
+            1 - Índice inicial (obligatorio): El índice del carácter donde comenzará la extracción.
+            2 - Índice final (opcional): El índice del carácter donde se detendrá la extracción. 
+        */
+       const valor22 = carta22.substring(0, carta22.length - 1)
+       console.log(valor22)
+       // Output: 10
+       console.log('')
 
     </script>
 </body>
