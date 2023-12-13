@@ -10,22 +10,47 @@
 </head>
 <body>
     <section>
-        <h1 id="titulo">Titulo</h1>
+        <h1 id="titulo">Valor - Referencia</h1>
     </section>
     <script>
-        
+        // Los primitivos se pasan por valor
         let a = 10
         let b = a
         a = 30
 
         let ab = {a,b}
         console.log(ab)
+        /*  
+            a : 30
+            b : 10 
+        */
 
+        // Los objetos se pasan por referencia
+        let juan = {
+            nombre: 'Juan'
+        }
+        // Si queremos crear una copia del objeto, utilizamos {}
+        let ana = {juan}
 
-        let juan = {nombre: 'Juan'}
-        let ana = {nombre: 'Ana'}
+        ana.nombre = 'Ana'
 
-        console.log(juan)
+        console.log({juan, ana})
+        /*
+            a : 30
+            b : 10 
+        */
+
+        // const cambiarNombre = (persona) => {
+        //     persona.nombre = 'Tony'
+        //     return persona
+        // }
+        // cambiarNombre()
+
+        // let peter = {
+        //     nombre : 'Peter'
+        // }
+        // let tony = cambiarNombre( peter )
+        // console.log(peter, tony)
 
 
     </script>
