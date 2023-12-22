@@ -25,14 +25,21 @@
 
         // Creamos una plantilla a partir de la cual creamos un objeto
         class Usuario {
+            // Por defecto todas las clases tienen el use strict
+            'use strict'
+
             // Propiedades generales para todos los objetos
             tipo = 'usuario' // Las propiedades dentro de clases itilizan "=" en lugar de "."
+
+            // Inicualizamos las propiedades de las clases, no las variables
+            nombre;
+            apellido;
 
             // Este método constructor se va a ejecuar cada vez que creemos un nuevo usuario
             constructor(nombre, apellido) {
                 // Creamos nuevas propiedades a aprtir de los valores que recibe la función
                 this.nombre = nombre; // Accedemos a la clase (this), creamos a la propiedad nombre y la asignamos al primer valor que le va a pasar la función 
-                this.apellido = apellido;
+                this.apellido = apellido;  // Con this hacemos referencia a la instancia de la clase
 
                 console.log(`Nuevo usuario registrado!`)
             }
