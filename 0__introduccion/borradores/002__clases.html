@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clases</title>
+    <title>Clases II</title>
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
     <section>
-        <h1 id="titulo">Clases</h1>
+        <h1 id="titulo">Clases II</h1>
     </section>
     <script>
         // 📌 window.metodoPropiedad
@@ -19,19 +19,42 @@
         /* Parámetros */
     </script>
     <script>
-        class PersonaNatural {
-            
+        class Persona {
+
             nombre;
             codigo;
             frase;
 
-            constructor(nombre, codigo, clase){
+            // Valores por defecto
+            constructor(nombre = 'Sin nombre', codigo = 'Sin código', frase = 'Sin frase') {
                 this.nombre = nombre
+                this.codigo = codigo
+                this.frase = frase
+            }
+
+            // Los métodos se suelen declarar después del constructor
+            quienSoy = () => {
+                console.log(`Hola, soy ${ this.nombre } y mi identidad es ${ this.codigo }` )
+            }
+
+            // Llamamos a un método dentro de otro método
+            miFrase = () => {
+                // Hay que poner this para que encuentre el método, ya que están en scopes diferentes
+                this.quienSoy()
+                console.log(`${this.codigo} dice: ${this.frase}`)
             }
         }
 
-        const spiderman = new PersonaNatural ('Spiderman')
+        // Creamos una instancia de la clase
+        console.log('______ PRIMERA INSTANCIA ______')
+        const spiderman = new Persona('Peter Parker', 'Spiderman', 'Soy un vengador bueno')
         console.log(spiderman)
+        spiderman.miFrase()
+
+        console.log('______ SEGUNDA INSTANCIA ______')
+        const ironman = new Persona('Tony Stark', 'Ironman', 'Soy un vengador bueno')
+        console.log(ironman)
+        ironman.miFrase()
     </script>
 </body>
 </html>
