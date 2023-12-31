@@ -21,19 +21,30 @@
     <script>
         class Persona {
 
-            // Declaramos las variables. Es totalmente opcional
+            // I Declaramos las variables. Es un paso opcional
             nombre;
             codigo;
             frase;
+            comida;
 
-            // Valores por defecto
+            // II Constructor. Valores por defecto
             constructor(nombre = 'Sin nombre', codigo = 'Sin código', frase = 'Sin frase') {
                 this.nombre = nombre
                 this.codigo = codigo
                 this.frase = frase
             }
 
-            // Los métodos se suelen declarar después del constructor
+            // III Sets y Gets
+            // Los sets no pueden tener el mismo nombre que la propiedad que queremos establecer
+            set setComidaFavorita( comida ) {
+                this.comida = comida.toUpperCase()
+            }
+            // Recuperá una propiedad construida
+            get getComidaFvorita() {
+                return `La comida favorita de ${this.nombre} es ${this.comida}`
+            }
+
+            // IV Los métodos se suelen declarar después del constructor
             quienSoy = () => {
                 console.log(`Hola, soy ${ this.nombre } y mi identidad es ${ this.codigo }` )
             }
@@ -49,13 +60,18 @@
         // Creamos una instancia de la clase
         console.log('______ PRIMERA INSTANCIA ______')
         const spiderman = new Persona('Peter Parker', 'Spiderman', 'Soy un vengador bueno')
-        console.log(spiderman)
         spiderman.miFrase()
+        // 
+        spiderman.setComidaFavorita = 'el pie de cereza de la tía May'
+        console.log(spiderman.getComidaFvorita)
+        console.log(spiderman)
 
         console.log('______ SEGUNDA INSTANCIA ______')
         const ironman = new Persona('Tony Stark', 'Ironman', 'Soy un vengador bueno')
         console.log(ironman)
         ironman.miFrase()
+
+
     </script>
 </body>
 </html>
