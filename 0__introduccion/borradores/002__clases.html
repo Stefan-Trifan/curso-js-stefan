@@ -21,6 +21,19 @@
     <script>
         class Persona {
 
+            // Propiedad estática
+            // Queremos saber cuantas instancias tenemos inicializadas con mi clase
+            static _conteo = 0
+
+            static get conteo(){
+                return Persona._conteo + ' instancias'
+            }
+
+            static mensaje() {
+                console.log(this.nombre)
+                console.log('Hola a todos, soy un método estático')
+            }
+
             // I Declaramos las variables. Es un paso opcional
             nombre;
             codigo;
@@ -32,6 +45,8 @@
                 this.nombre = nombre
                 this.codigo = codigo
                 this.frase = frase
+
+                Persona._conteo++
             }
 
             // III Sets y Gets
@@ -70,6 +85,16 @@
         const ironman = new Persona('Tony Stark', 'Ironman', 'Soy un vengador bueno')
         console.log(ironman)
         ironman.miFrase()
+
+        // Persona._conteo = 2
+        console.log('Conteo estático', Persona._conteo)
+
+        console.log(Persona.conteo)
+        Persona.mensaje()
+
+        Persona.propiedadExterna = 'Hola Mundo'
+        console.log(Persona.propiedadExter)
+        console.log(Persona)
 
 
     </script>
