@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases II</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Clases II</h1>
+    </section>
+    <script>
+        // 📌 window.metodoPropiedad
+        // Definición
+        // console.log('______  ______')
+        /* Parámetros */
+    </script>
+    <script>
+        class Persona {
+
+            // Propiedad estática
+            // Queremos saber cuantas instancias tenemos inicializadas con mi clase
+            static _conteo = 0
+
+            static get conteo(){
+                return Persona._conteo + ' instancias'
+            }
+
+            static mensaje() {
+                console.log(this.nombre)
+                console.log('Hola a todos, soy un método estático')
+            }
+
+            // I Declaramos las variables. Es un paso opcional
+            nombre;
+            codigo;
+            frase;
+            comida;
+
+            // II Constructor. Valores por defecto
+            constructor(nombre = 'Sin nombre', codigo = 'Sin código', frase = 'Sin frase') {
+                this.nombre = nombre
+                this.codigo = codigo
+                this.frase = frase
+
+                Persona._conteo++
+            }
+
+            // III Sets y Gets
+            // Los sets no pueden tener el mismo nombre que la propiedad que queremos establecer
+            set setComidaFavorita( comida ) {
+                this.comida = comida.toUpperCase()
+            }
+            // Recuperá una propiedad construida
+            get getComidaFvorita() {
+                return `La comida favorita de ${this.nombre} es ${this.comida}`
+            }
+
+            // IV Los métodos se suelen declarar después del constructor
+            quienSoy = () => {
+                console.log(`Hola, soy ${ this.nombre } y mi identidad es ${ this.codigo }` )
+            }
+
+            // Llamamos a un método dentro de otro método
+            miFrase = () => {
+                // Hay que poner this para que encuentre el método, ya que están en scopes diferentes
+                this.quienSoy()
+                console.log(`${this.codigo} dice: ${this.frase}`)
+            }
+        }
+
+        class Heroe extends Persona {
+            clan = 'sin clan'
+
+            constructor(nombre, codigo, frase){
+                super(nombre, codigo, frase)
+
+                this.clan = "Avangers"
+            }
+
+            quienSoy() {
+                console.log(`Hola, soy ${ this.nombre }, ${ this.clan }` )
+                super.quienSoy();
+            }
+        }
+
+        const spiderman = new Heroe('Peter Parker', 'Spiderman', 'Soy un vengador bueno')
+        console.log(spiderman)
+        spiderman.quienSoy()
+
+    </script>
+</body>
+</html>
