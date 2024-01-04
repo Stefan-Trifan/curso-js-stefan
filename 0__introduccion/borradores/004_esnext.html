@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades Privadas</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Propiedades Privadas</h1>
+    </section>
+    <script>
+        // 📌 Propiedades Privadas
+        // Sirven para impedir modificar el valor de una variable fuera de la clase
+
+        class Rectangulo {
+
+        // Las propiedades privadas 
+        #area = 0
+
+        constructor(base = 0, altura = 0){
+            this.base   = base
+            this.altura = altura
+
+            this.#area = base * altura
+        }
+        }
+
+        const rectangulo = new Rectangulo(10, 15)
+        console.log(rectangulo)
+    </script>
+</body>
+</html>

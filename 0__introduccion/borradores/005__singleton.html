@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singleton</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Singleton</h1>
+    </section>
+    <script>
+        // 📌 singleton
+        // Es una instancia única de mi clase
+
+        class Singleton {
+
+            static instancia;  // 
+            nombre = '';
+
+            constructor ( nombre = '' ){
+
+                // Si ya existe una isntancia 
+                if(!!Singleton.instancia){
+                    return Singleton.instancia 
+                } 
+
+                Singleton.instancia = this
+                this.nombre = nombre                    
+            }
+
+        }
+
+        const instancia1 = new Singleton('Ironman')
+        const instancia2 = new Singleton('Spiderman')
+
+        console.log(`Nombre de la instancia1 es: ${instancia1.nombre}`)
+        console.log(`Nombre de la instancia1 es: ${instancia2.nombre}`)
+    </script>
+</body>
+</html>

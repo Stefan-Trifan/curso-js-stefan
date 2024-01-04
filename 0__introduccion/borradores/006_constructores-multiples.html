@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructores múltiples</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <section>
+        <h1 id="titulo">Constructores múltiples</h1>
+    </section>
+    <script>
+        // 📌 Constructores múltiples
+        // Definición
+
+        class Persona {
+
+            constructor(nombre, apellido, pais){
+                this.nombre = nombre
+                this.apellido = apellido
+                this.pais = pais
+            }
+
+            getInfo(){
+                console.log(`info: ${this.nombre} ${this.apellido}, ${this.pais}`)
+            } 
+        }
+
+        const nombre1 = 'Carlos',
+              apellido1 = 'Trifan',
+              país1 = 'Rumanía';
+
+        const fher = {
+            nombre : 'Fernando',
+            apellido : 'Herrera',
+            pais : 'Costa Rica'
+        }
+
+        const persona1 = new Persona (nombre1, apellido1, país1)
+        persona1.getInfo()
+
+
+
+    </script>
+</body>
+</html>
