@@ -14,9 +14,14 @@
     </section>
     <script>
         // 📌 Constructores múltiples
-        // Definición
+        // Una clase con varios constructores
 
         class Persona {
+
+            // Desestructuramos el objeto antes de crear la instancia
+            static porObjeto({nombre, apellido, pais}){
+                return new Persona(nombre, apellido, pais)
+            }
 
             constructor(nombre, apellido, pais){
                 this.nombre = nombre
@@ -29,7 +34,7 @@
             } 
         }
 
-        const nombre1 = 'Carlos',
+        const nombre1 = 'Stefan',
               apellido1 = 'Trifan',
               país1 = 'Rumanía';
 
@@ -39,9 +44,13 @@
             pais : 'Costa Rica'
         }
 
+        // Creamos una instancia a través de los argumentos
         const persona1 = new Persona (nombre1, apellido1, país1)
         persona1.getInfo()
 
+        // Creamos una instancia a través de un objeto. Utilizamos el método estático .porObjeto()
+        const persona2 = Persona.porObjeto( fher )
+        persona2.getInfo()
 
 
     </script>
