@@ -1,5 +1,9 @@
-# Ejecutamos este comando en la terminal para instalar vite
+# Modulos con Vite
+
+## Pasos de instalación
+
+### Abrimos la carpeta en la terminal y ejecutamos este comando para instalar vite
 
 npm create vite
 
-# Seguimos los pasos
+### Seguimos los pasos de instalación
